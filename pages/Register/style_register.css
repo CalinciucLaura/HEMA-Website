@@ -1,5 +1,13 @@
 body {
+<<<<<<< HEAD
   background: url("../../resources/background.jpg");
+=======
+<<<<<<< HEAD
+  background: url("resources/background.jpg");
+=======
+  background: url("../../resources/background.jpg");
+>>>>>>> robert
+>>>>>>> main
   background-size: cover;
   position: relative;
   background-attachment: fixed;
@@ -35,7 +43,15 @@ body::before {
   left: 0;
   width: 93%;
   height: 9%;
+<<<<<<< HEAD
   background-color: #1e1e1e;
+=======
+<<<<<<< HEAD
+  background-color: rgb(58, 48, 48);
+=======
+  background-color: #1e1e1e;
+>>>>>>> robert
+>>>>>>> main
   padding: 19px;
   margin: 0 auto;
   border-radius: 41px 41px 0 0;
