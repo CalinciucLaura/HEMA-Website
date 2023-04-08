@@ -1,5 +1,9 @@
 body {
+<<<<<<< HEAD
   background: url("resources/background.jpg");
+=======
+  background: url("../../resources/background.jpg");
+>>>>>>> robert
   background-size: cover;
   position: relative;
   background-attachment: fixed;
@@ -32,7 +36,11 @@ body::before {
   left: 0;
   width: 93%;
   height: 10%;
+<<<<<<< HEAD
   background-color: rgb(58, 48, 48);
+=======
+  background-color: #1e1e1e;
+>>>>>>> robert
   padding: 19px;
   border-radius: 41px 41px 0 0;
   border-bottom: 3px solid #242121;
