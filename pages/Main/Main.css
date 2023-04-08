@@ -5,40 +5,73 @@ body {
 
 /* NAVBAR */
 
-.NAVBAR {
+header{
     width: 100%;
-    position: fixed;
-    background-color: #1e1e1e;
-    height: 50px;
+    top:0;
+    right: 0 ;
+    z-index: 0;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    background-color: #1e1e1e;
+    padding:10px 12%;
+    transition: all .50s ease;
+    align-items: center;
+}
+
+.LOGO{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
 }
 
 .LOGO a{
-    color: rgba(255, 255, 255, 0.596);
+    margin-left: 30px;
     text-decoration: none;
+    color: #d3cbcb;
     font-family: 'Raleway', sans-serif;
     letter-spacing: 10px;
-    display: block;
     font-size: 20px;
-    padding: 15px;
 }
 
-.NAVBAR-TEXT {
+
+.NAVBAR{
     display: flex;
-    justify-content: space-around;
-    width: 35%;
-    font-size: 12px;
+    list-style: none;
+    margin:0;
+    padding:0;
 }
 
-.NAVBAR-TEXT a {
-    color: rgba(255, 255, 255, 0.596);
-    text-decoration: none;
+.NAVBAR a{
+    color:#d3cbcb;
+    margin:0px 30px;
     font-family: 'Raleway', sans-serif;
-    display: block;
-    margin: 20px;
-    letter-spacing:2px;
+    text-decoration: none;
+}
+
+.NAVBAR a:hover{
+    color: green;
+}
+
+.sub-navbar{
+    display: flex;
+   align-items: center;
+}
+
+.sub-navbar a{
+    margin: 0px 30px;
+    color:#d3cbcb;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+#menu-icon{
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    color: white;
 }
 
 /* BACKGROUND */
@@ -65,13 +98,15 @@ body {
 
 .BACKGROUND-CONTENT h1
 {   
+    margin: 0;
     font-size: 55px;
     letter-spacing: 5px;
 }
 
 .BACKGROUND-CONTENT p
 {
-    font-size: 10px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .BACKGROUND-BUTTONS
@@ -271,26 +306,12 @@ margin:50px 0px;
     box-shadow: rgba(0, 0, 0, 0.151) 5px 8px 10px;
 }
 
-/* footer{
-    height: 200px;
-    background-color: #2244278e;
-    text-align: center;
-    display: block;
-    margin: auto;
-    
-}
 
-footer h1{
-    font-family: 'Raleway', sans-serif;
-    font-size: 80px;
-    color: rgba(255, 255, 255, 0.331);
-    letter-spacing: 30px;
-    padding: 30px;
-} */
 
 /* RESPONSIVE */
 
 @media screen  and (max-width: 768px) {
+
   
 
     /* BACKGROUND */
@@ -359,8 +380,6 @@ margin:auto;
    display: inline-block;
    width: 70%;
 }
-
-    
     .FIND{
         width: 100%;
         display:flex;
