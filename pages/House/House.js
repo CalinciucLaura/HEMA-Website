@@ -201,7 +201,60 @@ var pageContent = {
                "THYME",
                "PANAX"
         ]
+    },
+
+    recommendation: {
+        pageTitle: "Recommendation",
+        textH1 : "RECOMMENDATION",
+        textP: "HEMA'S RECOMMENDATIONS",
+        images : [
+            "../../images/Main/Salvia.jpg",
+            "../../images/Main/Hydrangeas.jpg",
+            "../../images/Main/Peony.jpg",
+            "../../images/Main/Lavender.jpg",           
+            "../../images/Main/CowBerry.jpg",
+            "../../images/Main/SaintJohn'sWort.jpg",
+            "../../images/Main/Ashwagandha.jpg",
+            "../../images/Main/EveningPrimrose.jpg",      
+            "../../images/Main/CatsClaw.jpg",
+            "../../images/Main/MilkThistle.jpg",
+            "../../images/Main/Philondron.jpg",
+            "../../images/Main/ZzPlant.jpg",
+            "../../images/Main/Poinsettia.jpg",
+            "../../images/Main/Jasmine.jpg",
+            "../../images/Main/Bromeliad.jpg",
+            "../../images/Main/Succulent.jpg",
+            "../../images/Main/Devil's Ivy.jpg",
+            "../../images/Main/ArisaemaTriphyllum.jpg",
+            "../../images/Main/TiPlant.jpg",
+            "../../images/Main/ArecaPalm.jpg", 
+                              
+        ],
+        texts:[
+               "SALVIA",
+               "HYDRANGEAS",
+               "PEONY",
+               "LAVENDER",
+               "COW-BERRY",
+               "SAINT JOHN'S WORT",
+               "ASHWAGANDHA",
+               "EVENING PRIMROSE",
+               "CAT'S CLAW",
+               "MILK-THISTLE",
+               "PHILONDRON",
+               "ZZ PLANT",
+               "POINSETTIA",
+               "JASMINE",
+               "BROMELIAD",
+               "SUCCULENT",
+               "DEVIL'S IVY",
+               "ARISAEMA TRIPHYLLUM",
+               "TI PLANT",
+               "ARECA PALM"
+        ]
     }
+
+
 };
 
 function changePageContent(page) {
@@ -260,5 +313,10 @@ document.getElementById("medicinal-link").addEventListener("click", function() {
     changeImageTitle("medicinal");
 });
 
+document.getElementById("recommendation-link").addEventListener("click", function() {
+    changePageContent("recommendation");
+    changePageImages("recommendation");
+    changeImageTitle("recommendation");
+});
 
 

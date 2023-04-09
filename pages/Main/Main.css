@@ -11,7 +11,7 @@ header {
   right: 0;
   z-index: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #1e1e1e;
   padding: 10px 12%;
   transition: all 0.5s ease;
@@ -26,7 +26,6 @@ header {
 }
 
 .LOGO a {
-  margin-left: 30px;
   text-decoration: none;
   color: #d3cbcb;
   font-family: "Raleway", sans-serif;
