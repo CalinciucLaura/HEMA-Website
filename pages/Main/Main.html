@@ -6,6 +6,7 @@
 <title id="page-title">HEMA</title>
 <link rel="stylesheet" href="Main.css">
 
+
 <!-- fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,16 +17,16 @@
 
 <!-- Navbar -->
 <header>
-  <ul class="LOGO"><li><a href="../Main/Main.html">HEMA</a></li></ul>
+  <ul class="LOGO"><li><a id="main-link" href="../Main/Main.html">HEMA</a></li></ul>
 
   <ul class = "NAVBAR">
     <li><a id="house-link" href="../House/House.html">House</a></li>
-    <li><a id="garden-link">Garden</a></li>
-    <li><a id= "tropical-link">Tropical</a></li>
-    <li><a id="medicinal-link">Medicinal</a></li>
-    <li><a id="recommendation-link">Recommendation</a></li>
-    <li><a id="help-link">Help</a></li>
-    <li><a id="about-link">About</a></li>
+    <li><a id="garden-link" href="../Garden/Garden.html">Garden</a></li>
+    <li><a id= "tropical-link" href="../Tropical/Tropical.html">Tropical</a></li>
+    <li><a id="medicinal-link" href="../Medicinal/Medicinal.html">Medicinal</a></li>
+    <li><a id="recommendation-link" href="../Recommendation/Recommendation.html">Recommendation</a></li>
+    <li><a id="help-link" href="#">Help</a></li>
+    <li><a id="about-link" href="#">About</a></li>
 
   </ul>
 
@@ -38,7 +39,7 @@
 </header>
 <!-- NAVBAR CLOSED -->
 
-
+<div class="content">
 <!-- BACKGROUND -->
 
 <div class="BACKGROUND">
@@ -72,37 +73,133 @@
 
     <div class="PLANT-BOX"> 
       <img src="../../images/Main/house3.jpg">
+      <a href="../Tropical/Tropical.html">
       <div class="TEXT-BOX">
         <h4>TROPICAL</h4>
       </div>
+      </a>
     </div>
 
     <div class="PLANT-BOX"> 
       <img src="../../images/Main/14.jpg">
+      <a href="../Garden/Garden.html">
       <div class="TEXT-BOX">
         <h4>GARDEN</h4>
       </div>
+      </a>
     </div>
 
 
     <div class="PLANT-BOX"> 
       <img src="../../images/Main/house10.jpg">
-      <div class="TEXT-BOX">
+      <a href="../House/House.html">
+        <div class="TEXT-BOX">
         <h4 href="Main.html">HOUSE</h4>
       </div>
+      </a>
     </div>
 
     <div class="PLANT-BOX"> 
       <img src="../../images/Main/Mint.jpg" >
+      <a href="../Medicinal/Medicinal.html">
       <div class="TEXT-BOX">
         <h4>MEDICINAL</h4>
       </div>
+      </a>
     </div>
 
   </div>
 
 
 <!-- PLANTS CATEGORY CLOSED -->
+
+<!-- FILTER -->
+<div class="FILTER">
+<h2>Search</h2>
+<div class = "FILTER-BOX">
+
+   <!-- CATHEGORY -->
+
+  <form action="/action_page.php">
+    <label for="cathegory">Cathegory: </label>
+    <select id="cathegory" name="cathegory">
+      <option value="house">House</option>
+      <option value="garden">Garden</option>
+      <option value="tropical">Tropical</option>
+      <option value="medicinal">Medicinal</option>
+    </select>
+  </form>
+
+  <!-- NAME -->
+
+  <form action="/action_page.php">
+    <label for="plant"> Name: </label>
+    <select id="plant" name="plant">
+      <option value="orhid">Orhid</option>
+      <option value="poinsettia">Poinsettia</option>
+      <option value="jasmine">Jasmine</option>
+      <option value="dandelion">Dandelion</option>
+      <option value="roses">Roses</option>
+      <option value="tulip">Tulip</option>
+    </select>
+  </form>
+
+  <!-- TYPE -->
+
+  <form action="/action_page.php">
+    <label for="type"> Type: </label>
+    <select id="type" name="type">
+      <option value="tree">Tree</option>
+      <option value="herb">Herb</option>
+      <option value="shrub">Shrub</option>
+    </select>
+  </form>
+
+  <!-- COLOR -->
+  
+  <form action="/action_page.php">
+    <label for="color"> Color: </label>
+    <select id="color" name="color">
+      <option value="white">White</option>
+      <option value="pink">Pink</option>
+      <option value="green">Green</option>
+      <option value="red">Red</option>
+      <option value="yellow">Yellow</option>
+      <option value="purple">Purple</option>
+      <option value="blue">Blue</option>
+      <option value="orange">Orange</option>
+      <option value="black">Black</option>
+    </select>
+  </form>
+
+  <!-- CONDITIONS -->
+
+  <form action="/action_page.php">
+    <label for="condition"> Conditions: </label>
+    <select id="condition" name="condition">
+      <option value="sun">Sun</option>
+      <option value="shade">Shade</option>
+      <option value="water">Water requirements</option>
+    </select>
+  </form>
+
+  <!-- SEASON -->
+
+  <form action="/action_page.php">
+    <label for="season"> Season: </label>
+    <select id="season" name="season">
+      <option value="winter">Winter</option>
+      <option value="spring">Spring</option>
+      <option value="summer">Summer</option>
+      <option value="fall">Fall</option>
+    </select>
+  </form>
+
+</div>
+<input type="submit">
+</div>
+
+<!-- FILTER CLOSED -->
 
 <!-- FIND MORE-->
 <div class="BOX-FIND">
@@ -138,7 +235,7 @@
 </div>
 
 
-<script src="../House/House.js"></script>
-
+<!-- <script src="../House/House.js"></script> -->
+</div>
 </body>
 </html>

@@ -1,4 +1,17 @@
+
+function getQueryParams(url) {
+    const paramArr = url.slice(url.indexOf('?') + 1).split('&');
+    const params = {};
+    paramArr.map(param => {
+        const [key, val] = param.split('=');
+        params[key] = decodeURIComponent(val);
+    })
+    return params;
+}
+
+
 var pageContent = {
+
     house: {
         pageTitle: "House",
         textH1 : "HOUSE PLANTS",
@@ -81,7 +94,7 @@ var pageContent = {
             "DAHLIAS",
             "HYDRANGEAS",
             "PEONY",
-            "LAVANDER",
+            "LAVENDER",
             "LILY",
             "TULIP",
             "VIOLET",
@@ -254,8 +267,9 @@ var pageContent = {
         ]
     }
 
-
 };
+
+
 
 function changePageContent(page) {
     document.title = pageContent[page].pageTitle;
