@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Titlu</title>
-    <link rel="stylesheet" href="Main.css" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="page-title">HEMA</title>
+<link rel="stylesheet" href="Main.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Navbar -->
 
-    <div class="NAVBAR">
-      <div class="LOGO">
-        <a href="Main.html">HEMA</a>
-      </div>
+<!-- Navbar -->
+<header>
+  <ul class="LOGO"><li><a href="../Main/Main.html">HEMA</a></li></ul>
 
-      <div class="NAVBAR-TEXT">
-        <a href="#house">House</a>
-        <a href="Garden.html">Garden</a>
-        <a href="#wild">Wild</a>
-        <a href="#tropical">Tropical</a>
-        <a href="#medicine">Medicine</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="#" style="margin: auto"
-          ><img src="../../images/Main/search.png"
-        /></a>
-      </div>
-    </div>
+  <ul class = "NAVBAR">
+    <li><a id="house-link" href="../House/House.html">House</a></li>
+    <li><a id="garden-link">Garden</a></li>
+    <li><a id= "tropical-link">Tropical</a></li>
+    <li><a id="medicinal-link">Medicinal</a></li>
+    <li><a id="recommendation-link">Recommendation</a></li>
+    <li><a id="help-link">Help</a></li>
+    <li><a id="about-link">About</a></li>
 
-    <!-- Navbar closed -->
+  </ul>
+
+  <div class="sub-navbar">
+  <a id="login-link" href="#">Login</a>
+  <a id="register-link" href="#">Register</a>
+  <div class="bx bx-menu" id="menu-icon"><img src="../../images/Main/hamburger.png"></div>
+  </div>
+
+</header>
+<!-- NAVBAR CLOSED -->
+
 
     <!-- BACKGROUND -->
 
@@ -92,11 +93,10 @@
         </div>
       </div>
 
-      <div class="PLANT-BOX">
-        <img src="../../images/Main/wild3.jpg" />
-        <div class="TEXT-BOX">
-          <h4>WILD</h4>
-        </div>
+    <div class="PLANT-BOX"> 
+      <img src="../../images/Main/Mint.jpg" >
+      <div class="TEXT-BOX">
+        <h4>MEDICINAL</h4>
       </div>
     </div>
 
@@ -126,6 +126,18 @@
     </div>
     <!-- FIND MORE CLOSED -->
 
+
+<div class="GREEN">
+
+  <div class="GREEN-IMAGE">
+    <img src="../../images/Main/13.jpg">
+    </div>
+  
+  <div class="BETWEEN-GREEN">
+    <h2>Some days all you need is plant therapy</h2>
+    <p>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+    <button>MEDICINAL</button>
+  </div>
     <div class="GREEN">
       <div class="GREEN-IMAGE">
         <img src="../../images/Main/13.jpg" />
@@ -147,6 +159,10 @@
       </div>
     </div>
 
+
+<script src="../House/House.js"></script>
+
+</body>
     <!-- <script src = "Main.js"></script> -->
     <!-- <footer>
  <h1>HEMA </h1>
