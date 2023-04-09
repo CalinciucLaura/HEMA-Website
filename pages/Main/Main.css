@@ -68,7 +68,8 @@ body {
 }
 
 .BACKGROUND-CONTENT p {
-  font-size: 10px;
+  font-size: 18px;
+  text-shadow: black 2px 0 1px;
 }
 
 .BACKGROUND-BUTTONS {
@@ -347,7 +348,7 @@ footer h1{
     width: 80%;
   }
 
-  .FIND button {
+  .FIND-TEXT button {
     width: 100px;
   }
 
