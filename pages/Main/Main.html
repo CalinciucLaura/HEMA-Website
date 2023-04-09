@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="Main.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title id="page-title">HEMA</title>
     <link rel="stylesheet" href="Main.css" />
 
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href=."https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap"
@@ -20,24 +21,22 @@
       <ul class="LOGO">
         <li><a href="../Main/Main.html">HEMA</a></li>
       </ul>
-
-      <ul class="NAVBAR">
-        <li><a id="house-link" href="../House/House.html">House</a></li>
-        <li><a id="garden-link">Garden</a></li>
-        <li><a id="tropical-link">Tropical</a></li>
-        <li><a id="medicinal-link">Medicinal</a></li>
-        <li><a id="recommendation-link">Recommendation</a></li>
-        <li><a id="help-link">Help</a></li>
-        <li><a id="about-link">About</a></li>
-      </ul>
-
-      <div class="sub-navbar">
-        <a id="login-link" href="#">Login</a>
-        <a id="register-link" href="#">Register</a>
-        <div class="bx bx-menu" id="menu-icon">
-          <img src="../../images/Main/hamburger.png" />
-        </div>
-      </div>
+      <nav>
+        <button class="hamburger">&#9776;</button>
+        <ul class="NAVBAR">
+          <li><a id="house-link" href="../House/House.html">House</a></li>
+          <li><a id="garden-link">Garden</a></li>
+          <li><a id="tropical-link">Tropical</a></li>
+          <li><a id="medicinal-link">Medicinal</a></li>
+          <li><a id="recommendation-link">Recommendation</a></li>
+          <li><a id="help-link">Help</a></li>
+          <li><a id="about-link">About</a></li>
+          <li><a id="login-link" href="../Login/login.html">Login</a></li>
+          <li>
+            <a id="register-link" href="../Register/register.html">Register</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <!-- NAVBAR CLOSED -->
 
@@ -56,7 +55,7 @@
 
         <div class="BACKGROUND-BUTTONS">
           <a href="../Login/login.html"><button>LOGIN</button> </a>
-          <button>REGISTER</button>
+          <a href="../Register/register.html"><button>REGISTER</button> </a>
         </div>
       </div>
     </div>
@@ -115,7 +114,9 @@
             publishing software like Aldus PageMaker including versions of Lorem
             Ipsum.
           </p>
-          <button>READ MORE..</button>
+          <div class="BACKGROUND-BUTTONS">
+            <a href="../About/about.html"><button>READ MORE...</button> </a>
+          </div>
         </div>
       </div>
     </div>
@@ -132,7 +133,9 @@
           "There is no one who loves pain itself, who seeks after it and wants
           to have it, simply because it is pain..."
         </p>
-        <button>MEDICINAL</button>
+        <div class="BACKGROUND-BUTTONS">
+          <a href="../Medicinal/medicinal.html"><button>MEDICINAL</button> </a>
+        </div>
       </div>
 
       <div class="GREEN-IMAGE">
