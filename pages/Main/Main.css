@@ -17,11 +17,11 @@ header {
   transition: all 0.5s ease;
   align-items: right;
 }
+/* /
 #house-link {
   width: 100px; /* adjust the width as needed */
-  margin: 0 auto;
-}
-
+  /* margin: 0 auto;
+}  */
 .LOGO {
   display: block;
   justify-content: flex-start;
@@ -41,14 +41,14 @@ header {
 .NAVBAR {
   display: flex;
   list-style: none;
-  justify-content: flex-end;
-  margin-right: 30px;
+  justify-content: space-around;
+  margin-right: 20px;
   padding: 0;
 }
 
 .NAVBAR a {
   color: #d3cbcb;
-  margin: 0 calc((100vw - 960px) / 16);
+  margin-right: calc((100vw - 960px) / 16);
   font-family: "Raleway", sans-serif;
   text-decoration: none;
   cursor: pointer;
@@ -179,6 +179,58 @@ header {
   opacity: 1;
 }
 
+/* SEARCH */
+
+.FILTER{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:whitesmoke;
+    font-family: "Raleway", sans-serif;
+    border: 2px solid white;
+   
+}
+
+.FILTER H2{
+   text-align: center;
+   font-size: 50px;
+   letter-spacing: 5px;
+}
+
+.FILTER-BOX {
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.FILTER-BOX select{
+    background-color: rgba(37, 172, 37, 0.63);
+    color: whitesmoke;
+    font-family: "Raleway", sans-serif;
+    margin-left: 10px;
+    border: 1px solid white;
+    width: 80%;
+    padding: 10px;
+    margin:10px;
+    text-align: center;
+}
+
+
+.FILTER input{
+    height: 40px;
+    width: 150px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    margin: 20px 0px;
+    font-size: 10px;
+    box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+}
+
+
 /* FIND */
 .BOX-FIND {
   display: block;
@@ -196,7 +248,7 @@ header {
   align-items: center;
   color: #d3cbcb;
   letter-spacing: 2px;
-  margin: auto;
+  margin: 30px auto;
   justify-content: space-evenly;
 }
 
@@ -213,6 +265,7 @@ header {
 }
 
 .FIND-TEXT {
+  font-size: 12px;
   margin-left: 10px;
   width: 40%;
 }
@@ -278,12 +331,144 @@ header {
 }
 
 .BETWEEN-GREEN button {
+  height: 40px;
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid white;
   color: white;
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  font-size: 10px;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+  cursor: pointer;
 }
+
+.BETWEEN-GREEN button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+.DESCRIPTION {
+  width: 60%;
+  display: block;
+  margin: auto;
+  color:#d3cbcb;
+  font-family: "Poppins", sans-serif;
+  line-height: 30px;
+
+}
+
+.DESCRIPTION h1{
+  text-align: center;
+  font-size: 30px;
+  margin: 50px;
+}
+
+.DESCRIPTION h2{
+  font-size: 15px;
+}
+
+
+.DETAILS{
+  display: block;
+  width: 30%;
+  align-items: center;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.DETAILS label{
+  color:white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.DETAILS input{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #888;
+  color:#1e1e1e;
+  font-family: "Poppins", sans-serif;
+ font-weight: bold;
+ margin: 20px 0px;
+ padding:5px;
+}
+
+.DETAILS select{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #888;
+  color:#1e1e1e;
+  font-family: "Poppins", sans-serif;
+ font-weight: bold;
+ margin: 20px 0px;
+ padding:5px;
+}
+
+.DETAILS h2{
+  font-size: 40px;
+  color:#d3cbcb;
+  margin: 100px 0;
+  letter-spacing: 2px;
+}
+
+
+/* DIALOG BOX */
+
+.dialog-box {
+  font-family: "Poppins", sans-serif;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#dialog-title{
+  text-align: center;
+  font-size: 40px;
+  color:#f5faf5c7;
+}
+
+.dialog-content {
+  background-color: #1e1e1e;
+  color:white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.close {
+  color: #0dac2f;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
+
+
   /* BACKGROUND */
 
   .BACKGROUND {
@@ -291,28 +476,27 @@ header {
   }
 
   .BACKGROUND-CONTENT {
+    width: 90%;
     display: block;
-    width: 50%;
-    height: 50%;
     align-items: center;
     display: block;
-    padding-top: 90px;
+    padding: 30px;
     margin: auto;
   }
 
   .BACKGROUND-CONTENT h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .BACKGROUND-CONTENT p {
-    font-size: 6px;
+    font-size: 15px;
   }
 
   .BACKGROUND-BUTTONS button {
-    height: 20px;
-    width: 80px;
+    height: 40px;
+    width: 100px;
     margin: 10px 20px 20px 0px;
-    font-size: 5px;
+    font-size: 10px;
   }
 
   /* BACKGROUND CLOSED */
@@ -320,9 +504,13 @@ header {
   /* PLANT-CONTAINER*/
 
   .PLANT-CONTAINER h3 {
-    letter-spacing: 9px;
-    font-size: 10px;
-    margin-bottom: 50px;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 15px;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    text-shadow: black 2px 0 1px;
+    margin: 20px 0px;
   }
 
   .PLANT-ROW {
@@ -336,10 +524,17 @@ header {
   .PLANT-BOX {
     position: relative;
     display: inline-block;
-    width: 70%;
+    width: 90%;
+    margin: 20px 0px;
   }
-  .FIND {
+
+  .PLANT-BOX img {
     width: 100%;
+    opacity: 0.9;
+  }
+
+  .FIND {
+    width: 60%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -358,16 +553,86 @@ header {
     width: 50%;
   }
 
-  .GREEN {
+.FILTER{
+  width: 90%;
+  margin: auto;
+}
+
+.FILTER H2{
+   font-size: 40px;
+}
+
+.FILTER-BOX {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    font-size: 10px;
-    background-size: 90% auto;
-  }
+}
 
-  .BETWEEN-GREEN h2 {
+
+.FILTER-BOX select{
+    
+    margin-left: 0px;
+    border: 1px solid white;
+    width: 80%;
+    padding: 10px;
+    margin:20px;
+}
+
+
+.FILTER input{
+  
     font-size: 15px;
-  }
+}
+
+.FIND {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.FIND img {
+width: 100%;
+}
+
+.GREEN {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  width: 70%;
+  margin: 30px auto;
+  background-size:70% auto;
+
+}
+
+.GREEN-IMAGE {
+  width: auto;
+  height: auto;
+}
+
+
+.BETWEEN-GREEN {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.DESCRIPTION {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.DETAILS{
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+}
+
+
+
 }
 
 /* NAVBAR RESPONSIVE */
@@ -377,7 +642,7 @@ header {
   color: white; /* initially hide the hamburger button */
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1280px) {
   /* show the hamburger button only on screens smaller than 768px */
   .hamburger {
     position: fixed;

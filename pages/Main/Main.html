@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="Main.js"></script>
+ 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title id="page-title">HEMA</title>
-    <link rel="stylesheet" href="Main.css" />
+    <link rel="stylesheet" href="../Main/Main.css" />
+    <script src="../Main/Main.js"></script>
 
     <!-- fonts -->
-    <link rel="preconnect" href=."https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap"
@@ -25,32 +26,30 @@
         <button class="hamburger">&#9776;</button>
         <ul class="NAVBAR">
           <li><a id="house-link" href="../House/House.html">House</a></li>
-          <li><a id="garden-link">Garden</a></li>
-          <li><a id="tropical-link">Tropical</a></li>
-          <li><a id="medicinal-link">Medicinal</a></li>
-          <li><a id="recommendation-link">Recommendation</a></li>
-          <li><a id="help-link">Help</a></li>
-          <li><a id="about-link">About</a></li>
+         <li><a id="garden-link" href="../Garden/Garden.html">Garden</a></li>
+         <li><a id= "tropical-link" href="../Tropical/Tropical.html">Tropical</a></li>
+         <li><a id="medicinal-link" href="../Medicinal/Medicinal.html">Medicinal</a></li>
+         <li><a id="recommendation-link" href="../Recommendation/Recommendation.html">Recommendation</a></li>
+          <li><a id="help-link" href="../Help/help.html">Help</a></li>
+          <li><a id="about-link" href="../About/about.html">About</a></li>
           <li><a id="login-link" href="../Login/login.html">Login</a></li>
-          <li>
-            <a id="register-link" href="../Register/register.html">Register</a>
-          </li>
-        </ul>
+          <li><a id="register-link" href="../Register/register.html">Register</a> </li>
+          <li><a href="../Profile/Profile.html" ><img src="../../images/Main/profile-icon.png" style="width: 25px;"></a></li>
+          
+          </ul>
       </nav>
     </header>
     <!-- NAVBAR CLOSED -->
 
-    <!-- BACKGROUND -->
+
+<!-- BACKGROUND -->
 
     <div class="BACKGROUND">
       <div class="BACKGROUND-CONTENT">
         <h1>Let the environment be green</h1>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting.
+        Our mission is to save the Planet, having an honor to be surrounded by all those magical flowers.<br>Be grateful to plants! They keep you alive by producing the oxygen you breathe. Plant a flower, do a good deed for the planet!<br>
+        Enjoy our web page!
         </p>
 
         <div class="BACKGROUND-BUTTONS">
@@ -67,37 +66,137 @@
       <h3>PLANTS CATEGORY</h3>
     </div>
 
-    <div class="PLANT-ROW">
-      <div class="PLANT-BOX">
-        <img src="../../images/Main/house3.jpg" />
-        <div class="TEXT-BOX">
-          <h4>TROPICAL</h4>
-        </div>
-      </div>
+  <div class="PLANT-ROW">
 
-      <div class="PLANT-BOX">
-        <img src="../../images/Main/14.jpg" />
-        <div class="TEXT-BOX">
-          <h4>GARDEN</h4>
-        </div>
+    <div class="PLANT-BOX"> 
+      <img src="../../images/Main/house3.jpg">
+      <a href="../Tropical/Tropical.html">
+      <div class="TEXT-BOX">
+        <h4>TROPICAL</h4>
       </div>
-
-      <div class="PLANT-BOX">
-        <img src="../../images/Main/house10.jpg" />
-        <div class="TEXT-BOX">
-          <h4 href="Main.html">HOUSE</h4>
-        </div>
-      </div>
-
-      <div class="PLANT-BOX">
-        <img src="../../images/Main/Mint.jpg" />
-        <div class="TEXT-BOX">
-          <h4>MEDICINAL</h4>
-        </div>
-      </div>
+      </a>
     </div>
 
-    <!-- PLANTS CATEGORY CLOSED -->
+    <div class="PLANT-BOX"> 
+      <img src="../../images/Main/14.jpg">
+      <a href="../Garden/Garden.html">
+      <div class="TEXT-BOX">
+        <h4>GARDEN</h4>
+      </div>
+      </a>
+    </div>
+
+
+    <div class="PLANT-BOX"> 
+      <img src="../../images/Main/house10.jpg">
+      <a href="../House/House.html">
+        <div class="TEXT-BOX">
+        <h4 href="Main.html">HOUSE</h4>
+      </div>
+      </a>
+    </div>
+
+    <div class="PLANT-BOX"> 
+      <img src="../../images/Main/Mint.jpg" >
+      <a href="../Medicinal/Medicinal.html">
+      <div class="TEXT-BOX">
+        <h4>MEDICINAL</h4>
+      </div>
+      </a>
+    </div>
+
+  </div>
+
+
+<!-- PLANTS CATEGORY CLOSED -->
+
+<!-- FILTER -->
+<div class="FILTER">
+<h2>Search</h2>
+<div class = "FILTER-BOX">
+
+   <!-- CATHEGORY -->
+
+  <form action="/action_page.php">
+    <label for="cathegory">Cathegory: </label>
+    <select id="cathegory" name="cathegory">
+      <option value="house">House</option>
+      <option value="garden">Garden</option>
+      <option value="tropical">Tropical</option>
+      <option value="medicinal">Medicinal</option>
+    </select>
+  </form>
+
+  <!-- NAME -->
+
+  <form action="/action_page.php">
+    <label for="plant"> Name: </label>
+    <select id="plant" name="plant">
+      <option value="orhid">Orhid</option>
+      <option value="poinsettia">Poinsettia</option>
+      <option value="jasmine">Jasmine</option>
+      <option value="dandelion">Dandelion</option>
+      <option value="roses">Roses</option>
+      <option value="tulip">Tulip</option>
+    </select>
+  </form>
+
+  <!-- TYPE -->
+
+  <form action="/action_page.php">
+    <label for="type"> Type: </label>
+    <select id="type" name="type">
+      <option value="tree">Tree</option>
+      <option value="herb">Herb</option>
+      <option value="shrub">Shrub</option>
+    </select>
+  </form>
+
+  <!-- COLOR -->
+  
+  <form action="/action_page.php">
+    <label for="color"> Color: </label>
+    <select id="color" name="color">
+      <option value="white">White</option>
+      <option value="pink">Pink</option>
+      <option value="green">Green</option>
+      <option value="red">Red</option>
+      <option value="yellow">Yellow</option>
+      <option value="purple">Purple</option>
+      <option value="blue">Blue</option>
+      <option value="orange">Orange</option>
+      <option value="black">Black</option>
+    </select>
+  </form>
+
+  <!-- CONDITIONS -->
+
+  <form action="/action_page.php">
+    <label for="condition"> Conditions: </label>
+    <select id="condition" name="condition">
+      <option value="sun">Sun</option>
+      <option value="shade">Shade</option>
+      <option value="water">Water requirements</option>
+    </select>
+  </form>
+
+  <!-- SEASON -->
+
+  <form action="/action_page.php">
+    <label for="season"> Season: </label>
+    <select id="season" name="season">
+      <option value="winter">Winter</option>
+      <option value="spring">Spring</option>
+      <option value="summer">Summer</option>
+      <option value="fall">Fall</option>
+    </select>
+  </form>
+
+</div>
+<input type="submit">
+</div>
+
+<!-- FILTER CLOSED -->
 
     <!-- FIND MORE-->
     <div class="BOX-FIND">
@@ -107,12 +206,13 @@
         <div class="FIND-TEXT">
           <h2>About HeMa</h2>
           <p>
-            Lorem Ipsum is simply five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged. It was
-            popularised in the 1960s with the release of Letraset sheets
-            containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem
-            Ipsum.
+            Welcome to our plant encyclopedia site, your go-to resource for all
+            things plants! Our mission is to provide you with comprehensive and
+            accurate information about a wide variety of plant species from around
+            the world. Our plant database is extensive and constantly growing. We
+            have carefully curated information on thousands of plants, including
+            their scientific names, common names, origins, physical
+            characteristics, and care requirements.
           </p>
           <div class="BACKGROUND-BUTTONS">
             <a href="../About/about.html"><button>READ MORE...</button> </a>
@@ -133,9 +233,7 @@
           "There is no one who loves pain itself, who seeks after it and wants
           to have it, simply because it is pain..."
         </p>
-        <div class="BACKGROUND-BUTTONS">
           <a href="../Medicinal/medicinal.html"><button>MEDICINAL</button> </a>
-        </div>
       </div>
 
       <div class="GREEN-IMAGE">
@@ -143,6 +241,6 @@
       </div>
     </div>
 
-    <script src="../House/House.js"></script>
+</body>
   </body>
 </html>
