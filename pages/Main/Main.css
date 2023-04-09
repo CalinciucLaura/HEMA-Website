@@ -261,23 +261,6 @@ body {
   box-shadow: rgba(0, 0, 0, 0.151) 5px 8px 10px;
 }
 
-/* footer{
-    height: 200px;
-    background-color: #2244278e;
-    text-align: center;
-    display: block;
-    margin: auto;
-    
-}
-
-footer h1{
-    font-family: 'Raleway', sans-serif;
-    font-size: 80px;
-    color: rgba(255, 255, 255, 0.331);
-    letter-spacing: 30px;
-    padding: 30px;
-} */
-
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
