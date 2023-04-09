@@ -1,130 +1,154 @@
 body {
-    margin: 0;
-    background-color: #1e1e1e;
+  margin: 0;
+  background-color: #1e1e1e;
 }
 
 /* NAVBAR */
 
+header {
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #1e1e1e;
+  padding: 10px 12%;
+  transition: all 0.5s ease;
+  align-items: center;
+}
+
+.LOGO {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.LOGO a {
+  text-decoration: none;
+  color: #d3cbcb;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 10px;
+  font-size: 20px;
+}
+
 .NAVBAR {
-    width: 100%;
-    position: fixed;
-    background-color: #1e1e1e;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.LOGO a{
-    color: rgba(255, 255, 255, 0.596);
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 10px;
-    display: block;
-    font-size: 20px;
-    padding: 15px;
+.NAVBAR a {
+  color: #d3cbcb;
+  margin: 0px 30px;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
 }
 
-.NAVBAR-TEXT {
-    display: flex;
-    justify-content: space-around;
-    width: 35%;
-    font-size: 12px;
+.NAVBAR a:hover {
+  color: green;
 }
 
-.NAVBAR-TEXT a {
-    color: rgba(255, 255, 255, 0.596);
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    display: block;
-    margin: 20px;
-    letter-spacing:2px;
+.sub-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.sub-navbar a {
+  margin: 0px 30px;
+  color: #d3cbcb;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+#menu-icon {
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+  color: white;
 }
 
 /* BACKGROUND */
 
 .BACKGROUND {
-    background-image: url(/images/Main/1.jpg);
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(/images/Main/1.jpg);
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.BACKGROUND-CONTENT
-{   
-    width: 30%;
-    padding: 100px;
-    height: auto;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    text-shadow: black 5px 0 10px;
-    margin-left: 100px ;
+.BACKGROUND-CONTENT {
+  width: 30%;
+  padding: 100px;
+  height: auto;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-shadow: black 5px 0 10px;
+  margin-left: 100px;
 }
 
-.BACKGROUND-CONTENT h1
-{   
-    font-size: 55px;
-    letter-spacing: 5px;
+.BACKGROUND-CONTENT h1 {
+  margin: 0;
+  font-size: 55px;
+  letter-spacing: 5px;
 }
 
-.BACKGROUND-CONTENT p
-{
-    font-size: 10px;
+.BACKGROUND-CONTENT p {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
 }
 
-.BACKGROUND-BUTTONS
-{
-    display:flex;
-    flex-direction: row;
+.BACKGROUND-BUTTONS {
+  display: flex;
+  flex-direction: row;
 }
 
-.BACKGROUND-BUTTONS  button
-{
-    height: 40px;
-    width: 150px;
-    background-color: transparent;
-    border: 1px solid white;
-    color:white;
-    font-weight: bold;
-    display: block;
-    margin: 20px 20px 20px 0px;
-    font-size: 10px;
-    box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+.BACKGROUND-BUTTONS button {
+  height: 40px;
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin: 20px 20px 20px 0px;
+  font-size: 10px;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
 }
 
 /* BACKGROUND CLOSED */
 
 /* PLANTS CATEGORY */
 
-.PLANT-CONTAINER h3
-{  
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 15px;
-    text-align: center;
-    color: white;
-    font-size: 12px;
-    text-shadow: black 2px 0 1px;
-    margin: 50px 0;
+.PLANT-CONTAINER h3 {
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 15px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  text-shadow: black 2px 0 1px;
+  margin: 50px 0;
 }
 
-.PLANT-ROW
-{
-display: flex;
-flex-direction: row;
-justify-content: space-evenly;
-align-items: center;
-margin:50px 0px;
+.PLANT-ROW {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 50px 0px;
 }
 
-
-.PLANT-BOX
-{  
-   position: relative;
-   display: inline-block;
-   width: 20%;
-   box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+.PLANT-BOX {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
 }
 
 .TEXT-BOX {
@@ -134,7 +158,7 @@ margin:50px 0px;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   color: white;
   display: flex;
   justify-content: center;
@@ -143,253 +167,211 @@ margin:50px 0px;
   transition: opacity 0.3s ease-in-out;
 }
 
-
-.PLANT-BOX img
-{ 
+.PLANT-BOX img {
   width: 100%;
   opacity: 0.9;
 }
 
-.PLANT-BOX:hover .TEXT-BOX
-{ 
+.PLANT-BOX:hover .TEXT-BOX {
   opacity: 1;
 }
 
-
 /* FIND */
-.BOX-FIND{
-    display: block;
-    width: 100%;
-    align-items: center;
+.BOX-FIND {
+  display: block;
+  width: 100%;
+  align-items: center;
 }
 
-.FIND{
-    width: 80%;
-    height: 350px;
-    display:flex;
-    flex-direction: row;
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    align-items: center;
-    color: #d3cbcb;
-    letter-spacing: 2px;
-    margin: auto;
-    justify-content: space-evenly;
+.FIND {
+  width: 80%;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  align-items: center;
+  color: #d3cbcb;
+  letter-spacing: 2px;
+  margin: auto;
+  justify-content: space-evenly;
 }
 
 .FIND img {
-    width: 40%;
+  width: 40%;
 }
 
-.FIND h2{
-    color: #d7ddda;
-    font-size:30px;
-    font-family: 'Raleway', sans-serif;
-    text-shadow: rgba(0, 0, 0, 0.164) 2px 0px 8px;
-    letter-spacing: 2px;
+.FIND h2 {
+  color: #d7ddda;
+  font-size: 30px;
+  font-family: "Raleway", sans-serif;
+  text-shadow: rgba(0, 0, 0, 0.164) 2px 0px 8px;
+  letter-spacing: 2px;
 }
 
-.FIND-TEXT{
-    margin-left: 10px;
-    width: 40%;
+.FIND-TEXT {
+  margin-left: 10px;
+  width: 40%;
 }
 
-
-.FIND button
-{
-    height: 40px;
-    width: 150px;
-    background-color: transparent;
-    border: 1px solid white;
-    color:white;
-    font-weight: bold;
-    display: block;
-    margin: 20px 20px 20px 0px;
-    font-size: 10px;
-    box-shadow: rgba(0, 0, 0, 0.151) 5px 8px 10px;
+.FIND button {
+  height: 40px;
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin: 20px 20px 20px 0px;
+  font-size: 10px;
+  box-shadow: rgba(0, 0, 0, 0.151) 5px 8px 10px;
 }
 
-.GREEN{
-    display:flex;
-    flex-direction: row;
-    height: auto;
-    font-size: 13px;
-    align-items: center;
-    width: 80%;
-    margin: 100px auto;
-    border: 4px solid #ffffff72;
-    /* background-image: url(/images/Main/wild1.jpg); */
-    background-size: 80% auto; 
-    background-repeat: no-repeat;
-    
+.GREEN {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  font-size: 13px;
+  align-items: center;
+  width: 80%;
+  margin: 100px auto;
+  border: 4px solid #ffffff72;
+  /* background-image: url(/images/Main/wild1.jpg); */
+  background-size: 80% auto;
+  background-repeat: no-repeat;
 }
 
 .GREEN-IMAGE {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
-.GREEN-IMAGE img{
-    width: 100%;
-    height: auto;
+.GREEN-IMAGE img {
+  width: 100%;
+  height: auto;
 }
 
 .BETWEEN-GREEN {
-    display: block;
-    width: 100%;
-    height: auto;
-    color: #d3cbcb;
-    padding: 20px;
-    align-items: center;
-    text-align: center;
-    background-color: #201919c8;
+  display: block;
+  width: 100%;
+  height: auto;
+  color: #d3cbcb;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  background-color: #201919c8;
 }
 
-.BETWEEN-GREEN h2{
-    color: white;
-    font-size:20px;
-    font-family: 'Poppins', sans-serif;
-    text-shadow: rgba(0, 0, 0, 0.048) 2px 0px 8px;
-    letter-spacing: 2px;
+.BETWEEN-GREEN h2 {
+  color: white;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  text-shadow: rgba(0, 0, 0, 0.048) 2px 0px 8px;
+  letter-spacing: 2px;
 }
 
 .BETWEEN-GREEN p {
-    font-family:  'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-.BETWEEN-GREEN button{
-
-    height: 40px;
-    width: 150px;
-    background-color: transparent;
-    border: 1px solid white;
-    color:white;
-    font-weight: bold;
-    display: block;
-    margin: 30px auto;
-    font-size: 10px;
-    box-shadow: rgba(0, 0, 0, 0.151) 5px 8px 10px;
+.BETWEEN-GREEN button {
+  height: 40px;
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin: 30px auto;
+  font-size: 10px;
+  box-shadow: rgba(0, 0, 0, 0.151) 5px 8px 10px;
 }
-
-/* footer{
-    height: 200px;
-    background-color: #2244278e;
-    text-align: center;
-    display: block;
-    margin: auto;
-    
-}
-
-footer h1{
-    font-family: 'Raleway', sans-serif;
-    font-size: 80px;
-    color: rgba(255, 255, 255, 0.331);
-    letter-spacing: 30px;
-    padding: 30px;
-} */
 
 /* RESPONSIVE */
 
-@media screen  and (max-width: 768px) {
-  
+@media screen and (max-width: 768px) {
+  /* BACKGROUND */
 
-    /* BACKGROUND */
+  .BACKGROUND {
+    background-size: 100%;
+  }
 
-    .BACKGROUND {
-        background-size: 100%;
-    }
-    
-    .BACKGROUND-CONTENT
-    {   
-        display: block;
-        width: 50%;
-        height: 50%;
-        align-items: center; 
-        display: block;
-        padding-top:90px;
-        margin: auto;
-    }
-    
-    .BACKGROUND-CONTENT h1
-    {   
-        font-size: 20px;
-       
-    }
-    
-    .BACKGROUND-CONTENT p
-    {
-        font-size: 6px;
-    }
-    
-    
-    .BACKGROUND-BUTTONS  button
-    {   
-        height: 20px;
-        width: 80px;
-        margin: 10px 20px 20px 0px;
-        font-size: 5px;
-    }
+  .BACKGROUND-CONTENT {
+    display: block;
+    width: 50%;
+    height: 50%;
+    align-items: center;
+    display: block;
+    padding-top: 90px;
+    margin: auto;
+  }
 
-    /* BACKGROUND CLOSED */
+  .BACKGROUND-CONTENT h1 {
+    font-size: 20px;
+  }
 
+  .BACKGROUND-CONTENT p {
+    font-size: 6px;
+  }
 
-    /* PLANT-CONTAINER*/
+  .BACKGROUND-BUTTONS button {
+    height: 20px;
+    width: 80px;
+    margin: 10px 20px 20px 0px;
+    font-size: 5px;
+  }
 
-    .PLANT-CONTAINER h3
-{  
-    
+  /* BACKGROUND CLOSED */
+
+  /* PLANT-CONTAINER*/
+
+  .PLANT-CONTAINER h3 {
     letter-spacing: 9px;
     font-size: 10px;
     margin-bottom: 50px;
-}
+  }
 
-.PLANT-ROW
-{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin:auto;
-}
+  .PLANT-ROW {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
 
+  .PLANT-BOX {
+    position: relative;
+    display: inline-block;
+    width: 70%;
+  }
+  .FIND {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+  }
 
-.PLANT-BOX
-{  
-   position: relative;
-   display: inline-block;
-   width: 70%;
-}
+  .FIND-TEXT {
+    width: 80%;
+  }
 
-    
-    .FIND{
-        width: 100%;
-        display:flex;
-        flex-direction: column;
-        margin: auto;
-        justify-content: center;
-    }
+  .FIND button {
+    width: 100px;
+  }
 
-    .FIND-TEXT{ 
-        width: 80%; 
-    }
-    
-    .FIND button
-    {
-        width: 100px;
-    }
+  .FIND img {
+    width: 50%;
+  }
 
-    .FIND img {
-        width: 50%;
-    }
-    
-    .GREEN{
-        display:flex;
-        flex-direction: column;
-        font-size: 10px;
-        background-size: 90% auto; 
-    }
+  .GREEN {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    background-size: 90% auto;
+  }
 
-    .BETWEEN-GREEN h2{  
-        font-size:15px;
-    }
+  .BETWEEN-GREEN h2 {
+    font-size: 15px;
+  }
 }
