@@ -66,38 +66,141 @@ var pageContent = {
             "../../images/Main/Daffodils.jpg",
             "../../images/Main/Petunia.jpg",
             "../../images/Main/SunFlower.jpg",          
-            "../../images/Main/Daisy.jpg"      
-
+            "../../images/Main/Daisy.jpg",      
+            "../../images/Main/chrysanthemum.jpg",
+            "../../images/Main/SnowDrop.jpg",
+            "../../images/Main/Crocus.jpg",
+            "../../images/Main/CherryTree.jpg",
+            "../../images/Main/AppleTree.jpg",
+            "../../images/Main/Vine.jpg",
+            "../../images/Main/ApricotTree.jpg"           
         ],
         texts:[
-            "LAURA E PETROANA"
+            "ROSES",
+            "LILIAC",
+            "DAHLIAS",
+            "HYDRANGEAS",
+            "PEONY",
+            "LAVANDER",
+            "LILY",
+            "TULIP",
+            "VIOLET",
+            "DAFFODILS",
+            "PETUNIA",
+            "SUN-FLOWER",
+            "DAISY",
+            "CHRYSANTHEMUM",
+            "SNOWDROP",
+            "CROCUS",
+            "CHERRY TREE",
+            "APPLE TREE",
+            "VINE",
+            "APRICOT TREE"
         ]
     },
 
-    wild: {
-        pageTitle: "Wild",
-        textH1 : "WILD PLANTS",
-        textP: "Wild plants are plants that grow naturally and without human intervention in the wild or in natural environments such as forests, meadows, deserts, and wetlands. These plants have adapted to survive in their natural habitat without being cultivated or cared for by humans."
-    },
 
     tropical: {
         pageTitle: "Tropical",
         textH1 : "TROPICAL PLANTS",
-        textP:"Tropical plants are plants that are native to tropical regions around the world. These regions are typically located near the equator and have warm temperatures, high humidity, and abundant rainfall throughout the year. Tropical plants have adapted to these conditions and are typically characterized by their lush foliage, vibrant colors, and exotic blooms."
+        textP:"Tropical plants are plants that are native to tropical regions around the world. These regions are typically located near the equator and have warm temperatures, high humidity, and abundant rainfall throughout the year. Tropical plants have adapted to these conditions and are typically characterized by their lush foliage, vibrant colors, and exotic blooms.",
+        images : [
+            "../../images/Main/BirdOfParadise.jpg",
+            "../../images/Main/AlpiniaGalanga.jpg",
+            "../../images/Main/Hibiscus.jpg",
+            "../../images/Main/Heliconia.jpg",
+            "../../images/Main/Plumeria.jpg",
+            "../../images/Main/BlueTorchCactus.jpg",
+            "../../images/Main/PassifloraFoetida.jpg",
+            "../../images/Main/SantaRitaCactus.jpg",
+            "../../images/Main/DracunculusVulgaris.jpg",
+            "../../images/Main/DietesGrandiflora.jpg",
+            "../../images/Main/CalotropisProcera.jpg",
+            "../../images/Main/CalliandraTergemina.jpg",
+            "../../images/Main/AntigononLeptopus.jpeg",
+            "../../images/Main/ArisaemaTriphyllum.jpg",
+            "../../images/Main/TiPlant.jpg",
+            "../../images/Main/ArecaPalm.jpg",
+            "../../images/Main/Hoya.jpg",
+            "../../images/Main/PalmTree.jpg",
+            "../../images/Main/LemonTree.jpg",
+            "../../images/Main/BananaTree.jpg",
+            "../../images/Main/OrangeTree.jpg" 
+        ],
+
+        texts: [
+                "BIRD OF PARADISE",
+                "ALPINIA GALANGA",
+                "HIBISCUS",
+                "HELICONIA",
+                "PLUMERIA",
+                "BLUE TORCH CACTUS",
+                "PASSOFILORA FOETIDA",
+                "SANTA RITA CACTUS",
+                "DRACUNULUS VULGARIS",
+                "DIETES GRANDIFLORA",
+                "CALOTROPIS PROCERA",
+                "CALLIANDRA TERGEMINA",
+                "ANTIGONON LEPTOPUS",
+                "ARISAEMA TRIPHYLLUM",
+                "TI PLANT",
+                "ARECA PALM",
+                "HOYA",
+                "PALM TREE",
+                "LEMON TREE",
+                "BANANA TREE",
+                "ORANGE TREE"
+        ]
     },
 
     medicinal: {
         pageTitle: "Medicinal",
         textH1 : "MEDICINAL PLANTS",
-        textP: "Medicinal plants are plants that have been traditionally used for their therapeutic or medicinal properties. Many cultures around the world have used medicinal plants for thousands of years to treat various ailments and diseases."
-    },
-    info: {
-        pageTitle: "Info",
-        textH1 : "INFO"
-    },
-    about: {
-        pageTitle: "About",
-        textH1 : "ABOUT HEMA"
+        textP: "Medicinal plants are plants that have been traditionally used for their therapeutic or medicinal properties. Many cultures around the world have used medicinal plants for thousands of years to treat various ailments and diseases.",
+        images : [
+            "../../images/Main/Salvia.jpg",
+            "../../images/Main/Dandelion.jpg",
+            "../../images/Main/CowBerry.jpg",
+            "../../images/Main/SaintJohn'sWort.jpg",
+            "../../images/Main/Ashwagandha.jpg",
+            "../../images/Main/EveningPrimrose.jpg",      
+            "../../images/Main/Mint.jpg",
+            "../../images/Main/Chamomile.jpg",
+            "../../images/Main/Echinacea.jpg",
+            "../../images/Main/Hawthorn.jpg",
+            "../../images/Main/CatsClaw.jpg",
+            "../../images/Main/MilkThistle.jpg",
+            "../../images/Main/Valerian.jpg",
+            "../../images/Main/Turmeric.jpg",
+            "../../images/Main/GinkgoBiloba.jpg",
+            "../../images/Main/Rosemary.jpg",
+            "../../images/Main/BlackCohosh.jpg",
+            "../../images/Main/aloe.jpg",          
+            "../../images/Main/Thyme.jpg",      
+            "../../images/Main/Panax.jpg"                       
+        ],
+        texts:[
+               "SALVIA",
+               "DANDELION",
+               "COWBERRY",
+               "SAINT JOHN'S WORT",
+               "ASHWAGANDHA",
+               "EVENING PRIMROSE",
+               "MINT",
+               "CHAMOMILE",
+               "ECHINACEA",
+               "HAWTHORN",
+               "CAT'S CLAW",
+               "MILKTHISTLE",
+               "VALERIAN",
+               "TURMERIC",
+               "GINKGO BILOBA",
+               "ROSEMARY",
+               "BLACK COHOSH",
+               "ALOE",
+               "THYME",
+               "PANAX"
+        ]
     }
 };
 
@@ -130,7 +233,6 @@ function changeImageTitle(page){
         var currentTextElement = textElements[i].getElementsByTagName("h4")[0];
         currentTextElement.textContent = currentText;
       }
-
 }
 
 
@@ -146,23 +248,17 @@ document.getElementById("garden-link").addEventListener("click", function() {
     changeImageTitle("garden");
 });
 
-document.getElementById("wild-link").addEventListener("click", function() {
-    changePageContent("wild");
-});
-
 document.getElementById("tropical-link").addEventListener("click", function() {
     changePageContent("tropical");
+    changePageImages("tropical");
+    changeImageTitle("tropical");
 });
 
 document.getElementById("medicinal-link").addEventListener("click", function() {
     changePageContent("medicinal");
+    changePageImages("medicinal");
+    changeImageTitle("medicinal");
 });
 
-document.getElementById("info-link").addEventListener("click", function() {
-    changePageContent("info");
-});
 
-document.getElementById("about-link").addEventListener("click", function() {
-    changePageContent("about");
-});
 
