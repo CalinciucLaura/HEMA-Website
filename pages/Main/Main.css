@@ -11,18 +11,23 @@ header {
   right: 0;
   z-index: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #1e1e1e;
-  padding: 10px 12%;
+  padding: 10px 2% 10px 2%;
   transition: all 0.5s ease;
-  align-items: center;
+  align-items: right;
 }
-
+/* /
+#house-link {
+  width: 100px; /* adjust the width as needed */
+  /* margin: 0 auto;
+}  */
 .LOGO {
-  display: flex;
-  justify-content: center;
+  display: block;
+  justify-content: flex-start;
   align-items: center;
   list-style: none;
+  margin-right: auto;
 }
 
 .LOGO a {
@@ -36,32 +41,21 @@ header {
 .NAVBAR {
   display: flex;
   list-style: none;
-  margin: 0;
+  justify-content: space-around;
+  margin-right: 20px;
   padding: 0;
 }
 
 .NAVBAR a {
   color: #d3cbcb;
-  margin: 0px 30px;
+  margin-right: calc((100vw - 960px) / 16);
   font-family: "Raleway", sans-serif;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .NAVBAR a:hover {
   color: green;
-}
-
-.sub-navbar {
-  display: flex;
-  align-items: center;
-}
-
-.sub-navbar a {
-  margin: 0px 30px;
-  color: #d3cbcb;
-  font-family: "Raleway", sans-serif;
-  text-decoration: none;
-  font-weight: bolder;
 }
 
 #menu-icon {
@@ -76,7 +70,7 @@ header {
 
 .BACKGROUND {
   background-image: url(/images/Main/1.jpg);
-  background-size: 100% auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -120,6 +114,15 @@ header {
   margin: 20px 20px 20px 0px;
   font-size: 10px;
   box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+  cursor: pointer;
+}
+.BACKGROUND-BUTTONS button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+.BACKGROUND-BUTTONS a {
+  text-decoration: none;
 }
 
 /* BACKGROUND CLOSED */
@@ -245,7 +248,7 @@ header {
   align-items: center;
   color: #d3cbcb;
   letter-spacing: 2px;
-  margin: auto;
+  margin: 30px auto;
   justify-content: space-evenly;
 }
 
@@ -262,6 +265,7 @@ header {
 }
 
 .FIND-TEXT {
+  font-size: 12px;
   margin-left: 10px;
   width: 40%;
 }
@@ -334,10 +338,85 @@ header {
   color: white;
   font-weight: bold;
   display: block;
-  margin: 30px auto;
+  margin: auto;
   font-size: 10px;
-  box-shadow: rgba(0, 0, 0, 0.151) 5px 8px 10px;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+  cursor: pointer;
 }
+
+.BETWEEN-GREEN button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+.DESCRIPTION {
+  width: 60%;
+  display: block;
+  margin: auto;
+  color:#d3cbcb;
+  font-family: "Poppins", sans-serif;
+  line-height: 30px;
+
+}
+
+.DESCRIPTION h1{
+  text-align: center;
+  font-size: 30px;
+  margin: 50px;
+}
+
+.DESCRIPTION h2{
+  font-size: 15px;
+}
+
+
+.DETAILS{
+  display: block;
+  width: 30%;
+  align-items: center;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.DETAILS label{
+  color:white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.DETAILS input{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #888;
+  color:#1e1e1e;
+  font-family: "Poppins", sans-serif;
+ font-weight: bold;
+ margin: 20px 0px;
+ padding:5px;
+}
+
+.DETAILS select{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #888;
+  color:#1e1e1e;
+  font-family: "Poppins", sans-serif;
+ font-weight: bold;
+ margin: 20px 0px;
+ padding:5px;
+}
+
+.DETAILS h2{
+  font-size: 40px;
+  color:#d3cbcb;
+  margin: 100px 0;
+  letter-spacing: 2px;
+}
+
 
 /* DIALOG BOX */
 
@@ -397,28 +476,27 @@ header {
   }
 
   .BACKGROUND-CONTENT {
+    width: 90%;
     display: block;
-    width: 50%;
-    height: 50%;
     align-items: center;
     display: block;
-    padding-top: 90px;
+    padding: 30px;
     margin: auto;
   }
 
   .BACKGROUND-CONTENT h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .BACKGROUND-CONTENT p {
-    font-size: 6px;
+    font-size: 15px;
   }
 
   .BACKGROUND-BUTTONS button {
-    height: 20px;
-    width: 80px;
+    height: 40px;
+    width: 100px;
     margin: 10px 20px 20px 0px;
-    font-size: 5px;
+    font-size: 10px;
   }
 
   /* BACKGROUND CLOSED */
@@ -426,9 +504,13 @@ header {
   /* PLANT-CONTAINER*/
 
   .PLANT-CONTAINER h3 {
-    letter-spacing: 9px;
-    font-size: 10px;
-    margin-bottom: 50px;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 15px;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    text-shadow: black 2px 0 1px;
+    margin: 20px 0px;
   }
 
   .PLANT-ROW {
@@ -442,10 +524,17 @@ header {
   .PLANT-BOX {
     position: relative;
     display: inline-block;
-    width: 70%;
+    width: 90%;
+    margin: 20px 0px;
   }
-  .FIND {
+
+  .PLANT-BOX img {
     width: 100%;
+    opacity: 0.9;
+  }
+
+  .FIND {
+    width: 60%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -464,14 +553,135 @@ header {
     width: 50%;
   }
 
-  .GREEN {
+.FILTER{
+  width: 90%;
+  margin: auto;
+}
+
+.FILTER H2{
+   font-size: 40px;
+}
+
+.FILTER-BOX {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    font-size: 10px;
-    background-size: 90% auto;
+}
+
+
+.FILTER-BOX select{
+    
+    margin-left: 0px;
+    border: 1px solid white;
+    width: 80%;
+    padding: 10px;
+    margin:20px;
+}
+
+
+.FILTER input{
+  
+    font-size: 15px;
+}
+
+.FIND {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.FIND img {
+width: 100%;
+}
+
+.GREEN {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  width: 70%;
+  margin: 30px auto;
+  background-size:70% auto;
+
+}
+
+.GREEN-IMAGE {
+  width: auto;
+  height: auto;
+}
+
+
+.BETWEEN-GREEN {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.DESCRIPTION {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.DETAILS{
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+}
+
+
+
+}
+
+/* NAVBAR RESPONSIVE */
+
+.hamburger {
+  display: none;
+  color: white; /* initially hide the hamburger button */
+}
+
+@media only screen and (max-width: 1280px) {
+  /* show the hamburger button only on screens smaller than 768px */
+  .hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 
-  .BETWEEN-GREEN h2 {
-    font-size: 15px;
+  /* hide the .NAVBAR list by default */
+  .NAVBAR {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 0;
+    top: 50px;
+    right: 0px;
+    border: #1e1e1e 1px solid;
+    width: 30%;
+    background-color: #333333aa;
+    text-align: center;
+  }
+  .NAVBAR li {
+    margin-bottom: 10px;
+  }
+
+  /* show the .NAVBAR list when the hamburger button is clicked */
+  .hamburger-clicked ~ .NAVBAR {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hamburger:hover {
+    color: green;
   }
 }
