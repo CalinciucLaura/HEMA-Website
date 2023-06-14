@@ -17,11 +17,11 @@ header {
   transition: all 0.5s ease;
   align-items: right;
 }
+/* /
 #house-link {
   width: 100px; /* adjust the width as needed */
-  margin: 0 auto;
-}
-
+  /* margin: 0 auto;
+}  */
 .LOGO {
   display: block;
   justify-content: flex-start;
@@ -41,14 +41,14 @@ header {
 .NAVBAR {
   display: flex;
   list-style: none;
-  justify-content: flex-end;
-  margin-right: 30px;
+  justify-content: space-around;
+  margin-right: 20px;
   padding: 0;
 }
 
 .NAVBAR a {
   color: #d3cbcb;
-  margin: 0 calc((100vw - 960px) / 16);
+  margin-right: calc((100vw - 960px) / 16);
   font-family: "Raleway", sans-serif;
   text-decoration: none;
   cursor: pointer;
@@ -248,7 +248,7 @@ header {
   align-items: center;
   color: #d3cbcb;
   letter-spacing: 2px;
-  margin: auto;
+  margin: 30px auto;
   justify-content: space-evenly;
 }
 
@@ -265,6 +265,7 @@ header {
 }
 
 .FIND-TEXT {
+  font-size: 12px;
   margin-left: 10px;
   width: 40%;
 }
@@ -330,8 +331,92 @@ header {
 }
 
 .BETWEEN-GREEN button {
+  height: 40px;
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid white;
   color: white;
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  font-size: 10px;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+  cursor: pointer;
 }
+
+.BETWEEN-GREEN button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+.DESCRIPTION {
+  width: 60%;
+  display: block;
+  margin: auto;
+  color:#d3cbcb;
+  font-family: "Poppins", sans-serif;
+  line-height: 30px;
+
+}
+
+.DESCRIPTION h1{
+  text-align: center;
+  font-size: 30px;
+  margin: 50px;
+}
+
+.DESCRIPTION h2{
+  font-size: 15px;
+}
+
+
+.DETAILS{
+  display: block;
+  width: 30%;
+  align-items: center;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.DETAILS label{
+  color:white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.DETAILS input{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #888;
+  color:#1e1e1e;
+  font-family: "Poppins", sans-serif;
+ font-weight: bold;
+ margin: 20px 0px;
+ padding:5px;
+}
+
+.DETAILS select{
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #888;
+  color:#1e1e1e;
+  font-family: "Poppins", sans-serif;
+ font-weight: bold;
+ margin: 20px 0px;
+ padding:5px;
+}
+
+.DETAILS h2{
+  font-size: 40px;
+  color:#d3cbcb;
+  margin: 100px 0;
+  letter-spacing: 2px;
+}
+
 
 /* DIALOG BOX */
 
@@ -441,11 +526,22 @@ header {
   .PLANT-BOX {
     position: relative;
     display: inline-block;
+<<<<<<< HEAD
     width:60%;
     margin: 40px 0px;
+=======
+    width: 90%;
+    margin: 20px 0px;
+>>>>>>> 8e6ac3308ba95a002d58187eeae0e71285dd1754
   }
-  .FIND {
+
+  .PLANT-BOX img {
     width: 100%;
+    opacity: 0.9;
+  }
+
+  .FIND {
+    width: 60%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -464,16 +560,89 @@ header {
     width: 50%;
   }
 
-  .GREEN {
+.FILTER{
+  width: 90%;
+  margin: auto;
+}
+
+.FILTER H2{
+   font-size: 40px;
+}
+
+.FILTER-BOX {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    font-size: 10px;
-    background-size: 90% auto;
-  }
+}
 
-  .BETWEEN-GREEN h2 {
+
+.FILTER-BOX select{
+    
+    margin-left: 0px;
+    border: 1px solid white;
+    width: 80%;
+    padding: 10px;
+    margin:20px;
+}
+
+
+.FILTER input{
+  
     font-size: 15px;
+<<<<<<< HEAD
   }
+=======
+}
+
+.FIND {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.FIND img {
+width: 100%;
+}
+
+.GREEN {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  width: 70%;
+  margin: 30px auto;
+  background-size:70% auto;
+
+}
+
+.GREEN-IMAGE {
+  width: auto;
+  height: auto;
+}
+
+
+.BETWEEN-GREEN {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.DESCRIPTION {
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.DETAILS{
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+}
+
+
+>>>>>>> 8e6ac3308ba95a002d58187eeae0e71285dd1754
 
 }
 
@@ -484,7 +653,7 @@ header {
   color: white; /* initially hide the hamburger button */
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1280px) {
   /* show the hamburger button only on screens smaller than 768px */
   .hamburger {
     position: fixed;

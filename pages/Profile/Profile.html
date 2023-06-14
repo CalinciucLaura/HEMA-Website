@@ -1,60 +1,98 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="page-title">Profile</title>
+    <link rel="stylesheet" href="../Main/Main.css" />
+    <script src="../Main/Main.js"></script>
 
-<title id="page-title">House</title>
-<link rel="stylesheet" href="../Main/Main.css">
-<script src="../Main/Main.js"></script>
-
-<!-- fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-
-
-<!-- Navbar -->
-<header>
-  <ul class="LOGO">
-    <li><a href="../Main/Main.html">HEMA</a></li>
-  </ul>
-  <nav>
-    <button class="hamburger">&#9776;</button>
-    <ul class="NAVBAR">
-      <li><a id="house-link" href="../House/House.html">House</a></li>
-     <li><a id="garden-link" href="../Garden/Garden.html">Garden</a></li>
-     <li><a id= "tropical-link" href="../Tropical/Tropical.html">Tropical</a></li>
-     <li><a id="medicinal-link" href="../Medicinal/Medicinal.html">Medicinal</a></li>
-     <li><a id="recommendation-link" href="../Recommendation/Recommendation.html">Recommendation</a></li>
-      <li><a id="help-link" href="../Help/help.html">Help</a></li>
-      <li><a id="about-link" href="../About/about.html">About</a></li>
-      <li><a id="login-link" href="../Login/login.html">Login</a></li>
-      <li><a id="register-link" href="../Register/register.html">Register</a> </li>
-<<<<<<< HEAD
-=======
-      <li><a href="../Profile/Profile.html" ><img src="../../images/Main/profile-icon.png" style="width: 25px;"></a></li>
->>>>>>> 8e6ac3308ba95a002d58187eeae0e71285dd1754
-    </ul>
-  </nav>
-</header>
-<!-- NAVBAR CLOSED -->
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <ul class="LOGO">
+        <li><a href="../Main/Main.html">HEMA</a></li>
+      </ul>
+      <nav>
+        <button class="hamburger">&#9776;</button>
+        <ul class="NAVBAR">
+          <li><a id="house-link" href="../House/House.html">House</a></li>
+         <li><a id="garden-link" href="../Garden/Garden.html">Garden</a></li>
+         <li><a id= "tropical-link" href="../Tropical/Tropical.html">Tropical</a></li>
+         <li><a id="medicinal-link" href="../Medicinal/Medicinal.html">Medicinal</a></li>
+         <li><a id="recommendation-link" href="../Recommendation/Recommendation.html">Recommendation</a></li>
+          <li><a id="help-link" href="../Help/help.html">Help</a></li>
+          <li><a id="about-link" href="../About/about.html">About</a></li>
+          <li><a id="login-link" href="../Login/login.html">Login</a></li>
+          <li><a id="register-link" href="../Register/register.html">Register</a> </li>
+          <li><a href="../Profile/Profile.html" ><img src="../../images/Main/profile-icon.png" style="width: 25px;"></a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- NAVBAR CLOSED -->
 
 
 <!-- BACKGROUND -->
-<div class="BACKGROUND">
-    <div class="BACKGROUND-CONTENT">
-     
-     <h1 id="text-h1">HOUSE PLANTS</h1>
-     <p id="text-p">House plants are plants that are grown indoors in homes and other buildings for ornamental, decorative, or air-purifying purposes. They are typically grown in containers or pots and placed on windowsills, tables, or other surfaces..
-     </p>     
-     </div>
-</div>
-<!-- BACKGROUND-CLOSE -->
 
-<!-- ROW 1 -->
+    <div class="BACKGROUND">
+      <div class="BACKGROUND-CONTENT">
+        <h1>Your Profile</h1>
+        <p>
+        Here you can enjoy and expand your collection
+        </p>
+      </div>
+    </div>
+    <!-- BACKGROUND-CLOSE -->
+
+    <div class="DETAILS">
+
+    <h2> YOUR PROFILE: </h2>
+    <form>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+
+      <label for="password">Password:</label><br>
+      <input type="text" id="password" name="password"><br>
+
+      <label for="password-change">Change password:</label><br>
+      <input type="text" id="password-change" name="password-change">
+      
+    </form>
+  
+    <form action="/action_page.php">
+      <label for="country"> Country: </label><br>
+      <select id="country" name="country">
+        <option value="Romania">Romania</option>
+        <option value="Italia">Italia</option>
+        <option value="Franta">Franta</option>
+        <option value="Germania">Germania</option>
+      </select>
+    </form>
+
+    <form action="/action_page.php">
+    <label for="age">Age</label><br>
+    <input class="quantity" id="age" min="8" name="age" value="8" type="number">
+   </form>
+
+   <input type="submit">
+
+  </div>
+
+    <!-- COLLECTIONS OPEN -->
+
+    <div class="DETAILS">
+
+      <h2> YOUR COLLECTION: </h2>
+   </div>
+    <!-- ROW 1 -->
 <div class="PLANT-ROW">
 
   <div class="PLANT-BOX" onclick="showDialog('Orhid', 'Orchids are a large and diverse family of flowering plants, with over 28,000 species and more than 100,000 hybrids and cultivars. They are known for their stunningly beautiful and exotic flowers, which come in a wide range of colors, shapes, and sizes. Orchids can be found all over the world, but they are most abundant in tropical and subtropical regions. <br><br> Orchids are popular as ornamental plants and are often grown as houseplants or in greenhouses. They require specific growing conditions, including high humidity, good air circulation, and proper watering and fertilization. Orchids are also often grown for their medicinal properties, with some species being used to treat ailments such as coughs, colds, and digestive issues. <br><br> Due to their beauty, orchids have also played an important role in art and culture throughout history. In many cultures, orchids are seen as symbols of love, beauty, and luxury. They have been used in art, literature, and fashion, and are often featured in floral arrangements and gardens.')">
@@ -120,117 +158,6 @@
       </div>
     </div>
 </div>
-
-<!-- ROW 3 -->
-<div class="PLANT-ROW">
-
-  <div class="PLANT-BOX"> 
-    <img id="img9" src="../../images/Main/Poinsettia.jpg">
-    <div class="TEXT-BOX">
-      <h4>POINSETTIA</h4>
-    </div>
-  </div>
-
-  <div class="PLANT-BOX"> 
-    <img id="img10" src="../../images/Main/Jasmine.jpg">
-    <div class="TEXT-BOX">
-      <h4>JASMINE</h4>
-    </div>
-  </div> 
-
-  <div class="PLANT-BOX"> 
-    <img id="img11" src="../../images/Main/Gloxinia.jpg" >
-    <div class="TEXT-BOX">
-      <h4>GLOXINIA</h4>
-    </div>
-  </div>
-
-  <div class="PLANT-BOX"> 
-    <img id="img12" src="../../images/Main/Ameryllis.jpg">
-    <div class="TEXT-BOX">
-      <h4>AMERYLLIS</h4>
-    </div>
-  </div>
-</div>
-
-
-<!-- ROW 4 -->
-
-<div class="PLANT-ROW">
-
-    <div class="PLANT-BOX"> 
-      <img id="img13" src="../../images/Main/SpiderPlant.jpg">
-      <div class="TEXT-BOX">
-        <h4>SPIDER PLANT</h4>
-      </div>
-    </div>
-
-
-    <div class="PLANT-BOX"> 
-      <img id="img14" src="../../images/Main/Chinese.jpg">
-      <div class="TEXT-BOX">
-        <h4>CHINESE EVERGREEN </h4>
-      </div>
-    </div>
-
-    <div class="PLANT-BOX"> 
-      <img id="img15" src="../../images/Main/SnakePlant.jpg">
-      <div class="TEXT-BOX">
-        <h4>SNAKE PLANT</h4>
-      </div>
-    </div>
-
-    <div class="PLANT-BOX"> 
-      <img id="img16" src="../../images/Main/Bird.jpg" >
-      <div class="TEXT-BOX">
-        <h4>BIRD'S NEST FERN</h4>
-      </div>
-    </div>
-</div>
-
-<!-- ROW 5 -->
-
-<div class="PLANT-ROW">
-
-  <div class="PLANT-BOX"> 
-    <img id="img17" src="../../images/Main/Monsterra.jpg">
-    <div class="TEXT-BOX">
-      <h4>MONSTERRA</h4>
-    </div>
-  </div>
-
-
-  <div class="PLANT-BOX"> 
-    <img id="img18" src="../../images/Main/Bromeliad.jpg">
-    <div class="TEXT-BOX">
-      <h4>BROMELIAD </h4>
-    </div>
-  </div>
-
-  <div class="PLANT-BOX"> 
-    <img id="img19" src="../../images/Main/Succulent.jpg">
-    <div class="TEXT-BOX">
-      <h4>SUCCULENT</h4>
-    </div>
-  </div>
-
-  <div class="PLANT-BOX"> 
-    <img id="img20" src="../../images/Main/Devil's Ivy.jpg" >
-    <div class="TEXT-BOX">
-      <h4>DEVIL'S IVY</h4>
-    </div>
-  </div>
-</div>
-
-<!-- DIALOG BOX -->
-<div id="dialog" class="dialog-box">
-  <div class="dialog-content">
-    <span class="close" onclick="closeDialog()">&times;</span>
-    <h2 id="dialog-title"></h2>
-    <p id="dialog-text"></p>
-  </div>
-
-<!-- <script src="../House/House.js"></script> -->
-<script src="../Plant.js"></script>
+<!-- COLLECTIONS CLOSED -->
 </body>
 </html>
