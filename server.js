@@ -1,37 +1,47 @@
-const net = require('net');
-const { Worker } = require('worker_threads');
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
-let clientCount = 0;
+const server = http.createServer((req, res) => {
+    let filePath = path.join(__dirname, 'pages', req.url);
 
+    // Check if requested URL is a specific page
+    if (req.url === '/') {
+        filePath = path.join(__dirname, 'pages','Main', 'Main.html');
+        console.log("1");
+    // } else if (req.url === '/pages/About') {
+    //     filePath = path.join(__dirname, '/about.html');
+    // } else if (req.url === '/pages/House') {
+    //     filePath = path.join(__dirname, '/House.html');
+    // } else { 
+    //     filePath = path.join(__dirname, req.url);
+    //     console.log("2");
+    // }
+    }
 
-console.log("Server started");
+    let extname = path.extname(filePath);
+    let contentType = 'text/html';
 
-const server = net.createServer((socket) => {
-    clientCount++;
-    console.log('Client ' + clientCount + ' connected');
-   
-    const worker = new Worker('./worker.js');
+    switch (extname) {
+        case '.js':
+            contentType = 'text/javascript';
+            break;
+        case '.css':
+            contentType = 'text/css';
+            break;
+    }
 
-    socket.on("data", (clientData) => {
-        console.log("Data received from client " +  clientCount +  ":" + clientData);
-        
-        // Send the client's data to the worker for processing
-        worker.postMessage("Hello from server");
-    });
-
-    worker.on("message", (workerResponse) => {
-        console.log("Worker response for client  " +  clientCount +  ":" +  workerResponse);
-        socket.write("Worker says to client " +  clientCount +  ":" +  workerResponse);
-    });
-
-    worker.on('error', function(error) {
-        console.error('Worker error for client' +  clientCount , error);
-    });
-
-    socket.on("end", () => {
-        console.log('Client ' + clientCount + ' disconnected');
-        worker.terminate();
+    fs.readFile(filePath, (err, content) => {
+        if (err) {
+            res.writeHead(500);
+            res.end(`Server Error: ${err.code}`);
+        } else {
+            res.writeHead(200, { 'Content-Type': contentType });
+            res.end(content, 'utf8');
+        }
     });
 });
 
-server.listen(5000, "localhost");
+server.listen(5500, () => {
+  console.log('Server is running on port 5500');
+});

@@ -526,13 +526,8 @@ header {
   .PLANT-BOX {
     position: relative;
     display: inline-block;
-<<<<<<< HEAD
     width:60%;
     margin: 40px 0px;
-=======
-    width: 90%;
-    margin: 20px 0px;
->>>>>>> 8e6ac3308ba95a002d58187eeae0e71285dd1754
   }
 
   .PLANT-BOX img {
@@ -589,9 +584,6 @@ header {
 .FILTER input{
   
     font-size: 15px;
-<<<<<<< HEAD
-  }
-=======
 }
 
 .FIND {
@@ -642,7 +634,6 @@ width: 100%;
 }
 
 
->>>>>>> 8e6ac3308ba95a002d58187eeae0e71285dd1754
 
 }
 
