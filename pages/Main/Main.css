@@ -513,6 +513,8 @@ header {
     margin: 20px 0px;
   }
 
+
+
   .PLANT-ROW {
     display: flex;
     flex-direction: column;
@@ -524,8 +526,8 @@ header {
   .PLANT-BOX {
     position: relative;
     display: inline-block;
-    width: 90%;
-    margin: 20px 0px;
+    width:60%;
+    margin: 40px 0px;
   }
 
   .PLANT-BOX img {
@@ -684,4 +686,8 @@ width: 100%;
   .hamburger:hover {
     color: green;
   }
+
+
+
+
 }
