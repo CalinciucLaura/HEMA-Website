@@ -29,7 +29,7 @@ function returnStaticResource(req, res) {
          break;
     }
 
-   console.log(filePath);
+   //console.log(filePath);
    
    fs.readFile(filePath, (err, content) => {
     if (err) {
