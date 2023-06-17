@@ -9,10 +9,11 @@ const sqlite3 = require('sqlite3').verbose();
 
 const db = new sqlite3.Database('Database\\person.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
-        console.error(err.message);
+      console.error(err.message);
     }
-    console.log('Connected to the person database.');   
-});
+    console.log("Connected to the person database.");
+  }
+);
 
 db.run(`CREATE TABLE IF NOT EXISTS users(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -36,7 +37,6 @@ function isInDatabase(username){
         });
     });
 }
-
 
 const server = http.createServer((req, res) => {
     console.log("Path ul este:" , req.url);
@@ -112,19 +112,15 @@ server.on('error', (err) => {
   });
 
 server.listen(5500, () => {
-  console.log('Server is running on port 5500');
+  console.log("Server is running on port 5500");
 });
 
 // Close database connection when the process exits
-process.on('exit', (code) => {
-    db.close((err) => { 
-        if (err) {
-            console.error(err.message);
-        }
-        console.log('Close the database connection.');
-    });
+process.on("exit", (code) => {
+  db.close((err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Close the database connection.");
   });
-  
-  
-  
-  
+});
