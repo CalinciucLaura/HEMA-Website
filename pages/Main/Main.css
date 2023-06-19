@@ -184,11 +184,9 @@ header {
 .FILTER{
     display: flex;
     flex-direction: column;
-    align-items: center;
     color:whitesmoke;
     font-family: "Raleway", sans-serif;
-    border: 2px solid white;
-   
+    width: 100%;
 }
 
 .FILTER H2{
@@ -209,7 +207,6 @@ header {
     background-color: rgba(37, 172, 37, 0.63);
     color: whitesmoke;
     font-family: "Raleway", sans-serif;
-    margin-left: 10px;
     border: 1px solid white;
     width: 80%;
     padding: 10px;
@@ -218,14 +215,14 @@ header {
 }
 
 
-.FILTER input{
+#buttonSearch{
     height: 40px;
     width: 150px;
     background-color: transparent;
     border: 1px solid white;
     color: white;
     font-weight: bold;
-    margin: 20px 0px;
+    margin: 20px;
     font-size: 10px;
     box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
 }
