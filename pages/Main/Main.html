@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title id="page-title">HEMA</title>
     <link rel="stylesheet" href="../Main/Main.css" />
-    <script src="../Main/Main.js"></script>
+ 
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +33,7 @@
           <li><a id="help-link" href="../Help/help.html">Help</a></li>
           <li><a id="about-link" href="../About/about.html">About</a></li>
           <li><a id="login-link" href="../Login/login.html">Log out</a></li>
-          <li><a id="register-link" href="../Register/register.html">Register</a> </li>
+ 
           <li><a href="../Profile/Profile.html" ><img src="../../images/Main/profile-icon.png" style="width: 25px;"></a></li>
           
           </ul>
@@ -53,8 +53,8 @@
         </p>
 
         <div class="BACKGROUND-BUTTONS">
-          <a href="../Login/login.html"><button>LOGIN</button> </a>
-          <a href="../Register/register.html"><button>REGISTER</button> </a>
+          <a href="../About/about.html"><button>ABOUT</button> </a>
+          <a href="../Recommendation/Recommendation.html"><button>RECOMMENDATION</button> </a>
         </div>
       </div>
     </div>
@@ -117,86 +117,158 @@
 
    <!-- CATHEGORY -->
 
-  <form action="/action_page.php">
-    <label for="cathegory">Cathegory: </label>
-    <select id="cathegory" name="cathegory">
-      <option value="house">House</option>
-      <option value="garden">Garden</option>
-      <option value="tropical">Tropical</option>
-      <option value="medicinal">Medicinal</option>
+   <form id="mySearch">
+
+    <label for="category">Category: </label>
+    <select id="category" name="category">
+        <option value="house">house</option>
+        <option value="garden">garden</option>
+        <option value="tropical">tropical</option>
+        <option value="medicinal">medicinal</option>
     </select>
-  </form>
+    <br>
 
-  <!-- NAME -->
+    <label for="name">Name: </label>
+    <select id="name" name="name">
+        <!-- Plante din categoria "House" -->
+        <option value="orchid">orchid</option>
+        <option value="peace lily">peace lily</option>
+        <option value="anthurium">anthurium</option>
+        <option value="kaffir lily">kaffir lily</option>
+        <option value="rubber plant">rubber plant</option>
+        <option value="aloe vera">aloe vera</option>
+        <option value="philodendron">philodendron</option>
+        <option value="zz plant">zz plant</option>
+        <option value="poinsettia">poinsettia</option>
+        <option value="jasmine">jasmine</option>
+        <option value="gloxinia">gloxinia</option>
+        <option value="amaryllis">amaryllis</option>
+        <option value="spider plant">spider plant</option>
+        <option value="chinese evergreen">chinese evergreen</option>
+        <option value="snake plant">snake plant</option>
+        <option value="bird's nest fern">bird's nest fern</option>
+        <option value="monstera">monstera</option>
+        <option value="bromeliad">bromeliad</option>
+        <option value="succulent">succulent</option>
+        <option value="devil's ivy">devil's ivy</option>
 
-  <form action="/action_page.php">
-    <label for="plant"> Name: </label>
-    <select id="plant" name="plant">
-      <option value="orhid">Orhid</option>
-      <option value="poinsettia">Poinsettia</option>
-      <option value="jasmine">Jasmine</option>
-      <option value="dandelion">Dandelion</option>
-      <option value="roses">Roses</option>
-      <option value="tulip">Tulip</option>
+        <!-- Plante din categoria "Garden" -->
+        <option value="roses">roses</option>
+        <option value="liliac">liliac</option>
+        <option value="dahlias">dahlias</option>
+        <option value="peony">peony</option>
+        <option value="lavender">lavender</option>
+        <option value="lily">lily</option>
+        <option value="violet">violet</option>
+        <option value="daffodils">daffodils</option>
+        <option value="petunia">petunia</option>
+        <option value="sunflower">sunflower</option>
+        <option value="daisy">daisy</option>
+        <option value="chrysanthemum">chrysanthemum</option>
+        <option value="snowdrop">snowdrop</option>
+        <option value="crocus">crocus</option>
+        <option value="cherry tree">cherry tree</option>
+        <option value="apple tree">apple tree</option>
+        <option value="vine">vine</option>
+        <option value="apricot tree">apricot tree</option>
+        <option value="tulip">tulip</option>
+        <option value="hydrangeas">hydrangeas</option>
+
+        <!-- Plante din categoria "Tropical" -->
+        <option value="bird of paradise">bird of paradise</option>
+        <option value="alpina purpurata">alpina purpurata</option>
+        <option value="palm tree">palm tree</option>
+        <option value="hibiscus">hibiscus</option>
+        <option value="heliconia">heliconia</option>
+        <option value="plumeria">plumeria</option>
+        <option value="blue torch cactus">blue torch cactus</option>
+        <option value="passiflora foetida">passiflora foetida</option>
+        <option value="santa rita cactus">santa rita cactus</option>
+        <option value="dracunulus vulgaris">dracunulus vulgaris</option>
+        <option value="dietes grandiflora">dietes grandiflora</option>
+        <option value="calotropis procera">calotropis procera</option>
+        <option value="calliandra tergemina">calliandra tergemina</option>
+        <option value="antigonon leptopus">antigonon leptopus</option>
+        <option value="arisaema triphyllum">arisaema triphyllum</option>
+        <option value="ti plant">ti plant</option>
+        <option value="areca palm">areca palm</option>
+        <option value="hoya">hoya</option>
+        <option value="orange tree">orange tree</option>
+        <option value="lemon tree">lemon tree</option>
+
+        <!-- Plante din categoria "Medicinal" -->
+        <option value="salvia">salvia</option>
+        <option value="dandelion">dandelion</option>
+        <option value="cowberry">cowberry</option>
+        <option value="saint john's wort">saint john's wort</option>
+        <option value="aswagandha">aswagandha</option>
+        <option value="evening primrose">evening primrose</option>
+        <option value="mint">mint</option>
+        <option value="chammomile">chammomile</option>
+        <option value="echinaea">echinaea</option>
+        <option value="hawthorn">hawthorn</option>
+        <option value="cat's claw">cat's claw</option>
+        <option value="milk thistle">milk thistle</option>
+        <option value="valerian">valerian</option>
+        <option value="turmeric">turmeric</option>
+        <option value="ginkgo">ginkgo</option>
+        <option value="rosemary">rosemary</option>
+        <option value="black cohosh">black cohosh</option>
+        <option value="aloe vera">aloe vera</option>
+        <option value="thyme">thyme</option>
+        <option value="panax">panax</option>
     </select>
-  </form>
+    <br>
 
-  <!-- TYPE -->
-
-  <form action="/action_page.php">
-    <label for="type"> Type: </label>
+    <label for="type">Type: </label>
     <select id="type" name="type">
-      <option value="tree">Tree</option>
-      <option value="herb">Herb</option>
-      <option value="shrub">Shrub</option>
+        <option value="flower">flower</option>
+        <option value="plant">plant</option>
+        <option value="tree">tree</option>
+        <option value="herb">herb</option>
+        <option value="shrub">shrub</option>
     </select>
-  </form>
+    <br>
 
-  <!-- COLOR -->
-  
-  <form action="/action_page.php">
-    <label for="color"> Color: </label>
+    <label for="color">Color: </label>
     <select id="color" name="color">
-      <option value="white">White</option>
-      <option value="pink">Pink</option>
-      <option value="green">Green</option>
-      <option value="red">Red</option>
-      <option value="yellow">Yellow</option>
-      <option value="purple">Purple</option>
-      <option value="blue">Blue</option>
-      <option value="orange">Orange</option>
-      <option value="black">Black</option>
+        <option value="white">white</option>
+        <option value="pink">pink</option>
+        <option value="green">green</option>
+        <option value="red">red</option>
+        <option value="yellow">yellow</option>
+        <option value="purple">purple</option>
+        <option value="blue">blue</option>
+        <option value="orange">orange</option>
     </select>
-  </form>
+    <br>
 
-  <!-- CONDITIONS -->
-
-  <form action="/action_page.php">
-    <label for="condition"> Conditions: </label>
-    <select id="condition" name="condition">
-      <option value="sun">Sun</option>
-      <option value="shade">Shade</option>
-      <option value="water">Water requirements</option>
+    <label for="conditions">Conditions: </label>
+    <select id="conditions" name="conditions">
+        <option value="sun">sun</option>
+        <option value="shade">shade</option>
+        <option value="water">water</option>
+        <option value="all">all</option>
     </select>
-  </form>
+    <br>
 
-  <!-- SEASON -->
-
-  <form action="/action_page.php">
-    <label for="season"> Season: </label>
+    <label for="season">Season: </label>
     <select id="season" name="season">
-      <option value="winter">Winter</option>
-      <option value="spring">Spring</option>
-      <option value="summer">Summer</option>
-      <option value="fall">Fall</option>
+        <option value="winter">winter</option>
+        <option value="spring">spring</option>
+        <option value="summer">summer</option>
+        <option value="autumn">autumn</option>
+        <option value="all">all</option>
     </select>
-  </form>
+    <button class="buttonSearch">Search</button>
 
-</div>
-<input type="submit">
+  </form>
 </div>
 
 <!-- FILTER CLOSED -->
+
+<!-- SHOW RESULTS -->
+<div id="plantList"></div>
 
     <!-- FIND MORE-->
     <div class="BOX-FIND">
@@ -241,6 +313,7 @@
       </div>
     </div>
 
+    <script src="../Main/Main.js"></script>
 </body>
-  </body>
+
 </html>

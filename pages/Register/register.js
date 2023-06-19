@@ -24,7 +24,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     .then((data) => {
       console.log(data);
       document.getElementById("registerMessage").innerHTML =
-        "Sorry, but your name is not valid :( Try again";
+        "Sorry, but your name or email is not valid :( Try again";
     })
     .catch((error) => console.error("Error:", error));
 });
