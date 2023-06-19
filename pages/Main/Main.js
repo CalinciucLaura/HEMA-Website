@@ -33,7 +33,7 @@ document
     var season = document.getElementById("season").value;
 
     //trimit la server informatiile
-    fetch("api/search", {
+    fetch("/api/search", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,20 +48,14 @@ document
       }),
     })
       .then((response) => {
-        console.log("SUCCES", response);
         return response.json();
+      })
+      .then((result) => {
+        console.log(result);
       })
       .then((data) => {
         console.log("Data:", data);
-        //daca nu am gasit nimic
-        if (data.length === 0) {
-          document.getElementById("searchResults").innerHTML =
-            "No results found";
-        } else {
-          //daca am gasit ceva
-          document.getElementById("searchResults").innerHTML =
-            "AM GASIT PLANTA";
-        }
+        document.getElementById("namePlant").innerHTML = name;
       })
 
       .catch((error) => console.error("Error:", error));

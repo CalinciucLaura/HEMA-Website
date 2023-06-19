@@ -4,8 +4,6 @@ const path = require("path");
 const querystring = require("querystring");
 const { Console } = require("console");
 const { returnStaticResource } = require("./api/StaticResource");
-//const { DatabaseManage } = require("./api/DatabaseManage");
-const { getFromDatabase } = require("./api/DatabaseManage");
 
 const sqlite3 = require("sqlite3").verbose();
 
@@ -79,13 +77,54 @@ function isInDatabase2(username, password) {
   });
 }
 
-//function getFromDatabase(cathegory, name, type, color, conditions, season)
+function getFromDatabase(cathegory, name, type, color, conditions, season) {
+  return new Promise((resolve, reject) => {
+    db.get(
+      `SELECT id FROM plantAbout WHERE category = ? and name = ? and type = ? and color = ? and conditions = ? and season = ?`,
+      [cathegory, name, type, color, conditions, season],
+      (err, row) => {
+        if (err) {
+          console.error(err.message);
+          reject(err);
+        } else {
+          resolve(row);
+        }
+      }
+    );
+  });
+}
 
 const server = http.createServer((req, res) => {
   //console.log("Path ul este:" , req.url);
 
-  if (!req.url.startsWith("/api") && req.method === "GET") {
-    returnStaticResource(req, res);
+  if (req.method === "POST" && req.url === "/api/search") {
+    console.log("You are in the search page");
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk.toString(); // convert Buffer to string
+    });
+
+    req.on("end", () => {
+      const { category, name, type, color, conditions, season } =
+        JSON.parse(body);
+
+      getFromDatabase(category, name, type, color, conditions, season)
+        .then((row) => {
+          if (!row) {
+            console.log("Plant is NOT in the database");
+            res.writeHead(400, { "Content-Type": "application/json" });
+            res.end(
+              JSON.stringify({ message: "Plant is NOT in the database" })
+            );
+            return;
+          } else {
+            console.log("Plant is in the database");
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ message: "Plant is in the database" }));
+          }
+        })
+        .catch((err) => console.error(err));
+    });
     return;
   }
 
@@ -95,8 +134,6 @@ const server = http.createServer((req, res) => {
     req.on("data", (chunk) => {
       body += chunk.toString(); // convert Buffer to string
     });
-
-    //console.log("Body-ul este",body);
 
     req.on("end", () => {
       // const { username, email, password } = querystring.parse(body);  //extrage username, email, password din body
@@ -186,34 +223,10 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  //SEARCH
-  if (req.method === "POST" && req.url === "/api/search") {
-    let body = "";
-    req.on("data", (chunk) => {
-      body += chunk.toString(); // convert Buffer to string
-    });
-
-    req.on("end", () => {
-      const { category, name, type, color, conditions, season } =
-        JSON.parse(body);
-      console.log("in Search");
-
-      db.all(
-        `SELECT * FROM plantAbout WHERE category = ? AND name = ? AND type = ? AND color = ? AND conditions = ? AND season = ?`,
-        [category, name, type, color, conditions, season],
-        (err, rows) => {
-          if (err) {
-            console.error(err.message);
-            return;
-          }
-
-          console.log("Rows:", rows);
-
-          res.writeHead(200, { "Content-Type": "application/json" });
-          res.end(JSON.stringify(rows));
-        }
-      );
-    });
+  if (!req.url.startsWith("/api") && req.method === "GET") {
+    console.log("Am intrat in pagina");
+    returnStaticResource(req, res);
+    return;
   }
 });
 

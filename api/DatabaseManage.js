@@ -246,25 +246,3 @@ Thyme, herb, purple, sun, summer
 Panax, herb, red, sun, summer
 
 */
-
-//MEDICIAL
-// db.exec(
-//   'INSERT INTO plantAbout (plant_id, name, color, image) VALUES (4, "Salvia", "Purple", "Salvia.jpg");',
-//   (err) => {
-//     if (err) {
-//       console.error(err.message);
-//     }
-//   }
-// );
-
-console.log("Cathegories inserted in plant table.");
-
-// //TROPICAL
-// db.exec(
-//   'INSERT INTO plantAbout (plant_id, name, type, color, conditions, season) VALUES (3, "BIRD OF PARADISE", "Orange", "Hibiscus.jpg"), (3,"Heliconia", "Red", "Heliconia.jpg"), (3,"Plumeria", "Red", "Plumeria.jpg"), (3,"Blue Torch Cactus", "Blue", "BlueTorchCactus.jpg"), (3, "Passiflora Foetida", "Purple", "Passiflora.jpg"), (3,"Santa Rita Cactus", "Purple", "SantaRitaCactus.jpg"), (3, "DRACUNULUS VULGARIS", "Maroon", "DracunculusVulgaris.jpg"), (3, "DIETES GRANDIFLORA", "White", "DietesGrandiflora.jpg"), (3, "CALOTROPIS PROCERA", "White", "CalotropisProcera.jpg"), (3, "CALLIANDRA TERGEMINA", "Unknown", "CalliandraTergemina.jpg"), (3, "ANTIGONON LEPTOPUS", "Unknown", "AntigononLeptopus.jpeg"), (3, "ARISAEMA TRIPHYLLUM", "Unknown", "ArisaemaTriphyllum.jpg"), (3, "TI PLANT", "Unknown", "TiPlant.jpg"), (3, "ARECA PALM", "Unknown", "ArecaPalm.jpg"), (3, "HOYA", "Unknown", "Hoya.jpg"), (3, "ORANGE TREE", "Orange", "OrangeTree.jpg"), (3, "LEMON TREE", "Yellow", "LemonTree.jpg");',
-//   (err) => {
-//     if (err) {
-//       console.error(err.message);
-//     }
-//   }
-// );

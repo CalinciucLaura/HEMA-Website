@@ -121,6 +121,7 @@
 
     <label for="category">Category: </label>
     <select id="category" name="category">
+      <option value="select" selected>Select</option>
         <option value="house">house</option>
         <option value="garden">garden</option>
         <option value="tropical">tropical</option>
@@ -131,6 +132,7 @@
     <label for="name">Name: </label>
     <select id="name" name="name">
         <!-- Plante din categoria "House" -->
+        <option value="select" selected>Select</option>
         <option value="orchid">orchid</option>
         <option value="peace lily">peace lily</option>
         <option value="anthurium">anthurium</option>
@@ -222,6 +224,7 @@
 
     <label for="type">Type: </label>
     <select id="type" name="type">
+      <option value="select" selected>Select</option>
         <option value="flower">flower</option>
         <option value="plant">plant</option>
         <option value="tree">tree</option>
@@ -232,6 +235,7 @@
 
     <label for="color">Color: </label>
     <select id="color" name="color">
+      <option value="select" selected>Select</option>
         <option value="white">white</option>
         <option value="pink">pink</option>
         <option value="green">green</option>
@@ -245,6 +249,7 @@
 
     <label for="conditions">Conditions: </label>
     <select id="conditions" name="conditions">
+      <option value="select" selected>Select</option>
         <option value="sun">sun</option>
         <option value="shade">shade</option>
         <option value="water">water</option>
@@ -254,15 +259,20 @@
 
     <label for="season">Season: </label>
     <select id="season" name="season">
+      <option value="select" selected>Select</option>
         <option value="winter">winter</option>
         <option value="spring">spring</option>
         <option value="summer">summer</option>
         <option value="autumn">autumn</option>
         <option value="all">all</option>
     </select>
-    <button class="buttonSearch">Search</button>
 
+    <button class="buttonSearch">Search</button>
   </form>
+</div>
+
+<div id="showResults">
+<h1 id="namePlant"></h1>
 </div>
 
 <!-- FILTER CLOSED -->
@@ -313,7 +323,7 @@
       </div>
     </div>
 
-    <script src="../Main/Main.js"></script>
+    <script src="Main.js"></script>
 </body>
 
 </html>
