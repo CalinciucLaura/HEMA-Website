@@ -20,17 +20,49 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Path: pages\Main\Main.js
+
 document
   .getElementById("mySearch")
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Previne trimiterea formularului
 
-    var category = document.getElementById("category").value;
-    var name = document.getElementById("name").value;
-    var type = document.getElementById("type").value;
-    var color = document.getElementById("color").value;
-    var conditions = document.getElementById("conditions").value;
-    var season = document.getElementById("season").value;
+    var categoryOptions = document.querySelectorAll(
+      'input[name="category"]:checked'
+    );
+    var category = categoryOptions
+      ? Array.from(categoryOptions).map((el) => el.value)
+      : [];
+
+    var nameOptions = document.querySelectorAll(' input[name="name"]:checked');
+    var name = nameOptions ? Array.from(nameOptions).map((el) => el.value) : [];
+
+    var typeOptions = document.querySelectorAll('input[name="type"]:checked');
+    var type = nameOptions ? Array.from(typeOptions).map((el) => el.value) : [];
+
+    var colorOptions = document.querySelectorAll(
+      ' input[name="color"]:checked'
+    );
+    var color = colorOptions
+      ? Array.from(colorOptions).map((el) => el.value)
+      : [];
+
+    var conditionsOptions = document.querySelectorAll(
+      ' input[name="conditions"]:checked'
+    );
+
+    var conditions = conditionsOptions
+      ? Array.from(conditionsOptions).map((el) => el.value)
+      : [];
+
+    var seasonOptions = document.querySelectorAll(
+      ' input[name="season"]:checked'
+    );
+    var season = seasonOptions
+      ? Array.from(seasonOptions).map((el) => el.value)
+      : [];
+
+    //console.log(category, name, type, color, conditions, season);
 
     //trimit la server informatiile
     fetch("/api/search", {
@@ -50,12 +82,15 @@ document
       .then((response) => {
         return response.json();
       })
-      .then((result) => {
-        console.log(result);
-      })
       .then((data) => {
-        console.log("Data:", data);
-        document.getElementById("namePlant").innerHTML = name;
+        let resultsDiv = document.getElementById("showResults");
+        let htmlString = "";
+
+        data.forEach((element) => {
+          htmlString += ` <p> ${element.name} </p>`;
+        });
+
+        resultsDiv.innerHTML = htmlString;
       })
 
       .catch((error) => console.error("Error:", error));

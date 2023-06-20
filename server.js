@@ -4,6 +4,8 @@ const path = require("path");
 const querystring = require("querystring");
 const { Console } = require("console");
 const { returnStaticResource } = require("./api/StaticResource");
+const { r } = require("tar");
+const { eventNames } = require("process");
 
 const sqlite3 = require("sqlite3").verbose();
 
@@ -77,20 +79,44 @@ function isInDatabase2(username, password) {
   });
 }
 
-function getFromDatabase(cathegory, name, type, color, conditions, season) {
+function getFromDatabase(category, name, type, color, conditions, season) {
+  let query = "SELECT name FROM plantAbout WHERE";
+  let params = [];
+
+  console.log(category, name, type, color, conditions, season);
+
+  let addCondition = function (param, name) {
+    if (param && param.length) {
+      query +=
+        ` ${name} IN (` + "?,".repeat(param.length).slice(0, -1) + ") AND";
+      params.push(...param);
+    }
+  };
+
+  addCondition(category, "category");
+  addCondition(name, "name");
+  addCondition(type, "type");
+  addCondition(color, "color");
+  addCondition(conditions, "conditions");
+  addCondition(season, "season");
+
+  // Removing last "AND"
+  if (params.length) {
+    query = query.slice(0, -3);
+  } else {
+    // If no parameters were passed, remove the WHERE clause
+    query = "SELECT name FROM plantAbout";
+  }
+
   return new Promise((resolve, reject) => {
-    db.get(
-      `SELECT id FROM plantAbout WHERE category = ? and name = ? and type = ? and color = ? and conditions = ? and season = ?`,
-      [cathegory, name, type, color, conditions, season],
-      (err, row) => {
-        if (err) {
-          console.error(err.message);
-          reject(err);
-        } else {
-          resolve(row);
-        }
+    db.all(query, params, (err, rows) => {
+      if (err) {
+        console.error(err.message);
+        reject(err);
+      } else {
+        resolve(rows);
       }
-    );
+    });
   });
 }
 
@@ -119,8 +145,9 @@ const server = http.createServer((req, res) => {
             return;
           } else {
             console.log("Plant is in the database");
+            console.log(row);
             res.writeHead(200, { "Content-Type": "application/json" });
-            res.end(JSON.stringify({ message: "Plant is in the database" }));
+            res.end(JSON.stringify(row));
           }
         })
         .catch((err) => console.error(err));
