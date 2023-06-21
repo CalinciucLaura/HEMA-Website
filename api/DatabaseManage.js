@@ -13,16 +13,6 @@ const db = new sqlite3.Database(
   }
 );
 
-// db.exec(
-//   'INSERT INTO plant (cathegory) VALUES ("House"), ("Tree"), ("Sun"), ("Spring"));',
-//   (err) => {
-//     if (err) {
-//       console.error(err.message);
-//     }
-//   }
-// );
-
-/*
 db.exec(
   `INSERT INTO plantAbout (category, name, type, color, conditions, season) VALUES 
   ("house", "orchid", "flower", "pink", "sun", "spring"),
@@ -31,17 +21,17 @@ db.exec(
   ("house", "kaffir lily", "flower", "white", "sun", "summer"),
   ("house", "rubber plant", "plant", "green", "sun", "all"),
   ("house", "aloe vera", "plant", "green", "water", "all"),
-  ("house", "philodendron", "plant", "green", "sun", "all"),
+  ("house", "philondron", "plant", "green", "sun", "all"),
   ("house", "zz plant", "plant", "green", "shade", "all"),
   ("house", "poinsettia", "plant", "red", "sun", "winter"),
   ("house", "jasmine", "flower", "white", "sun", "summer"),
   ("house", "gloxinia", "flower", "red", "sun", "summer"),
-  ("house", "amaryllis", "flower", "red", "sun", "winter"),
+  ("house", "ameryllis", "flower", "red", "sun", "winter"),
   ("house", "spider plant", "plant", "green", "sun", "all"),
   ("house", "chinese evergreen", "plant", "green", "shade", "all"),
   ("house", "snake plant", "plant", "green", "sun", "all"),
   ("house", "bird's nest fern", "plant", "green", "shade", "all"),
-  ("house", "monstera", "plant", "green", "sun", "all"),
+  ("house", "monsterra", "plant", "green", "sun", "all"),
   ("house", "bromeliad", "plant", "red", "sun", "all"),
   ("house", "succulent", "plant", "green", "sun", "all"),
   ("house", "devil's ivy", "plant", "green", "sun", "all")
@@ -66,14 +56,14 @@ db.exec(
   ("garden", "daffodils", "flower", "yellow", "sun", "spring"),
   ("garden", "petunia", "flower", "pink", "sun", "summer"),
   ("garden", "sunflower", "flower", "yellow", "sun", "summer"),
-  ("garden", "daisy", "flower", "white", "sun", "autumn"),
+  ("garden", "daisy", "flower", "white", "sun", "summer"),
   ("garden", "chrysanthemum", "flower", "red", "sun", "autumn"),
   ("garden", "snowdrop", "flower", "white", "sun", "spring"),
   ("garden", "crocus", "flower", "purple", "sun", "spring"),
-  ("garden", "cherry tree", "tree", "pink", "sun", "spring"),
-  ("garden", "apple tree", "tree", "white", "sun", "spring"),
+  ("garden", "cherry tree", "tree", "pink", "sun", "summer"),
+  ("garden", "apple tree", "tree", "white", "sun", "summer"),
   ("garden", "vine", "shrub", "green", "sun", "autumn"),
-  ("garden", "apricot tree", "tree", "orange", "sun", "spring"),
+  ("garden", "apricot tree", "tree", "orange", "sun", "summer"),
   ("garden", "tulip", "flower", "pink", "sun", "spring"),
   ("garden", "hydrangeas", "shrub", "blue", "shade", "summer")
   `,
@@ -87,8 +77,8 @@ db.exec(
 db.exec(
   `
   INSERT INTO plantAbout (category, name, type, color, conditions, season) VALUES
-  ("tropical", "bird of paradise", "flower", "orange", "sun", "spring"),
-  ("tropical", "alpina purpurata", "flower", "red", "sun", "summer"),
+  ("tropical", "bird of paradise", "flower", "orange", "sun", "summer"),
+  ("tropical", "alpinia galanga", "flower", "red", "sun", "summer"),
   ("tropical", "palm tree", "tree", "green", "sun", "summer"),
   ("tropical", "hibiscus", "flower", "pink", "sun", "summer"),
   ("tropical", "heliconia", "flower", "red", "sun", "summer"),
@@ -96,7 +86,7 @@ db.exec(
   ("tropical", "blue torch cactus", "flower", "blue", "sun", "summer"),
   ("tropical", "passiflora foetida", "flower", "white", "sun", "summer"),
   ("tropical", "santa rita cactus", "flower", "purple", "sun", "summer"),
-  ("tropical", "dracunulus vulgaris", "flower", "maroon", "sun", "summer"),
+  ("tropical", "dracunculus vulgaris", "flower", "maroon", "sun", "summer"),
   ("tropical", "dietes grandiflora", "flower", "white", "sun", "summer"),
   ("tropical", "calotropis procera", "flower", "white", "sun", "summer"),
   ("tropical", "calliandra tergemina", "flower", "pink", "sun", "summer"),
@@ -118,26 +108,26 @@ db.exec(
 db.exec(
   `
   INSERT INTO plantAbout (category, name, type, color, conditions, season) VALUES
-  ("medicinal", "salvia", "shrub", "purple", "sun", "winter"),
+  ("medicinal", "salvia", "shrub", "purple", "sun", "all"),
   ("medicinal", "dandelion", "herb", "yellow", "sun", "spring"),
   ("medicinal", "cowberry", "herb", "red", "sun", "summer"),
   ("medicinal", "saint john's wort", "herb", "yellow", "sun", "summer"),
-  ("medicinal", "aswagandha", "herb", "green", "sun", "summer"),
+  ("medicinal", "ashwagandha", "herb", "green", "sun", "summer"),
   ("medicinal", "evening primrose", "herb", "yellow", "sun", "summer"),
   ("medicinal", "mint", "herb", "green", "sun", "summer"),
-  ("medicinal", "chammomile", "herb", "white", "sun", "summer"),
-  ("medicinal", "echinaea", "herb", "purple", "sun", "summer"),
-  ("medicinal", "hawthorn", "herb", "white", "sun", "summer"),
+  ("medicinal", "chamomile", "herb", "white", "sun", "summer"),
+  ("medicinal", "echinacea", "herb", "purple", "sun", "summer"),
+  ("medicinal", "hawthorn", "herb", "red", "sun", "summer"),
   ("medicinal", "cat's claw", "herb", "yellow", "sun", "summer"),
   ("medicinal", "milk thistle", "herb", "pink", "sun", "summer"),
-  ("medicinal", "valerian", "herb", "pink", "sun", "summer"),
+  ("medicinal", "valerian", "herb", "purple", "sun", "summer"),
   ("medicinal", "turmeric", "herb", "yellow", "sun", "summer"),
-  ("medicinal", "ginkgo", "herb", "green", "sun", "summer"),
-  ("medicinal", "rosemary", "herb", "purple", "sun", "summer"),
+  ("medicinal", "ginkgo biloba", "herb", "green", "sun", "summer"),
+  ("medicinal", "rosemary", "herb", "green", "sun", "summer"),
   ("medicinal", "black cohosh", "herb", "white", "sun", "summer"),
-  ("medicinal", "aloe vera", "herb", "green", "water", "all"),
-  ("medicinal", "thyme", "herb", "purple", "sun", "summer"),
-  ("medicinal", "panax", "herb", "red", "sun", "summer")
+  ("medicinal", "thyme", "herb", "green", "sun", "summer"),
+  ("medicinal", "panax", "herb", "red", "sun", "summer"),
+  ("medicinal", "aloe vera medicinal", "plant", "green", "water", "all")
   `,
   (err) => {
     if (err) {
@@ -145,8 +135,6 @@ db.exec(
     }
   }
 );
-
-*/
 
 // name, type, color, conditions, season
 /*

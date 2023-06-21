@@ -6,6 +6,7 @@ const { Console } = require("console");
 const { returnStaticResource } = require("./api/StaticResource");
 const { r } = require("tar");
 const { eventNames } = require("process");
+//const { DatabaseManage } = require("./api/DatabaseManage");
 
 const sqlite3 = require("sqlite3").verbose();
 
@@ -27,11 +28,6 @@ db.run(`CREATE TABLE IF NOT EXISTS users(
     password TEXT,
     isLogged INTEGER
 )`);
-
-// db.run(`CREATE TABLE IF NOT EXISTS plant(
-//   id INTEGER PRIMARY KEY AUTOINCREMENT,
-//   cathegory TEXT
-// )`);
 
 db.run(`CREATE TABLE IF NOT EXISTS plantAbout(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -133,6 +129,22 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       const { category, name, type, color, conditions, season } =
         JSON.parse(body);
+
+      if (
+        category == "" &&
+        name == "" &&
+        type == "" &&
+        color == "" &&
+        conditions == "" &&
+        season == ""
+      ) {
+        console.log("You need to select at least one option");
+        res.writeHead(400, { "Content-Type": "application/json" });
+        res.end(
+          JSON.stringify({ message: "You need to select at least one option" })
+        );
+        return;
+      }
 
       getFromDatabase(category, name, type, color, conditions, season)
         .then((row) => {

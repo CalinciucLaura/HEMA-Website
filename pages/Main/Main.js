@@ -86,9 +86,26 @@ document
         let resultsDiv = document.getElementById("showResults");
         let htmlString = "";
 
-        data.forEach((element) => {
-          htmlString += ` <p> ${element.name} </p>`;
-        });
+        if (data.message == "You need to select at least one option") {
+          htmlString += "<h2>You need to select at least one option</h2>";
+        } else if (data.length == 0) {
+          htmlString += "<h2>Sorry, no results found :(</h2>";
+        } else {
+          data.forEach((element) => {
+            htmlString += ` <div class="PLANT-BOX">
+                         <img src="../../images/Main/${element.name.replace(
+                           /\s/g,
+                           ""
+                         )}.jpg" />
+                         <div class = "TEXT-BOX">
+                          <h3>${element.name}</h3>
+                          </div>
+                          </div>
+          `;
+          });
+
+          htmlString += "</div> ";
+        }
 
         resultsDiv.innerHTML = htmlString;
       })
