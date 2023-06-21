@@ -22,9 +22,10 @@ document
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-        document.getElementById("loginMessage").innerHTML =
-          "Verify your info or create an account :)";
+        if (data.message === "Username is NOT in the database") {
+          document.getElementById("loginMessage").innerHTML =
+            "Verify your info or create an account :)";
+        }
       })
       .catch((error) => console.error("Error:", error));
   });

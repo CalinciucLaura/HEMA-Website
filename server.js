@@ -4,9 +4,11 @@ const path = require("path");
 const querystring = require("querystring");
 const { Console } = require("console");
 const { returnStaticResource } = require("./api/StaticResource");
-const { r } = require("tar");
+const { r, c, update } = require("tar");
 const { eventNames } = require("process");
+const { getRandomValues } = require("crypto");
 //const { DatabaseManage } = require("./api/DatabaseManage");
+const crypto = require("crypto"); //pentru token random
 
 const sqlite3 = require("sqlite3").verbose();
 
@@ -26,7 +28,7 @@ db.run(`CREATE TABLE IF NOT EXISTS users(
     username TEXT,
     email TEXT,
     password TEXT,
-    isLogged INTEGER
+    sessionToken TEXT
 )`);
 
 db.run(`CREATE TABLE IF NOT EXISTS plantAbout(
@@ -38,6 +40,10 @@ db.run(`CREATE TABLE IF NOT EXISTS plantAbout(
   conditions TEXT,
   season TEXT
 )`);
+
+db.run(
+  "CREATE TABLE IF NOT EXISTS collection ( id_plant INTEGER, id_user INTEGER, FOREIGN KEY(id_plant) REFERENCES plantAbout(id), FOREIGN KEY(id_user) REFERENCES users(id))"
+);
 
 function isInDatabase(username, email) {
   return new Promise((resolve, reject) => {
@@ -193,9 +199,20 @@ const server = http.createServer((req, res) => {
               email.includes(".") &&
               password.length >= 1
             ) {
+              //Atunci cand se conecteaza, se face un cookie pentru fiecare user
+
+              let token = crypto.randomBytes(20).toString("hex");
+
+              //seteaza cookie
+              res.setHeader(
+                "Set-Cookie",
+                "session=" + token + "; Path=/; HttpOnly"
+              );
+              console.log("Cookie setat");
+
               db.run(
-                "INSERT INTO users(username, email, password, isLogged) VALUES(?, ?, ?, 1)",
-                [username, email, password],
+                "INSERT INTO users(username, email, password, sessionToken) VALUES(?, ?, ?, ?)",
+                [username, email, password, token],
                 function (err) {
                   if (err) {
                     return console.error(err.message);
@@ -211,11 +228,6 @@ const server = http.createServer((req, res) => {
                       message: "User was added to the database",
                     })
                   );
-
-                  //res.setHeader('Set-Cookie', 'session=123456; Path=/; HttpOnly');
-
-                  // res.writeHead(302, { 'Location': '/Main/Main.html' });
-                  // res.end();
                 }
               );
             } else {
@@ -253,8 +265,29 @@ const server = http.createServer((req, res) => {
             );
             return;
           } else {
+            //Atunci cand se conecteaza, se face un cookie pentru fiecare user
+
+            let token = Math.random().toString(36).substr(2, 8);
+
+            //seteaza cookie
+
+            res.setHeader(
+              "Set-Cookie",
+              "session=" + token + "; Path=/; HttpOnly"
+            );
+            console.log("Cookie setat");
+
+            //update in baza de date
+            let sql = `UPDATE users SET sessionToken = ? WHERE username = ?`;
+            db.run(sql, [token, username], function (err) {
+              if (err) {
+                return console.error(err.message);
+              }
+              console.log(`Row(s) updated: ${this.changes}`);
+            });
+
             res.writeHead(200, { "Content-Type": "application/json" });
-            res.end(JSON.stringify({ message: "User was sent to Main page" }));
+            res.end(JSON.stringify(username));
           }
         })
         .catch((err) => console.error(err));
@@ -262,8 +295,45 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  //LOGOUT
+  //Sterge cookie-ul
+
+  if (req.method === "GET" && req.url === "/api/logout") {
+    //ia cookie-ul
+
+    let cookies = req.headers.cookie.split("; ");
+    let sessionToken;
+
+    for (let cookie of cookies) {
+      let [name, value] = cookie.split("=");
+      if (name === "session") {
+        sessionToken = value;
+        break;
+      }
+    }
+
+    console.log("Token-ul este: ", sessionToken);
+
+    //update in baza de date
+    let sql = `UPDATE users SET sessionToken = ? WHERE sessionToken = ? `; //seteaza isLogged pe null
+    db.run(sql, [null, sessionToken], function (err) {
+      if (err) {
+        return console.error(err.message);
+      }
+      console.log(`Row(s) updated: ${this.changes}`);
+    });
+
+    //sterge cookie
+    res.setHeader("Set-Cookie", "session=; Path=/; HttpOnly");
+    console.log("Cookie sters");
+
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({ message: "You are logged out" }));
+    return;
+  }
+
   if (!req.url.startsWith("/api") && req.method === "GET") {
-    console.log("Am intrat in pagina");
+    //console.log("Am intrat in pagina");
     returnStaticResource(req, res);
     return;
   }
