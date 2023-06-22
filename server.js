@@ -1,15 +1,13 @@
 const http = require("http");
 const fs = require("fs"); //manipularea fisierelor
 const path = require("path");
-const querystring = require("querystring");
+
 const { Console } = require("console");
 const { returnStaticResource } = require("./api/StaticResource");
 const { r, c, update } = require("tar");
-const { eventNames } = require("process");
-const { getRandomValues } = require("crypto");
+
 //const { DatabaseManage } = require("./api/DatabaseManage");
 const crypto = require("crypto"); //pentru token random
-
 const sqlite3 = require("sqlite3").verbose();
 
 const db = new sqlite3.Database(
@@ -122,6 +120,21 @@ function getFromDatabase(category, name, type, color, conditions, season) {
   });
 }
 
+function getCookie(req) {
+  let cookies = req.headers.cookie.split("; ");
+  let sessionToken;
+
+  for (let cookie of cookies) {
+    let [name, value] = cookie.split("=");
+    if (name === "session") {
+      sessionToken = value;
+      break;
+    }
+  }
+
+  return sessionToken;
+}
+
 const server = http.createServer((req, res) => {
   //console.log("Path ul este:" , req.url);
 
@@ -181,7 +194,6 @@ const server = http.createServer((req, res) => {
     });
 
     req.on("end", () => {
-      // const { username, email, password } = querystring.parse(body);  //extrage username, email, password din body
       const { username, email, password } = JSON.parse(body);
 
       isInDatabase(username, email)
@@ -297,8 +309,8 @@ const server = http.createServer((req, res) => {
 
   //LOGOUT
   //Sterge cookie-ul
-
   if (req.method === "GET" && req.url === "/api/logout") {
+    console.log("You are in the logout page");
     //ia cookie-ul
 
     let cookies = req.headers.cookie.split("; ");
@@ -332,9 +344,11 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  if (!req.url.startsWith("/api") && req.method === "GET") {
-    //console.log("Am intrat in pagina");
-    returnStaticResource(req, res);
+  if (req.url === "/" && req.method === "GET") {
+    returnStaticResource(req, res, false);
+    return;
+  } else if (!req.url.startsWith("/api") && req.method === "GET") {
+    returnStaticResource(req, res, true);
     return;
   }
 });

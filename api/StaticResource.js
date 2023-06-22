@@ -1,12 +1,21 @@
 const fs = require("fs"); //manipularea fisierelor
 const path = require("path");
+const { c } = require("tar");
 
-function returnStaticResource(req, res) {
+function returnStaticResource(req, res, next) {
+  //console.log("Url", req.url);
+
   let filePath;
   let extname;
   let contentType = "text/html";
 
-  filePath = path.join(__dirname, "..", "pages", req.url);
+  if (next == true) {
+    filePath = path.join(__dirname, "..", "pages", req.url);
+  } else {
+    filePath = path.join(__dirname, "..", "pages", "Login", "login.html");
+  }
+
+  console.log("filePath", filePath);
 
   if (filePath === undefined) {
     res.writeHead(404);
@@ -29,7 +38,7 @@ function returnStaticResource(req, res) {
       break;
   }
 
-  //console.log(filePath);
+  //console.log("File", filePath);
 
   fs.readFile(filePath, (err, content) => {
     if (err) {

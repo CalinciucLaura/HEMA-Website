@@ -1,3 +1,5 @@
+console.log("logout.js");
+
 document
   .getElementById("login-link")
   .addEventListener("click", function (event) {
@@ -10,7 +12,10 @@ document
       },
     })
       .then((response) => {
-        window.location.replace("/Login/Login.html");
+        if (response.status === 200) {
+          window.location.replace("/");
+        }
+        return response.json();
       })
       .catch((error) => console.error("Error:", error));
   });

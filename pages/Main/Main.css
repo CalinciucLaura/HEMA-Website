@@ -164,6 +164,7 @@ header {
   font-family: "Raleway", sans-serif;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
@@ -178,6 +179,9 @@ header {
 .PLANT-BOX:hover .TEXT-BOX {
   opacity: 1;
 }
+
+
+
 
 /* SEARCH */
 

@@ -1,0 +1,11 @@
+{
+    "dependencies": {
+      "fs": "^0.0.1-security",
+      "jsonfile": "^6.1.0",
+      "jspdf": "^2.5.1",
+      "node": "^20.2.0",
+      "sqlite3": "^5.0.2",
+      "tar": "^6.1.1",
+      "util": "^0.12.5"
+    }
+  }
