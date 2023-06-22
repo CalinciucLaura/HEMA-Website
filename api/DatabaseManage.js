@@ -39,6 +39,7 @@ db.exec(
   (err) => {
     if (err) {
       console.error(err.message);
+      a;
     }
   }
 );
