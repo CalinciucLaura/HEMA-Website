@@ -1,5 +1,3 @@
-const { waitForDebugger } = require("inspector");
-
 const sqlite3 = require("sqlite3").verbose();
 
 const db = new sqlite3.Database(
@@ -32,8 +30,8 @@ db.exec(
   ("house", "snake plant", "plant", "green", "sun", "all", "Snake plants, also known as Sansevieria or mother in law's tongue, are a popular houseplant known for their hardiness and ability to tolerate low light conditions. They are native to tropical regions of Africa and Asia and are characterized by their long, upright leaves with variegated patterns of green and yellow. Snake plants are valued for their ornamental appeal and air purifying qualities, making them a common choice for indoor greenery."),
   ("house", "bird's nest fern", "plant", "green", "shade", "all", "The bird's nest fern, scientifically known as Asplenium nidus, is a unique and visually captivating fern species. It earned its name due to the shape of its leaves, which resemble a nest or a bird's roosting place. Native to tropical regions and rainforests, the bird's nest fern is often found growing on trees or rocks, absorbing moisture and nutrients from the air and surrounding environment."),
   ("house", "monsterra", "plant", "green", "sun", "all", "Monstera, also known as Monstera deliciosa or the Swiss cheese plant, is a popular and visually striking tropical houseplant. Its large, glossy, and uniquely perforated leaves give it the nickname 'Swiss cheese plant' due to their resemblance to holey cheese. The Monstera is native to the tropical rainforests of Central and South America and has gained immense popularity for its aesthetic appeal and ease of care."),
-  ("house", "bromeliad", "plant", "red", "sun", "all", "Bromeliads are stunning and versatile tropical plants that belong to the Bromeliaceae family. Known for their vibrant colors, unique rosette shaped foliage, and exotic flower spikes, bromeliads are popular for their ornamental value."),
-  ("house", "succulent", "plant", "green", "sun", "all","Succulents are charming, low maintenance plants known for their fleshy leaves and ability to store water. These unique plants come in a wide variety of shapes, sizes, and colors, making them a favorite among plant enthusiasts. With their thick, juicy leaves and often compact growth habits, succulents are well suited for indoor and outdoor spaces alike." ),
+  ("house", "bromeliad", "plant", "red", "sun", "all", "Bromeliads are stunning and versatile tropical plants that belong to the Bromeliaceae family. Known for their vibrant colors, unique rosette-shaped foliage, and exotic flower spikes, bromeliads are popular for their ornamental value."),
+  ("house", "succulent", "plant", "green", "sun", "all","Succulents are charming, low-maintenance plants known for their fleshy leaves and ability to store water. These unique plants come in a wide variety of shapes, sizes, and colors, making them a favorite among plant enthusiasts. With their thick, juicy leaves and often compact growth habits, succulents are well-suited for indoor and outdoor spaces alike." ),
   ("house", "devil's ivy", "plant", "green", "sun", "all", "Devil's ivy is a popular houseplant that is tolerant of a wide range of growing conditions. It can be grown in low light or bright light, and it can be grown in soil or in water. It is also a very easy plant to propagate, and it can be grown from cuttings or from seed.")
   `,
   (err) => {
@@ -46,7 +44,7 @@ db.exec(
 
 db.exec(
   `
-  INSERT INTO plantAbout (category, name, type, color, conditions, season,description) VALUES
+  INSERT INTO plantAbout (category, name, type, color, conditions, season, description) VALUES
   ("garden", "roses", "flower", "red", "sun", "summer","Roses are a popular crop for both domestic and commercial cut flowers. Generally they are harvested and cut when in bud, and held in refrigerated conditions until ready for display at their point of sale."),
   ("garden", "liliac", "shrub", "purple", "sun","spring","Lilacs are popular shrubs in parks and gardens throughout the temperate zone, and several hybrids and numerous cultivars have been developed. The term French lilac is often used to refer to modern double flowered cultivars, thanks to the work of prolific breeder Victor Lemoine."),
   ("garden", "dahlias", "flower", "purple", "sun", "summer","Dahlias are a genus of bushy, tuberous, herbaceous perennial plants native to Mexico and Central America. A member of the Asteraceae, dicotyledonous plants, related species include the sunflower, daisy, chrysanthemum, and zinnia."),
@@ -128,7 +126,7 @@ db.exec(
   ("medicinal", "black cohosh", "herb", "white", "sun", "summer", "Actaea racemosa, black cohosh, black bugbane, black snakeroot, or fairy candle, is a species of flowering plant of the family Ranunculaceae. It is native to eastern North America from the extreme south of Ontario to central Georgia, and west to Missouri and Arkansas."),
   ("medicinal", "thyme", "herb", "green", "sun", "summer", "Thyme is any member of the genus Thymus of aromatic perennial evergreen herbs in the mint family Lamiaceae. Thymes are relatives of the oregano genus Origanum. They have culinary, medicinal, and ornamental uses, the species most commonly cultivated and used for culinary purposes being Thymus vulgaris."),
   ("medicinal", "panax", "herb", "red", "sun", "summer", "Panax ginseng, also known as Asian ginseng, Chinese ginseng, or Korean ginseng, is a species of plant whose root is the original source of ginseng. It is native to China, Korea, and Russia. It has been used in traditional Chinese medicine for thousands of years, often for improving stamina and mental performance."),
-  ("medicinal", "aloe vera medicinal", "plant", "green", "water", "all", "Aloe vera is a succulent plant species of the genus Aloe. An evergreen perennial, it originates from the Arabian Peninsula, but grows wild in tropical, semi tropical, and arid climates around the world. It is cultivated for agricultural and medicinal uses.")
+  ("medicinal", "aloe vera medicinal", "plant", "green", "water", "all", "Aloe vera is a succulent plant species of the genus Aloe. An evergreen perennial, it originates from the Arabian Peninsula, but grows wild in tropical, semi-tropical, and arid climates around the world. It is cultivated for agricultural and medicinal uses.")
   `,
   (err) => {
     if (err) {
