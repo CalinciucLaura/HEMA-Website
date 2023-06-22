@@ -6,7 +6,7 @@ const { Console } = require("console");
 const { returnStaticResource } = require("./api/StaticResource");
 const { r, c, update } = require("tar");
 
-const { DatabaseManage } = require("./api/DatabaseManage");
+//const { DatabaseManage } = require("./api/DatabaseManage");
 const crypto = require("crypto"); //pentru token random
 const sqlite3 = require("sqlite3").verbose();
 

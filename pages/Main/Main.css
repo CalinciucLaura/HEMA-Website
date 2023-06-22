@@ -129,6 +129,8 @@ header {
 
 /* PLANTS CATEGORY */
 
+/* PLANTS CATEGORY */
+
 .PLANT-CONTAINER h3 {
   font-family: "Raleway", sans-serif;
   letter-spacing: 15px;
@@ -174,19 +176,10 @@ header {
   color: white;
   display: flex;
   flex-direction: column;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-}
-.TEXT-BOX button {
-  background-color: #ff0000;
-  color: #ffffff;
-  border: none;
-  padding: 8px 16px;
-  margin-top: 10px;
-  cursor: pointer;
 }
 
 .TEXT-BOX p {
@@ -194,6 +187,38 @@ header {
   margin: 10px;
   line-height: 1.5;
 }
+
+
+
+.heart-default, .heart-active {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background-color: rgba(0,0,0,0.6);
+  border: 1px solid white;
+  padding: 15px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.heart-default {
+  color: white; /* this makes the heart icon semi-transparent */
+}
+
+.heart-active {
+  color: red;
+}
+
+.heart-default:hover, .heart-active:hover {
+  color: gray
+  transition: 0.5s;
+}
+
+
+
 
 /* SEARCH */
 
