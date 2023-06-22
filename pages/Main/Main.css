@@ -189,6 +189,12 @@ header {
   cursor: pointer;
 }
 
+.TEXT-BOX p{
+  font-size : 15px;
+  margin: 10px;
+  line-height: 1.5;
+}
+
 /* SEARCH */
 
 .FILTER {

@@ -99,6 +99,7 @@ document
                          )}.jpg" />
                          <div class = "TEXT-BOX">
                           <h3>${element.name}</h3>
+                          <p>${element.description}</p>
                           </div>
                           </div>
           `;

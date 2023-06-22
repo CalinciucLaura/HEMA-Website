@@ -81,7 +81,7 @@ function isInDatabase2(username, password) {
 }
 
 function getFromDatabase(category, name, type, color, conditions, season) {
-  let query = "SELECT name FROM plantAbout WHERE";
+  let query = "SELECT name, description FROM plantAbout WHERE";
   let params = [];
 
   console.log(category, name, type, color, conditions, season);
