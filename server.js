@@ -36,7 +36,8 @@ db.run(`CREATE TABLE IF NOT EXISTS plantAbout(
   type TEXT,
   color TEXT,
   conditions TEXT,
-  season TEXT
+  season TEXT,
+  description TEXT
 )`);
 
 db.run(
