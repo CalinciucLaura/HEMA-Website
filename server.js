@@ -6,7 +6,7 @@ const { Console } = require("console");
 const { returnStaticResource } = require("./api/StaticResource");
 const { r, c, update } = require("tar");
 
-//const { DatabaseManage } = require("./api/DatabaseManage");
+const { DatabaseManage } = require("./api/DatabaseManage");
 const crypto = require("crypto"); //pentru token random
 const sqlite3 = require("sqlite3").verbose();
 
@@ -81,7 +81,7 @@ function isInDatabase2(username, password) {
 }
 
 function getFromDatabase(category, name, type, color, conditions, season) {
-  let query = "SELECT name FROM plantAbout WHERE";
+  let query = "SELECT name,description FROM plantAbout WHERE";
   let params = [];
 
   console.log(category, name, type, color, conditions, season);
