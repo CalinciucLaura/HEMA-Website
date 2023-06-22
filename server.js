@@ -4,8 +4,6 @@ const path = require("path");
 const querystring = require("querystring");
 const sqlite3 = require("sqlite3").verbose();
 
-const accessKey = "mhn1bf_6krB1bc1YlRGbcqD-llHPZk-LL8hMUHGxJlk";
-
 // Connect to database
 const db = new sqlite3.Database(
   "Database/person.db",
