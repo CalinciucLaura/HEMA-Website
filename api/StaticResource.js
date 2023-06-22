@@ -15,7 +15,7 @@ function returnStaticResource(req, res, next) {
     filePath = path.join(__dirname, "..", "pages", "Login", "login.html");
   }
 
-  console.log("filePath", filePath);
+  //console.log("filePath", filePath);
 
   if (filePath === undefined) {
     res.writeHead(404);
