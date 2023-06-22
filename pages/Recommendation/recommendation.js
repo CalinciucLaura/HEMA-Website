@@ -1,7 +1,7 @@
-// recommendation.js
-
 const accessKey = "mhn1bf_6krB1bc1YlRGbcqD-llHPZk-LL8hMUHGxJlk";
-// const jsPDF = window.jspdf.jsPDF;
+
+//const jsPDF = require("jspdf");
+//import { jsPDF } from "jspdf";
 
 const fetchPhotos = async () => {
   try {
@@ -91,7 +91,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       feedContainer.appendChild(photoContainer);
     });
     const resolvedData = await Promise.all(combinedPromise);
-    // const document = new jsPDF();
+
+    //const document = new jsPDF();
+
     resolvedData.forEach((stat, index) => {
       const id = stat.id;
       const totalLikes = stat.likes.total;

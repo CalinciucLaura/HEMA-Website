@@ -20,7 +20,7 @@ header {
 /* /
 #house-link {
   width: 100px; /* adjust the width as needed */
-  /* margin: 0 auto;
+/* margin: 0 auto;
 }  */
 .LOGO {
   display: block;
@@ -154,6 +154,15 @@ header {
   box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
 }
 
+.PLANT-BOX img {
+  width: 100%;
+  opacity: 0.9;
+}
+
+.PLANT-BOX:hover .TEXT-BOX {
+  opacity: 1;
+}
+
 .TEXT-BOX {
   position: absolute;
   top: 0;
@@ -164,72 +173,68 @@ header {
   font-family: "Raleway", sans-serif;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-
-.PLANT-BOX img {
-  width: 100%;
-  opacity: 0.9;
-}
-
-.PLANT-BOX:hover .TEXT-BOX {
-  opacity: 1;
+.TEXT-BOX button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 /* SEARCH */
 
-.FILTER{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color:whitesmoke;
-    font-family: "Raleway", sans-serif;
-    border: 2px solid white;
-   
+.FILTER {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  border: 2px solid white;
 }
 
-.FILTER H2{
-   text-align: center;
-   font-size: 50px;
-   letter-spacing: 5px;
+.FILTER H2 {
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 5px;
 }
 
 .FILTER-BOX {
-    width: 100%;
-    justify-content: space-evenly;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
 }
 
-
-.FILTER-BOX select{
-    background-color: rgba(37, 172, 37, 0.63);
-    color: whitesmoke;
-    font-family: "Raleway", sans-serif;
-    margin-left: 10px;
-    border: 1px solid white;
-    width: 80%;
-    padding: 10px;
-    margin:10px;
-    text-align: center;
+.FILTER-BOX select {
+  background-color: rgba(37, 172, 37, 0.63);
+  color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+  margin-left: 10px;
+  border: 1px solid white;
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
 }
 
-
-.FILTER input{
-    height: 40px;
-    width: 150px;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    font-weight: bold;
-    margin: 20px 0px;
-    font-size: 10px;
-    box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+.FILTER input {
+  height: 40px;
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  margin: 20px 0px;
+  font-size: 10px;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
 }
-
 
 /* FIND */
 .BOX-FIND {
@@ -354,24 +359,22 @@ header {
   width: 60%;
   display: block;
   margin: auto;
-  color:#d3cbcb;
+  color: #d3cbcb;
   font-family: "Poppins", sans-serif;
   line-height: 30px;
-
 }
 
-.DESCRIPTION h1{
+.DESCRIPTION h1 {
   text-align: center;
   font-size: 30px;
   margin: 50px;
 }
 
-.DESCRIPTION h2{
+.DESCRIPTION h2 {
   font-size: 15px;
 }
 
-
-.DETAILS{
+.DETAILS {
   display: block;
   width: 30%;
   align-items: center;
@@ -380,43 +383,42 @@ header {
   font-weight: bold;
 }
 
-.DETAILS label{
-  color:white;
+.DETAILS label {
+  color: white;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-.DETAILS input{
+.DETAILS input {
   width: 70%;
   height: 30px;
   border-radius: 10px;
   background-color: #888;
-  color:#1e1e1e;
+  color: #1e1e1e;
   font-family: "Poppins", sans-serif;
- font-weight: bold;
- margin: 20px 0px;
- padding:5px;
+  font-weight: bold;
+  margin: 20px 0px;
+  padding: 5px;
 }
 
-.DETAILS select{
+.DETAILS select {
   width: 70%;
   height: 30px;
   border-radius: 10px;
   background-color: #888;
-  color:#1e1e1e;
+  color: #1e1e1e;
   font-family: "Poppins", sans-serif;
- font-weight: bold;
- margin: 20px 0px;
- padding:5px;
+  font-weight: bold;
+  margin: 20px 0px;
+  padding: 5px;
 }
 
-.DETAILS h2{
+.DETAILS h2 {
   font-size: 40px;
-  color:#d3cbcb;
+  color: #d3cbcb;
   margin: 100px 0;
   letter-spacing: 2px;
 }
-
 
 /* DIALOG BOX */
 
@@ -433,15 +435,15 @@ header {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-#dialog-title{
+#dialog-title {
   text-align: center;
   font-size: 40px;
-  color:#f5faf5c7;
+  color: #f5faf5c7;
 }
 
 .dialog-content {
   background-color: #1e1e1e;
-  color:white;
+  color: white;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -463,12 +465,9 @@ header {
   cursor: pointer;
 }
 
-
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
-
-
   /* BACKGROUND */
 
   .BACKGROUND {
@@ -513,8 +512,6 @@ header {
     margin: 20px 0px;
   }
 
-
-
   .PLANT-ROW {
     display: flex;
     flex-direction: column;
@@ -526,7 +523,7 @@ header {
   .PLANT-BOX {
     position: relative;
     display: inline-block;
-    width:60%;
+    width: 60%;
     margin: 40px 0px;
   }
 
@@ -555,86 +552,76 @@ header {
     width: 50%;
   }
 
-.FILTER{
-  width: 90%;
-  margin: auto;
-}
+  .FILTER {
+    width: 90%;
+    margin: auto;
+  }
 
-.FILTER H2{
-   font-size: 40px;
-}
+  .FILTER H2 {
+    font-size: 40px;
+  }
 
-.FILTER-BOX {
+  .FILTER-BOX {
     width: 50%;
     display: flex;
     flex-direction: column;
-}
+  }
 
-
-.FILTER-BOX select{
-    
+  .FILTER-BOX select {
     margin-left: 0px;
     border: 1px solid white;
     width: 80%;
     padding: 10px;
-    margin:20px;
-}
+    margin: 20px;
+  }
 
-
-.FILTER input{
-  
+  .FILTER input {
     font-size: 15px;
-}
+  }
 
-.FIND {
-  width: 80%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  
-}
+  .FIND {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-.FIND img {
-width: 100%;
-}
+  .FIND img {
+    width: 100%;
+  }
 
-.GREEN {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  align-items: center;
-  width: 70%;
-  margin: 30px auto;
-  background-size:70% auto;
+  .GREEN {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    width: 70%;
+    margin: 30px auto;
+    background-size: 70% auto;
+  }
 
-}
+  .GREEN-IMAGE {
+    width: auto;
+    height: auto;
+  }
 
-.GREEN-IMAGE {
-  width: auto;
-  height: auto;
-}
+  .BETWEEN-GREEN {
+    display: block;
+    width: auto;
+    height: auto;
+  }
 
+  .DESCRIPTION {
+    width: 70%;
+    display: block;
+    margin: auto;
+  }
 
-.BETWEEN-GREEN {
-  display: block;
-  width: auto;
-  height: auto;
-}
-
-.DESCRIPTION {
-  width: 70%;
-  display: block;
-  margin: auto;
-}
-
-.DETAILS{
-  display: block;
-  width: 80%;
-  margin: 20px auto;
-}
-
-
-
+  .DETAILS {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+  }
 }
 
 /* NAVBAR RESPONSIVE */
@@ -686,8 +673,4 @@ width: 100%;
   .hamburger:hover {
     color: green;
   }
-
-
-
-
 }
