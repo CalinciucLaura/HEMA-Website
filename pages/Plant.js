@@ -60,7 +60,8 @@ buttons.forEach((button) => {
       })
       .then((data) => {
         console.log(data.rows);
-        localStorage.setItem("plant", data.rows);
+        localStorage.setItem("plant", JSON.stringify(data.rows));
+
         if (data.plantInCollection) {
           button.style.backgroundColor = "red";
         } else {

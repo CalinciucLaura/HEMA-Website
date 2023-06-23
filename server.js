@@ -178,7 +178,7 @@ function getCurrentUser(req) {
 function getYourCollection(id_user) {
   return new Promise((resolve, reject) => {
     db.all(
-      `SELECT name from plantAbout p JOIN collection c ON p.id = c.id_plant JOIN users u ON u.id = c.id_user WHERE id_user = ?`,
+      `SELECT name, description from plantAbout p JOIN collection c ON p.id = c.id_plant JOIN users u ON u.id = c.id_user WHERE id_user = ?`,
       [id_user],
       (err, row) => {
         if (err) {
@@ -449,7 +449,7 @@ const server = http.createServer((req, res) => {
         console.log(typeof id_user);
         console.log("Id-ul userului este: ", id_user);
 
-        // Check if the plant already exists in the user's collection
+        // already exists?
         const existingEntry = await checkExistingEntry(id_plant, id_user);
         let plantInCollection = false;
 
@@ -468,14 +468,18 @@ const server = http.createServer((req, res) => {
               }
               console.log("Plant removed from the collection");
 
-              res.writeHead(200, { "Content-Type": "application/json" });
-              res.end(
-                JSON.stringify({
-                  success: true,
-                  plantInCollection: false,
-                  message: "Plant removed from the collection",
-                })
-              );
+              getYourCollection(id_user).then((rows) => {
+                res.writeHead(200, { "Content-Type": "application/json" });
+                res.end(
+                  JSON.stringify({
+                    success: true,
+                    plantInCollection: false,
+                    message: "Plant removed from the collection",
+                    rows: rows,
+                  })
+                );
+                return;
+              });
             }
           );
         } else {
@@ -509,6 +513,33 @@ const server = http.createServer((req, res) => {
             }
           );
         }
+      } catch (err) {
+        console.error(err);
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.end("Server error");
+        return;
+      }
+    });
+  }
+
+  if (req.method === "POST" && req.url === "/api/showMyCollection") {
+    body = "";
+    req.on("data", (chunk) => {
+      body += chunk.toString(); // convert Buffer to string
+    });
+
+    req.on("end", async () => {
+      try {
+        const id_user = await getCurrentUser(req);
+        getYourCollection(id_user).then((rows) => {
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(
+            JSON.stringify({
+              rows,
+            })
+          );
+          return;
+        });
       } catch (err) {
         console.error(err);
         res.writeHead(500, { "Content-Type": "text/plain" });
