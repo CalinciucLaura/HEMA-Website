@@ -43,6 +43,7 @@ const buttons = document.querySelectorAll(".favorite-button");
 buttons.forEach((button) => {
   button.addEventListener("click", function () {
     const plantName = button.getAttribute("data-name");
+    console.log(plantName);
 
     fetch("/api/name", {
       method: "POST",

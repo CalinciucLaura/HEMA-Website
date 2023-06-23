@@ -416,6 +416,8 @@ const server = http.createServer((req, res) => {
       body += chunk.toString(); // convert Buffer to string
     });
 
+    console.log("You are in the name page");
+
     req.on("end", async () => {
       try {
         const { plantName } = JSON.parse(body);
@@ -486,6 +488,7 @@ const server = http.createServer((req, res) => {
         console.error(err);
         res.writeHead(500, { "Content-Type": "text/plain" });
         res.end("Server error");
+        return;
       }
     });
   }
