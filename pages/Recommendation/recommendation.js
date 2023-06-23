@@ -50,10 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const photoData = await fetchPhotos();
     const feedContainer = document.getElementById("feed-container");
-    //console.log(JSON.stringify(photoData));
-    //myjson = JSON.stringify(photoData);
-    // console.log(photoData);
-    // console.log(JSON.parse(JSON.stringify(photoData)));
+
     const combinedPromise = [];
     const combinedData = [];
     photoData.results.forEach((photo) => {
@@ -92,7 +89,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
     const resolvedData = await Promise.all(combinedPromise);
 
-    //const document = new jsPDF();
+    const doc = new jsPDF();
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "bold");
 
     resolvedData.forEach((stat, index) => {
       const id = stat.id;
@@ -102,12 +101,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       const photo = photoData.results[index];
       const photoName = photo.alt_description || photo.alt_description;
 
-      const yPos = (index + 1) * 15;
-      // document.text("Photo Name: ${photoName}", 10, yPos);
-      // document.text("Photo ID: ${id}", 50, yPos);
-      // document.text("Total Likes: ${totalLikes}", 100, yPos);
-      // document.text("Total Downloads: ${totalDownloads}", 150, yPos);
-      // document.text("Total Views: ${totalViews}", 200, yPos);
+      const yPos = (index + 1) * 30; // Adjust the vertical position for each line
+
+      doc.text(`Photo Name: ${photoName}`, 10, yPos);
+      doc.text(`Photo ID: ${id}`, 120, yPos);
+      doc.text(`Total Likes: ${totalLikes}`, 10, yPos + 10);
+      doc.text(`Total Downloads: ${totalDownloads}`, 70, yPos + 10);
+      doc.text(`Total Views: ${totalViews}`, 130, yPos + 10);
 
       const dataObject = {
         name: photoName,
@@ -152,9 +152,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     downloadPDF.addEventListener("click", () => {
-      document.setFontSize(20);
-      document.setFont("arial", "normal");
-      const pdfContent = document.output("blob");
+      // doc.setFontSize(5);
+      // doc.setFont("helvetica", "bold");
+      const pdfContent = doc.output("blob");
 
       // Create a download link for the PDF file
       const downloadLink = document.createElement("a");
