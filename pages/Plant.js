@@ -33,7 +33,9 @@ buttons.forEach((button) => {
         return response.json();
       })
       .then((data) => {
-        console.log("Success:", data);
+        console.log(data.rows);
+        localStorage.setItem("plant", JSON.stringify(data.rows));
+
         if (data.plantInCollection) {
           button.style.backgroundColor = "red";
         } else {
