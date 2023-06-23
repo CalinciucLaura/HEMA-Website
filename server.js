@@ -196,6 +196,7 @@ async function getUserData() {
   try {
     const userId = await getCurrentUser(req);
     console.log(userId);
+    return userId;
   } catch (error) {
     console.error(error);
   }
@@ -552,9 +553,11 @@ const server = http.createServer((req, res) => {
 
   if (req.url === "/" && req.method === "GET") {
     returnStaticResource(req, res, false);
+
     return;
   } else if (!req.url.startsWith("/api") && req.method === "GET") {
     returnStaticResource(req, res, true);
+
     return;
   }
 });

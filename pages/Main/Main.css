@@ -186,6 +186,9 @@ header {
   transition: 0.5s;
 }
 
+.heart-active {
+  color: red; 
+}
 
 
 .TEXT-BOX {

@@ -1,10 +1,10 @@
+const { Console } = require("console");
 const fs = require("fs"); //manipularea fisierelor
+const { get } = require("http");
 const path = require("path");
-const { c } = require("tar");
+const { r, c, update } = require("tar");
 
 function returnStaticResource(req, res, next) {
-  //console.log("Url", req.url);
-
   let filePath;
   let extname;
   let contentType = "text/html";
@@ -14,8 +14,6 @@ function returnStaticResource(req, res, next) {
   } else {
     filePath = path.join(__dirname, "..", "pages", "Login", "login.html");
   }
-
-  //console.log("filePath", filePath);
 
   if (filePath === undefined) {
     res.writeHead(404);
@@ -32,13 +30,10 @@ function returnStaticResource(req, res, next) {
     case ".css":
       contentType = "text/css";
       break;
-
     case ".html":
       contentType = "text/html";
       break;
   }
-
-  //console.log("File", filePath);
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
@@ -50,8 +45,8 @@ function returnStaticResource(req, res, next) {
         res.end(`Server Error: ${err.code}`);
       }
     } else {
-      res.writeHead(200, { "Content-Type": contentType }); //200 = OK
-      res.end(content, "utf8");
+      res.writeHead(200, { "Content-Type": contentType });
+      res.end(content);
     }
   });
 }
