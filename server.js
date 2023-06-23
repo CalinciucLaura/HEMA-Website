@@ -434,10 +434,9 @@ const server = http.createServer((req, res) => {
 
         // Check if the plant already exists in the user's collection
         const existingEntry = await checkExistingEntry(id_plant, id_user);
-        let plantInCollection = false;
+        let plantInCollection = false; // Initialize with false by default
 
         if (existingEntry) {
-          plantInCollection = true;
           // Plant already exists in the collection, remove it
           db.run(
             "DELETE FROM collection WHERE id_plant = ? AND id_user = ?",
@@ -449,12 +448,13 @@ const server = http.createServer((req, res) => {
                 res.end("Server error");
                 return;
               }
+              plantInCollection = false; // Update to false
               console.log("Plant removed from the collection");
               res.writeHead(200, { "Content-Type": "application/json" });
               res.end(
                 JSON.stringify({
                   success: true,
-                  plantInCollection: false,
+                  plantInCollection: existingEntry,
                   message: "Plant removed from the collection",
                 })
               );
@@ -472,13 +472,15 @@ const server = http.createServer((req, res) => {
                 res.end("Server error");
                 return;
               }
+              plantInCollection = true; // Update to true
               // get the last insert id
               console.log(`A row has been inserted with rowid ${this.lastID}`);
               res.writeHead(200, { "Content-Type": "application/json" });
               res.end(
                 JSON.stringify({
                   success: true,
-                  plantInCollection: plantInCollection,
+                  plantInCollection: !existingEntry,
+                  message: "Plant added to the collection",
                 })
               );
             }
