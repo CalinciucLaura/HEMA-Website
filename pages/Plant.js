@@ -13,28 +13,31 @@ function closeDialog() {
   dialog.style.display = "none";
 }
 
-const button = document.querySelector(".favorite-button");
+console.log("plant.js");
 
-button.addEventListener("click", function () {
-  const plantName = this.dataset.name;
+const buttons = document.querySelectorAll(".favorite-button");
 
-  fetch("/api/name", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ plantName: plantName }),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const plantName = button.getAttribute("data-name");
+    console.log(plantName);
+
+    fetch("/api/name", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: plantName }),
     })
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        localStorage.setItem("plant", data.name);
+      })
+
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });
 });

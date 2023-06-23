@@ -175,15 +175,6 @@ function getCurrentUser(req) {
   });
 }
 
-async function getUserData() {
-  try {
-    const userId = await getCurrentUser(req);
-    console.log(userId);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 const server = http.createServer((req, res) => {
   //console.log("Path ul este:" , req.url);
 
@@ -400,9 +391,12 @@ const server = http.createServer((req, res) => {
       body += chunk.toString(); // convert Buffer to string
     });
 
+    console.log("You are in the name page");
+
     req.on("end", async () => {
       try {
         const { name } = JSON.parse(body);
+
         const id_plant = await getIdPlant(name);
         const id_user = await getCurrentUser(req);
 
@@ -421,13 +415,17 @@ const server = http.createServer((req, res) => {
             // get the last insert id
             console.log(`A row has been inserted with rowid ${this.lastID}`);
             res.writeHead(200, { "Content-Type": "application/json" });
-            res.end(JSON.stringify({ success: true }));
+            res.end(
+              JSON.stringify({ success: true, id_plant: id_plant, name: name })
+            );
+            return;
           }
         );
       } catch (err) {
         console.error(err);
         res.writeHead(500, { "Content-Type": "text/plain" });
         res.end("Server error");
+        return;
       }
     });
   }
