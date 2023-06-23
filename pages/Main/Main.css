@@ -187,6 +187,18 @@ header {
   margin: 10px;
   line-height: 1.5;
 }
+@media screen and (max-width:768px)
+{
+  .TEXT-BOX p{
+    font-size:10px;
+  }
+}
+@media screen and (max-width:480px)
+{
+  .TEXT-BOX p{
+    font-size:5px;
+  }
+}
 
 
 

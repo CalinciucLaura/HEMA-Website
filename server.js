@@ -133,7 +133,55 @@ function getCookie(req) {
     }
   }
 
+  console.log("Session token:", sessionToken);
   return sessionToken;
+}
+
+function getIdPlant(name) {
+  console.log("Pas4", name);
+
+  return new Promise((resolve, reject) => {
+    db.get(`SELECT id FROM plantAbout WHERE name = ?`, [name], (err, row) => {
+      if (err) {
+        console.log("Eroare");
+        console.error(err.message);
+        reject(err);
+      } else {
+        console.log("Id-ul plantei este", row.id);
+        resolve(row.id);
+      }
+    });
+  });
+}
+
+function getCurrentUser(req) {
+  return new Promise((resolve, reject) => {
+    let sessionToken = getCookie(req);
+    console.log("Tokenul este", sessionToken);
+    db.get(
+      `SELECT id FROM users WHERE sessionToken = ?`,
+      [sessionToken],
+      (err, row) => {
+        if (err) {
+          console.log("Este o eroare la selectarea id-ului userului");
+          console.error(err.message);
+          reject(err);
+        } else {
+          console.log("Id-ul userului este", row.id);
+          resolve(row.id);
+        }
+      }
+    );
+  });
+}
+
+async function getUserData() {
+  try {
+    const userId = await getCurrentUser(req);
+    console.log(userId);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 const server = http.createServer((req, res) => {
@@ -343,6 +391,45 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ message: "You are logged out" }));
     return;
+  }
+
+  if (req.method === "POST" && req.url === "/api/name") {
+    let body = "";
+
+    req.on("data", (chunk) => {
+      body += chunk.toString(); // convert Buffer to string
+    });
+
+    req.on("end", async () => {
+      try {
+        const { name } = JSON.parse(body);
+        const id_plant = await getIdPlant(name);
+        const id_user = await getCurrentUser(req);
+
+        console.log("Id-ul userului este", id_user);
+
+        db.run(
+          "INSERT INTO collection (id_plant, id_user) VALUES (?, ?)",
+          [id_plant, id_user],
+          function (err) {
+            if (err) {
+              console.error(err.message);
+              res.writeHead(500, { "Content-Type": "text/plain" });
+              res.end("Server error");
+              return;
+            }
+            // get the last insert id
+            console.log(`A row has been inserted with rowid ${this.lastID}`);
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ success: true }));
+          }
+        );
+      } catch (err) {
+        console.error(err);
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.end("Server error");
+      }
+    });
   }
 
   if (req.url === "/" && req.method === "GET") {
