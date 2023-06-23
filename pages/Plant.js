@@ -33,7 +33,8 @@ buttons.forEach((button) => {
         return response.json();
       })
       .then((data) => {
-        localStorage.setItem("plant", data.name);
+        console.log(data.rows);
+        localStorage.setItem("plant", data.rows);
       })
 
       .catch((error) => {

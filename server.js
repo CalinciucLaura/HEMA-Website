@@ -175,6 +175,23 @@ function getCurrentUser(req) {
   });
 }
 
+function getYourCollection(id_user) {
+  return new Promise((resolve, reject) => {
+    db.all(
+      `SELECT name from plantAbout p JOIN collection c ON p.id = c.id_plant JOIN users u ON u.id = c.id_user WHERE id_user = ?`,
+      [id_user],
+      (err, row) => {
+        if (err) {
+          console.error(err.message);
+          reject(err);
+        } else {
+          resolve(row);
+        }
+      }
+    );
+  });
+}
+
 const server = http.createServer((req, res) => {
   //console.log("Path ul este:" , req.url);
 
@@ -414,11 +431,15 @@ const server = http.createServer((req, res) => {
             }
             // get the last insert id
             console.log(`A row has been inserted with rowid ${this.lastID}`);
-            res.writeHead(200, { "Content-Type": "application/json" });
-            res.end(
-              JSON.stringify({ success: true, id_plant: id_plant, name: name })
-            );
-            return;
+
+            //get all rows from collection
+            getYourCollection(id_user).then((rows) => {
+              console.log("Rows from collection", rows);
+
+              res.writeHead(200, { "Content-Type": "application/json" });
+              res.end(JSON.stringify({ success: true, rows }));
+              return;
+            });
           }
         );
       } catch (err) {
