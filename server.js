@@ -184,6 +184,22 @@ async function getUserData() {
   }
 }
 
+async function checkExistingEntry(id_plant, id_user) {
+  return new Promise((resolve, reject) => {
+    db.get(
+      "SELECT * FROM collection WHERE id_plant = ? AND id_user = ?",
+      [id_plant, id_user],
+      (err, row) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        resolve(row !== undefined);
+      }
+    );
+  });
+}
+
 const server = http.createServer((req, res) => {
   //console.log("Path ul este:" , req.url);
 
@@ -402,28 +418,70 @@ const server = http.createServer((req, res) => {
 
     req.on("end", async () => {
       try {
-        const { name } = JSON.parse(body);
-        const id_plant = await getIdPlant(name);
+        const { plantName } = JSON.parse(body);
+        if (plantName === null || plantName === undefined || plantName === "") {
+          console.log("plantName not provided");
+          return;
+        }
+
+        const id_plant = await getIdPlant(plantName);
         const id_user = await getCurrentUser(req);
 
-        console.log("Id-ul userului este", id_user);
+        console.log(typeof id_user);
+        console.log("Id-ul userului este: ", id_user);
 
-        db.run(
-          "INSERT INTO collection (id_plant, id_user) VALUES (?, ?)",
-          [id_plant, id_user],
-          function (err) {
-            if (err) {
-              console.error(err.message);
-              res.writeHead(500, { "Content-Type": "text/plain" });
-              res.end("Server error");
-              return;
+        // Check if the plant already exists in the user's collection
+        const existingEntry = await checkExistingEntry(id_plant, id_user);
+        let plantInCollection = false;
+
+        if (existingEntry) {
+          plantInCollection = true;
+          // Plant already exists in the collection, remove it
+          db.run(
+            "DELETE FROM collection WHERE id_plant = ? AND id_user = ?",
+            [id_plant, id_user],
+            function (err) {
+              if (err) {
+                console.error(err.message);
+                res.writeHead(500, { "Content-Type": "text/plain" });
+                res.end("Server error");
+                return;
+              }
+              console.log("Plant removed from the collection");
+              res.writeHead(200, { "Content-Type": "application/json" });
+              res.end(
+                JSON.stringify({
+                  success: true,
+                  plantInCollection: false,
+                  message: "Plant removed from the collection",
+                })
+              );
             }
-            // get the last insert id
-            console.log(`A row has been inserted with rowid ${this.lastID}`);
-            res.writeHead(200, { "Content-Type": "application/json" });
-            res.end(JSON.stringify({ success: true }));
-          }
-        );
+          );
+        } else {
+          // Plant does not exist in the collection, insert it
+          db.run(
+            "INSERT INTO collection (id_plant, id_user) VALUES (?, ?)",
+            [id_plant, id_user],
+            function (err) {
+              if (err) {
+                console.error(err.message);
+                res.writeHead(500, { "Content-Type": "text/plain" });
+                res.end("Server error");
+                return;
+              }
+              // get the last insert id
+              console.log(`A row has been inserted with rowid ${this.lastID}`);
+              res.writeHead(200, { "Content-Type": "application/json" });
+              res.end(
+                JSON.stringify({
+                  success: true,
+                  plantInCollection: plantInCollection,
+                })
+              );
+            }
+          );
+        }
       } catch (err) {
         console.error(err);
         res.writeHead(500, { "Content-Type": "text/plain" });

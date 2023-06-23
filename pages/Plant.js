@@ -13,28 +13,60 @@ function closeDialog() {
   dialog.style.display = "none";
 }
 
-const button = document.querySelector(".favorite-button");
-
-button.addEventListener("click", function () {
-  const plantName = this.dataset.name;
-
-  fetch("/api/name", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ plantName: plantName }),
+// Fetch the user's plant collection from the server
+fetch("/api/collection")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
   })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+  .then((data) => {
+    // Iterate over each plant in the collection
+    data.forEach((plant) => {
+      // Find the button element with the corresponding data-name attribute
+      const button = document.querySelector(
+        `.favorite-button[data-name="${plant.name}"]`
+      );
+      if (button) {
+        // Set the button's style to red
+        button.style.backgroundColor = "red";
       }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error(error);
     });
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+const buttons = document.querySelectorAll(".favorite-button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const plantName = button.getAttribute("data-name");
+
+    fetch("/api/name", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ plantName: plantName }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Success:", data);
+        if (data.plantInCollection) {
+          button.style.backgroundColor = "red";
+        } else {
+          button.style.backgroundColor = "";
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
 });
