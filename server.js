@@ -219,7 +219,8 @@ async function checkExistingEntry(id_plant, id_user) {
 }
 
 const server = http.createServer((req, res) => {
-  //console.log("Path ul este:" , req.url);
+const server = http.createServer((req, res) => {
+  console.log("Path ul este:", req.url);
 
   if (req.method === "POST" && req.url === "/api/search") {
     console.log("You are in the search page");
@@ -268,9 +269,8 @@ const server = http.createServer((req, res) => {
     });
     return;
   }
-
   // REGISTER
-  if (req.method === "POST" && req.url === "/api/register") {
+  else if (req.method === "POST" && req.url === "/api/register") {
     let body = "";
     req.on("data", (chunk) => {
       body += chunk.toString(); // convert Buffer to string
@@ -297,12 +297,14 @@ const server = http.createServer((req, res) => {
               //Atunci cand se conecteaza, se face un cookie pentru fiecare user
 
               let token = crypto.randomBytes(20).toString("hex");
+              const expirationDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // Expiră într-o săptămână
 
               //seteaza cookie
               res.setHeader(
                 "Set-Cookie",
-                "session=" + token + "; Path=/; HttpOnly"
+                "session=" + token + "; Expires=" + expirationDate.toUTCString() + "; Path=/; HttpOnly"
               );
+              
               console.log("Cookie setat");
 
               db.run(
@@ -337,10 +339,8 @@ const server = http.createServer((req, res) => {
         .catch((err) => console.error(err));
     });
     return;
-  }
-
-  //LOGIN
-  if (req.method === "POST" && req.url === "/api/login") {
+  } //LOGIN
+  else if (req.method === "POST" && req.url === "/api/login") {
     console.log("You are in the login page");
     let body = "";
     req.on("data", (chunk) => {
@@ -389,10 +389,9 @@ const server = http.createServer((req, res) => {
     });
     return;
   }
-
   //LOGOUT
   //Sterge cookie-ul
-  if (req.method === "GET" && req.url === "/api/logout") {
+  else if (req.method === "GET" && req.url === "/api/logout") {
     console.log("You are in the logout page");
     //ia cookie-ul
 
@@ -425,9 +424,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ message: "You are logged out" }));
     return;
-  }
-
-  if (req.method === "POST" && req.url === "/api/name") {
+  } else if (req.method === "POST" && req.url === "/api/name") {
     let body = "";
 
     req.on("data", (chunk) => {
@@ -522,9 +519,7 @@ const server = http.createServer((req, res) => {
         return;
       }
     });
-  }
-
-  if (req.method === "POST" && req.url === "/api/showMyCollection") {
+  } else if (req.method === "POST" && req.url === "/api/showMyCollection") {
     body = "";
     req.on("data", (chunk) => {
       body += chunk.toString(); // convert Buffer to string
@@ -549,16 +544,21 @@ const server = http.createServer((req, res) => {
         return;
       }
     });
-  }
-
-  if (req.url === "/" && req.method === "GET") {
-    returnStaticResource(req, res, false);
-
-    return;
-  } else if (!req.url.startsWith("/api") && req.method === "GET") {
-    returnStaticResource(req, res, true);
-
-    return;
+  } else if (
+    getCookie(req) == undefined ||
+    getCookie(req) === null ||
+    getCookie(req) === ""
+  ) {
+    if (req.method === "GET") {
+      console.log("Pas1");
+      returnStaticResource(req, res, "login", 0);
+      return;
+    }
+  } else {
+    if (!req.url.startsWith("/api") && req.method === "GET") {
+      returnStaticResource(req, res, true, 1);
+      return;
+    }
   }
 });
 
