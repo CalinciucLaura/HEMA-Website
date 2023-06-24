@@ -140,7 +140,7 @@ function getCookie(req) {
 function getPopularity() {
   return new Promise((resolve, reject) => {
     db.all(
-      `SELECT name, description, COUNT(c.id_plant) AS appearance_count from plantAbout p JOIN collection c ON p.id = c.id_plant GROUP BY c.id_plant ORDER BY appearance_count DESC LIMIT 8 `,
+      `SELECT name, color, type, category, conditions, season, description, COUNT(c.id_plant) AS appearance_count from plantAbout p JOIN collection c ON p.id = c.id_plant GROUP BY c.id_plant ORDER BY appearance_count DESC LIMIT 8 `,
       (err, row) => {
         if (err) {
           console.error(err.message);
@@ -238,11 +238,15 @@ function generateRssXml(rssFeed, items) {
     .map((item) => {
       return `
         <item>
-          <title>${item.name}</title>
-          <description>${item.description}</description>
-          <description>${item.appearance_count}</description>
-          <guid>${item.guid}</guid>
-          <pubDate>${item.pubDate}</pubDate>
+          <name>NAME: ${item.name}</name>
+          <top>NR. OF APPEARANCES: ${item.top} </top>
+          <category>CATEGORY: ${item.category}</category>
+          <type>TYPE: ${item.type} </type>
+          <season>SEASON: ${item.season} </season>
+          <color>COLOR: ${item.color}</color>      
+          <description>DESCRIPTION: ${item.description}</description>
+          <language>LANGUAGE: EN</language>
+          <pubDate>PUBLIC DATE: ${item.pubDate}</pubDate>
         </item>
       `;
     })
@@ -251,11 +255,10 @@ function generateRssXml(rssFeed, items) {
   const rssXml = `
     <rss version="2.0">
       <channel>
-        <title>${rssFeed.title}</title>
-        <description>${rssFeed.description}</description>
-        <link>${rssFeed.appearance_count}</link>
-        <language>${rssFeed.language}</language>
-        <lastBuildDate>${rssFeed.lastBuildDate}</lastBuildDate>
+        <title>TOP 8 PLANTS</title>
+        <description> DESCRIPTION: ${rssFeed.description}</description>
+        <language> Language:  ${rssFeed.language}</language>
+        <lastBuildDate> DOWNLOAD NOW : ${rssFeed.lastBuildDate}</lastBuildDate>
         ${xmlItems}
       </channel>
     </rss>
@@ -642,22 +645,26 @@ const server = http.createServer((req, res) => {
   }
 
   if (req.method == "POST" && req.url === "/api/rss") {
+    //titlul si numele filei
     getPopularity()
       .then((plants) => {
         const rssFeed = {
-          title: "Clasamentul plantelor populare",
+          TITLE: "Clasamentul plantelor populare",
           description:
             "Aici găsiți clasamentul celor mai populare plante colectate.",
-          link: "salut",
           language: "en",
           lastBuildDate: new Date(),
         };
 
         const items = plants.map((plant) => {
           return {
-            title: plant.title,
+            name: plant.name,
             description: plant.description,
-            guid: plant.id_plant,
+            top: plant.appearance_count,
+            color: plant.color,
+            category: plant.category,
+            type: plant.type,
+            season: plant.season,
             pubDate: new Date().toUTCString(),
           };
         });
