@@ -217,9 +217,9 @@ header {
   color: white; /* this makes the heart icon semi-transparent */
 }
 
-.heart-active {
+/* .heart-active {
   color: red;
-}
+} */
 
 .heart-default:hover,
 .heart-active:hover {
@@ -720,4 +720,23 @@ header {
   .hamburger:hover {
     color: green;
   }
+}
+#showMyCollection {
+  display: block;
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+}
+
+#showMyCollection:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
 }
