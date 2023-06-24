@@ -137,6 +137,20 @@ function getCookie(req) {
   return sessionToken;
 }
 
+const requireLogin = (req, res, next) => {
+  console.log("Sunt calluit");
+  const sessionToken = getCookie(req);
+  if (sessionToken) {
+    // User is authenticated, proceed to the next middleware or route handler
+    console.log("Sunt autentificat");
+    next();
+  } else {
+    // User is not authenticated, redirect to the login page or send an error response
+    res.writeHead(302, { Location: "/login.html" });
+    res.end();
+  }
+};
+
 function getIdPlant(name) {
   console.log("Pas4", name);
 
@@ -218,7 +232,25 @@ async function checkExistingEntry(id_plant, id_user) {
 }
 
 const server = http.createServer((req, res) => {
-  //console.log("Path ul este:" , req.url);
+  //console log the path im currenty in
+  console.log("Request URL:", req.url);
+
+  //it does not work
+
+  // if (reqUrl.path === "/Main/main.html") {
+  //   console.log("You are in the main page");
+  //   requireLogin(req, res, () => {
+  //     // Only authenticated users can access this route
+  //     res.statusCode = 200;
+  //     res.setHeader("Content-Type", "text/html");
+  //     res.end("Welcome to the main page!");
+  //   });
+  // } else {
+  //   // Handle other routes
+  //   res.statusCode = 404;
+  //   res.setHeader("Content-Type", "text/html");
+  //   res.end("Not Found");
+  // }
 
   if (req.method === "POST" && req.url === "/api/search") {
     console.log("You are in the search page");
@@ -550,12 +582,30 @@ const server = http.createServer((req, res) => {
     });
   }
 
-  if (req.url === "/" && req.method === "GET") {
-    returnStaticResource(req, res, false);
-    return;
-  } else if (!req.url.startsWith("/api") && req.method === "GET") {
-    returnStaticResource(req, res, true);
-    return;
+  if (
+    getCookie(req) == undefined ||
+    getCookie(req) == null ||
+    getCookie(req) == ""
+  ) {
+    if (req.url === "/" && req.method === "GET") {
+      returnStaticResource(req, res, "login");
+      return;
+    } else if (
+      !req.url.startsWith("/api") &&
+      req.method === "GET" &&
+      req.url != "/"
+    ) {
+      returnStaticResource(req, res, "login");
+      return;
+    }
+  } else {
+    if (req.url === "/" && req.method === "GET") {
+      returnStaticResource(req, res, "main");
+      return;
+    } else if (!req.url.startsWith("/api") && req.method === "GET") {
+      returnStaticResource(req, res, "any");
+      return;
+    }
   }
 });
 

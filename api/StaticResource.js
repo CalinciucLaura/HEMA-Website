@@ -9,11 +9,17 @@ function returnStaticResource(req, res, next) {
   let extname;
   let contentType = "text/html";
 
-  if (next == true) {
-    filePath = path.join(__dirname, "..", "pages", req.url);
-  } else {
+  // if (next == true) {
+  //   filePath = path.join(__dirname, "..", "pages", req.url);
+  // } else {
+  //   filePath = path.join(__dirname, "..", "pages", "Login", "login.html");
+  // }
+
+  if (next == "login") {
     filePath = path.join(__dirname, "..", "pages", "Login", "login.html");
-  }
+  } else if (next == "main") {
+    filePath = path.join(__dirname, "..", "pages", "Main", "Main.html");
+  } else filePath = path.join(__dirname, "..", "pages", req.url);
 
   //console.log("filePath", filePath);
 
