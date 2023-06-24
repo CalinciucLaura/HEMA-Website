@@ -4,22 +4,16 @@ const { get } = require("http");
 const path = require("path");
 const { r, c, update } = require("tar");
 
-function returnStaticResource(req, res, next, ok) {
+function returnStaticResource(req, res, next) {
   let filePath;
   let extname;
   let contentType = "text/html";
   console.log(req.url);
 
-  if (next == "login") {
-    req.url = "/Login/login.html";
-    console.log("La login4", req.url);
-
+  if (next == true) {
     filePath = path.join(__dirname, "..", "pages", req.url);
-    console.log("La login1", filePath);
   } else {
-    console.log("Any", req.url);
-    filePath = path.join(__dirname, "..", "pages", req.url);
-    console.log("Any", filePath);
+    filePath = path.join(__dirname, "..", "pages", "Login", "login.html");
   }
 
   if (filePath === undefined) {
@@ -29,7 +23,6 @@ function returnStaticResource(req, res, next, ok) {
   }
 
   extname = path.extname(filePath);
-  console.log("Extensia este ", extname);
 
   switch (extname) {
     case ".js":
@@ -44,7 +37,6 @@ function returnStaticResource(req, res, next, ok) {
   }
 
   fs.readFile(filePath, (err, content) => {
-    console.log("Path-ul citit ", filePath);
     if (err) {
       if (err.code === "ENOENT") {
         res.writeHead(404);

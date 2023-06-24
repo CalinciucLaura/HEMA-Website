@@ -137,19 +137,19 @@ function getCookie(req) {
   return sessionToken;
 }
 
-const requireLogin = (req, res, next) => {
-  console.log("Sunt calluit");
-  const sessionToken = getCookie(req);
-  if (sessionToken) {
-    // User is authenticated, proceed to the next middleware or route handler
-    console.log("Sunt autentificat");
-    next();
-  } else {
-    // User is not authenticated, redirect to the login page or send an error response
-    res.writeHead(302, { Location: "/login.html" });
-    res.end();
-  }
-};
+// const requireLogin = (req, res, next) => {
+//   console.log("Sunt calluit");
+//   const sessionToken = getCookie(req);
+//   if (sessionToken) {
+//     // User is authenticated, proceed to the next middleware or route handler
+//     console.log("Sunt autentificat");
+//     next();
+//   } else {
+//     // User is not authenticated, redirect to the login page or send an error response
+//     res.writeHead(302, { Location: "/login.html" });
+//     res.end();
+//   }
+// };
 
 function getIdPlant(name) {
   console.log("Pas4", name);
@@ -282,8 +282,9 @@ const server = http.createServer((req, res) => {
     });
     return;
   }
+
   // REGISTER
-  else if (req.method === "POST" && req.url === "/api/register") {
+  if (req.method === "POST" && req.url === "/api/register") {
     let body = "";
     req.on("data", (chunk) => {
       body += chunk.toString(); // convert Buffer to string
@@ -324,7 +325,6 @@ const server = http.createServer((req, res) => {
                   expirationDate.toUTCString() +
                   "; Path=/; HttpOnly"
               );
-
               console.log("Cookie setat");
 
               db.run(
@@ -359,8 +359,10 @@ const server = http.createServer((req, res) => {
         .catch((err) => console.error(err));
     });
     return;
-  } //LOGIN
-  else if (req.method === "POST" && req.url === "/api/login") {
+  }
+
+  //LOGIN
+  if (req.method === "POST" && req.url === "/api/login") {
     console.log("You are in the login page");
     let body = "";
     req.on("data", (chunk) => {
@@ -417,9 +419,10 @@ const server = http.createServer((req, res) => {
     });
     return;
   }
+
   //LOGOUT
   //Sterge cookie-ul
-  else if (req.method === "GET" && req.url === "/api/logout") {
+  if (req.method === "GET" && req.url === "/api/logout") {
     console.log("You are in the logout page");
     //ia cookie-ul
 
@@ -452,7 +455,9 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ message: "You are logged out" }));
     return;
-  } else if (req.method === "POST" && req.url === "/api/name") {
+  }
+
+  if (req.method === "POST" && req.url === "/api/name") {
     let body = "";
 
     req.on("data", (chunk) => {
@@ -547,7 +552,9 @@ const server = http.createServer((req, res) => {
         return;
       }
     });
-  } else if (req.method === "POST" && req.url === "/api/showMyCollection") {
+  }
+
+  if (req.method === "POST" && req.url === "/api/showMyCollection") {
     body = "";
     req.on("data", (chunk) => {
       body += chunk.toString(); // convert Buffer to string
