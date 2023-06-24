@@ -312,10 +312,18 @@ const server = http.createServer((req, res) => {
 
               let token = crypto.randomBytes(20).toString("hex");
 
+              const expirationDate = new Date(
+                Date.now() + 7 * 24 * 60 * 60 * 1000
+              ); // Expiră într-o săptămână
+
               //seteaza cookie
               res.setHeader(
                 "Set-Cookie",
-                "session=" + token + "; Path=/; HttpOnly"
+                "session=" +
+                  token +
+                  "; Expires=" +
+                  expirationDate.toUTCString() +
+                  "; Path=/; HttpOnly"
               );
               console.log("Cookie setat");
 
@@ -376,14 +384,22 @@ const server = http.createServer((req, res) => {
           } else {
             //Atunci cand se conecteaza, se face un cookie pentru fiecare user
 
-            let token = Math.random().toString(36).substr(2, 8);
+            //seteaza cookie
+            let token = crypto.randomBytes(20).toString("hex");
+            const expirationDate = new Date(
+              Date.now() + 7 * 24 * 60 * 60 * 1000
+            ); // Expiră într-o săptămână
 
             //seteaza cookie
-
             res.setHeader(
               "Set-Cookie",
-              "session=" + token + "; Path=/; HttpOnly"
+              "session=" +
+                token +
+                "; Expires=" +
+                expirationDate.toUTCString() +
+                "; Path=/; HttpOnly"
             );
+
             console.log("Cookie setat");
 
             //update in baza de date
