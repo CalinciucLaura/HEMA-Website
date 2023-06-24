@@ -154,7 +154,7 @@ function getPopularity() {
 }
 
 function getIdPlant(name) {
-  console.log("Pas4", name);
+  //console.log("Pas4", name);
 
   return new Promise((resolve, reject) => {
     db.get(`SELECT id FROM plantAbout WHERE name = ?`, [name], (err, row) => {
@@ -512,7 +512,7 @@ const server = http.createServer((req, res) => {
         const id_plant = await getIdPlant(plantName);
         const id_user = await getCurrentUser(req);
 
-        console.log(typeof id_user);
+        //console.log(typeof id_user);
         console.log("Id-ul userului este: ", id_user);
 
         // already exists?

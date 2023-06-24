@@ -8,7 +8,7 @@ function returnStaticResource(req, res, next) {
   let filePath;
   let extname;
   let contentType = "text/html";
-  console.log(req.url);
+  //console.log(req.url);
 
   if (next == true) {
     filePath = path.join(__dirname, "..", "pages", req.url);
