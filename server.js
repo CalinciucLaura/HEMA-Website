@@ -268,8 +268,7 @@ function generateRssXml(rssFeed, items) {
 }
 
 const server = http.createServer((req, res) => {
-  //console log the path im currenty in
-  console.log("Request URL2:", req.url);
+  // console.log("Request URL2:", req.url);
 
   if (req.method === "POST" && req.url === "/api/search") {
     console.log("You are in the search page");

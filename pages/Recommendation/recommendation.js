@@ -1,9 +1,10 @@
 const accessKey = "mhn1bf_6krB1bc1YlRGbcqD-llHPZk-LL8hMUHGxJlk";
+let page = 1;
 
-const fetchPhotos = async () => {
+const fetchPhotos = async (page) => {
   try {
     const response = await fetch(
-      "https://api.unsplash.com/search/photos?query=plants&per_page=12&seed=${seed}",
+      `https://api.unsplash.com/photos/random?query=plants&count=12&page=${page}`,
       {
         headers: {
           Authorization: `Client-ID ${accessKey}`,
@@ -25,15 +26,16 @@ const fetchPhotos = async () => {
 const fetchStatistics = async (photoID) => {
   try {
     const statistics = await fetch(
-      "https://api.unsplash.com/photos/" + photoID + "/statistics",
+      `https://api.unsplash.com/photos/${photoID}/statistics`,
       {
         headers: {
           Authorization: `Client-ID ${accessKey}`,
         },
       }
     );
+
     if (!statistics.ok) {
-      throw new Error("Failed to fetch photos");
+      throw new Error("Failed to fetch statistics");
     }
 
     return statistics.json();
@@ -43,14 +45,16 @@ const fetchStatistics = async (photoID) => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", async () => {
+const fetchMorePhotos = async () => {
   try {
-    const photoData = await fetchPhotos();
+    const photoData = await fetchPhotos(page);
     const feedContainer = document.getElementById("feed-container");
 
     const combinedPromise = [];
     const combinedData = [];
-    photoData.results.forEach((photo) => {
+
+    // Fetch statistics for each photo
+    photoData.forEach((photo) => {
       const photoID = photo.id;
       combinedPromise.push(fetchStatistics(photoID));
 
@@ -66,7 +70,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Create attribution element
       const attributionElement = document.createElement("p");
       attributionElement.classList.add("attribution");
-      // attributionElement.classList.add("text_resize");
       attributionElement.textContent = `Photo by ${photo.user.name} on Unsplash`;
 
       // Create link element
@@ -84,8 +87,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Append photo container to feed container
       feedContainer.appendChild(photoContainer);
     });
+
     const resolvedData = await Promise.all(combinedPromise);
 
+    // Create doc and append text for PDF
     const doc = new jsPDF();
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
@@ -95,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const totalLikes = stat.likes.total;
       const totalDownloads = stat.downloads.total;
       const totalViews = stat.views.total;
-      const photo = photoData.results[index];
+      const photo = photoData[index];
       const photoName = photo.alt_description || photo.alt_description;
 
       const yPos = (index + 1) * 30; // Adjust the vertical position for each line
@@ -116,11 +121,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       combinedData.push(dataObject);
     });
 
-    //console.log(combinedData);
-
-    // const combinedJSON = JSON.stringify(combinedData);
-    // console.log(combinedJSON);
-
     const csvRows = [];
     const headers = Object.keys(combinedData[0]);
     csvRows.push(headers.join(","));
@@ -133,9 +133,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const downloadCSV = document.getElementById("downloadCSV");
     const downloadPDF = document.getElementById("downloadPDF");
 
-    // Attach event listener to the button
     downloadCSV.addEventListener("click", () => {
-      // Create a download link for the CSV file
       const downloadLink = document.createElement("a");
       downloadLink.setAttribute(
         "href",
@@ -149,11 +147,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     downloadPDF.addEventListener("click", () => {
-      // doc.setFontSize(5);
-      // doc.setFont("helvetica", "bold");
       const pdfContent = doc.output("blob");
 
-      // Create a download link for the PDF file
       const downloadLink = document.createElement("a");
       downloadLink.href = URL.createObjectURL(pdfContent);
       downloadLink.download = "data.pdf";
@@ -162,7 +157,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       downloadLink.click();
       document.body.removeChild(downloadLink);
     });
+
+    page++;
   } catch (error) {
     console.error("Error:", error);
   }
+};
+
+window.addEventListener("scroll", () => {
+  const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+  if (scrollTop + clientHeight >= scrollHeight - 5) {
+    fetchMorePhotos();
+  }
 });
+
+fetchMorePhotos();
