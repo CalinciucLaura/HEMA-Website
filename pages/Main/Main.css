@@ -721,7 +721,7 @@ header {
     color: green;
   }
 }
-#showMyCollection {
+#showMyCollection{
   display: block;
   width: 200px;
   height: 100px;
@@ -735,7 +735,27 @@ header {
   box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
 }
 
-#showMyCollection:hover {
+#showPopularity{
+  display: block;
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+}
+
+#showPopularity :hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+#showMyCollection :hover {
   background-color: white;
   color: black;
   transition: 0.5s;

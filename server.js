@@ -137,19 +137,21 @@ function getCookie(req) {
   return sessionToken;
 }
 
-// const requireLogin = (req, res, next) => {
-//   console.log("Sunt calluit");
-//   const sessionToken = getCookie(req);
-//   if (sessionToken) {
-//     // User is authenticated, proceed to the next middleware or route handler
-//     console.log("Sunt autentificat");
-//     next();
-//   } else {
-//     // User is not authenticated, redirect to the login page or send an error response
-//     res.writeHead(302, { Location: "/login.html" });
-//     res.end();
-//   }
-// };
+function getPopularity() {
+  return new Promise((resolve, reject) => {
+    db.all(
+      `SELECT name, description, COUNT(c.id_plant) AS appearance_count from plantAbout p JOIN collection c ON p.id = c.id_plant GROUP BY c.id_plant ORDER BY appearance_count DESC LIMIT 8 `,
+      (err, row) => {
+        if (err) {
+          console.error(err.message);
+          reject(err);
+        } else {
+          resolve(row);
+        }
+      }
+    );
+  });
+}
 
 function getIdPlant(name) {
   console.log("Pas4", name);
@@ -581,23 +583,33 @@ const server = http.createServer((req, res) => {
     });
   }
 
-  // if (
-  //   getCookie(req) == undefined ||
-  //   getCookie(req) == null ||
-  //   getCookie(req) == ""
-  // ) {
-  //   if (req.url === "/" && req.method === "GET") {
-  //     returnStaticResource(req, res, "login");
-  //     return;
-  //   } else if (
-  //     !req.url.startsWith("/api") &&
-  //     req.method === "GET" &&
-  //     req.url != "/"
-  //   ) {
-  //     returnStaticResource(req, res, "login");
-  //     return;
-  //   }
-  // } else {
+  if (req.method === "POST" && req.url === "/api/showPopularity") {
+    body = "";
+    req.on("data", (chunk) => {
+      body += chunk.toString(); // convert Buffer to string
+    });
+
+    req.on("end", async () => {
+      try {
+        const id_user = await getCurrentUser(req);
+        getPopularity().then((rows) => {
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(
+            JSON.stringify({
+              rows,
+            })
+          );
+          return;
+        });
+      } catch (err) {
+        console.error(err);
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.end("Server error");
+        return;
+      }
+    });
+  }
+
   if (req.url === "/" && req.method === "GET") {
     returnStaticResource(req, res, false);
 
