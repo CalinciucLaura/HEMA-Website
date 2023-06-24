@@ -149,8 +149,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     downloadPDF.addEventListener("click", () => {
-      // doc.setFontSize(5);
-      // doc.setFont("helvetica", "bold");
       const pdfContent = doc.output("blob");
 
       // Create a download link for the PDF file

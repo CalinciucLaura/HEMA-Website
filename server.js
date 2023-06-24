@@ -240,9 +240,8 @@ function generateRssXml(rssFeed, items) {
         <item>
           <title>${item.name}</title>
           <description>${item.description}</description>
-          <description>${item.appearance_count}</description>
-          <guid>${item.guid}</guid>
-          <pubDate>${item.pubDate}</pubDate>
+          <appearance_count>${item.appearance_count}</appearance_count>
+          
         </item>
       `;
     })
@@ -254,8 +253,7 @@ function generateRssXml(rssFeed, items) {
         <title>${rssFeed.title}</title>
         <description>${rssFeed.description}</description>
         <link>${rssFeed.appearance_count}</link>
-        <language>${rssFeed.language}</language>
-        <lastBuildDate>${rssFeed.lastBuildDate}</lastBuildDate>
+        
         ${xmlItems}
       </channel>
     </rss>
@@ -265,8 +263,7 @@ function generateRssXml(rssFeed, items) {
 }
 
 const server = http.createServer((req, res) => {
-  //console log the path im currenty in
-  console.log("Request URL2:", req.url);
+  // console.log("Request URL2:", req.url);
 
   if (req.method === "POST" && req.url === "/api/search") {
     console.log("You are in the search page");
@@ -655,7 +652,7 @@ const server = http.createServer((req, res) => {
 
         const items = plants.map((plant) => {
           return {
-            title: plant.title,
+            name: plant.name,
             description: plant.description,
             guid: plant.id_plant,
             pubDate: new Date().toUTCString(),
