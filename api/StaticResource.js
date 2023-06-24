@@ -8,6 +8,7 @@ function returnStaticResource(req, res, next, ok) {
   let filePath;
   let extname;
   let contentType = "text/html";
+  console.log(req.url);
 
   if (next == "login") {
     req.url = "/Login/login.html";

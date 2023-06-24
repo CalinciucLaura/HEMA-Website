@@ -1,12 +1,9 @@
 const accessKey = "mhn1bf_6krB1bc1YlRGbcqD-llHPZk-LL8hMUHGxJlk";
 
-//const jsPDF = require("jspdf");
-//import { jsPDF } from "jspdf";
-
 const fetchPhotos = async () => {
   try {
     const response = await fetch(
-      "https://api.unsplash.com/search/photos?query=plants&per_page=12",
+      "https://api.unsplash.com/search/photos?query=plants&per_page=12&seed=${seed}",
       {
         headers: {
           Authorization: `Client-ID ${accessKey}`,

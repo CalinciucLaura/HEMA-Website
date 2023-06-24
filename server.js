@@ -137,6 +137,20 @@ function getCookie(req) {
   return sessionToken;
 }
 
+const requireLogin = (req, res, next) => {
+  console.log("Sunt calluit");
+  const sessionToken = getCookie(req);
+  if (sessionToken) {
+    // User is authenticated, proceed to the next middleware or route handler
+    console.log("Sunt autentificat");
+    next();
+  } else {
+    // User is not authenticated, redirect to the login page or send an error response
+    res.writeHead(302, { Location: "/login.html" });
+    res.end();
+  }
+};
+
 function getIdPlant(name) {
   console.log("Pas4", name);
 
@@ -196,7 +210,6 @@ async function getUserData() {
   try {
     const userId = await getCurrentUser(req);
     console.log(userId);
-    return userId;
   } catch (error) {
     console.error(error);
   }
@@ -219,8 +232,8 @@ async function checkExistingEntry(id_plant, id_user) {
 }
 
 const server = http.createServer((req, res) => {
-const server = http.createServer((req, res) => {
-  console.log("Path ul este:", req.url);
+  //console log the path im currenty in
+  console.log("Request URL2:", req.url);
 
   if (req.method === "POST" && req.url === "/api/search") {
     console.log("You are in the search page");
@@ -297,14 +310,21 @@ const server = http.createServer((req, res) => {
               //Atunci cand se conecteaza, se face un cookie pentru fiecare user
 
               let token = crypto.randomBytes(20).toString("hex");
-              const expirationDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // Expiră într-o săptămână
+
+              const expirationDate = new Date(
+                Date.now() + 7 * 24 * 60 * 60 * 1000
+              ); // Expiră într-o săptămână
 
               //seteaza cookie
               res.setHeader(
                 "Set-Cookie",
-                "session=" + token + "; Expires=" + expirationDate.toUTCString() + "; Path=/; HttpOnly"
+                "session=" +
+                  token +
+                  "; Expires=" +
+                  expirationDate.toUTCString() +
+                  "; Path=/; HttpOnly"
               );
-              
+
               console.log("Cookie setat");
 
               db.run(
@@ -362,14 +382,22 @@ const server = http.createServer((req, res) => {
           } else {
             //Atunci cand se conecteaza, se face un cookie pentru fiecare user
 
-            let token = Math.random().toString(36).substr(2, 8);
+            //seteaza cookie
+            let token = crypto.randomBytes(20).toString("hex");
+            const expirationDate = new Date(
+              Date.now() + 7 * 24 * 60 * 60 * 1000
+            ); // Expiră într-o săptămână
 
             //seteaza cookie
-
             res.setHeader(
               "Set-Cookie",
-              "session=" + token + "; Path=/; HttpOnly"
+              "session=" +
+                token +
+                "; Expires=" +
+                expirationDate.toUTCString() +
+                "; Path=/; HttpOnly"
             );
+
             console.log("Cookie setat");
 
             //update in baza de date
@@ -544,21 +572,56 @@ const server = http.createServer((req, res) => {
         return;
       }
     });
+  }
+
+  // if (
+  //   getCookie(req) == undefined ||
+  //   getCookie(req) == null ||
+  //   getCookie(req) == ""
+  // ) {
+  //   if (req.url === "/" && req.method === "GET") {
+  //     returnStaticResource(req, res, "login");
+  //     return;
+  //   } else if (
+  //     !req.url.startsWith("/api") &&
+  //     req.method === "GET" &&
+  //     req.url != "/"
+  //   ) {
+  //     returnStaticResource(req, res, "login");
+  //     return;
+  //   }
+  // } else {
+  if (req.url === "/" && req.method === "GET") {
+    returnStaticResource(req, res, false);
+
+    return;
   } else if (
-    getCookie(req) == undefined ||
-    getCookie(req) === null ||
-    getCookie(req) === ""
+    (req.url.startsWith("/Main") ||
+      req.url.startsWith("/House") ||
+      req.url.startsWith("/Garden") ||
+      req.url.startsWith("/Tropical") ||
+      req.url.startsWith("/Medicinal") ||
+      req.url.startsWith("/About") ||
+      req.url.startsWith("/Help") ||
+      req.url.startsWith("/Recommendation") ||
+      req.url.startsWith("/Profile")) &&
+    req.method === "GET"
   ) {
-    if (req.method === "GET") {
-      console.log("Pas1");
-      returnStaticResource(req, res, "login", 0);
+    if (
+      getCookie(req) === null ||
+      getCookie(req) === undefined ||
+      getCookie(req) === ""
+    ) {
+      returnStaticResource(req, res, false);
+      return;
+    } else {
+      returnStaticResource(req, res, true);
       return;
     }
-  } else {
-    if (!req.url.startsWith("/api") && req.method === "GET") {
-      returnStaticResource(req, res, true, 1);
-      return;
-    }
+  } else if (!req.url.startsWith("/api") && req.method === "GET") {
+    returnStaticResource(req, res, true);
+
+    return;
   }
 });
 
