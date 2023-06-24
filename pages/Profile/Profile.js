@@ -120,3 +120,15 @@ document
       })
       .catch((error) => console.error("Error:", error));
   });
+
+const generateRSSButton = document.getElementById("rss");
+
+generateRSSButton.addEventListener("click", () => {
+  fetch("/api/rss", { method: "POST" })
+    .then((response) => response.text())
+    .then((data) => {
+      const newTab = window.open(); // Deschideți un tab nou în browser
+      newTab.document.write(`<pre>${data}</pre>`); // Afișați conținutul XML în tab-ul nou
+    })
+    .catch((error) => console.error(error));
+});

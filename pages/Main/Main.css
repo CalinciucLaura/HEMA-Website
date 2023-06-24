@@ -721,6 +721,7 @@ header {
     color: green;
   }
 }
+
 #showMyCollection{
   display: block;
   width: 200px;
@@ -756,6 +757,26 @@ header {
 }
 
 #showMyCollection :hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+#rss{
+  display: block;
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.808) 5px 10px 10px;
+}
+
+#rss :hover {
   background-color: white;
   color: black;
   transition: 0.5s;

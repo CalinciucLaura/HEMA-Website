@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs"); //manipularea fisierelor
 const path = require("path");
-
+const { format } = require("date-fns");
 const { Console } = require("console");
 const { returnStaticResource } = require("./api/StaticResource");
 const { r, c, update } = require("tar");
@@ -231,6 +231,37 @@ async function checkExistingEntry(id_plant, id_user) {
       }
     );
   });
+}
+
+function generateRssXml(rssFeed, items) {
+  const xmlItems = items
+    .map((item) => {
+      return `
+        <item>
+          <title>${item.name}</title>
+          <description>${item.description}</description>
+          <description>${item.appearance_count}</description>
+          <guid>${item.guid}</guid>
+          <pubDate>${item.pubDate}</pubDate>
+        </item>
+      `;
+    })
+    .join("");
+
+  const rssXml = `
+    <rss version="2.0">
+      <channel>
+        <title>${rssFeed.title}</title>
+        <description>${rssFeed.description}</description>
+        <link>${rssFeed.appearance_count}</link>
+        <language>${rssFeed.language}</language>
+        <lastBuildDate>${rssFeed.lastBuildDate}</lastBuildDate>
+        ${xmlItems}
+      </channel>
+    </rss>
+  `;
+
+  return rssXml;
 }
 
 const server = http.createServer((req, res) => {
@@ -608,6 +639,40 @@ const server = http.createServer((req, res) => {
         return;
       }
     });
+  }
+
+  if (req.method == "POST" && req.url === "/api/rss") {
+    getPopularity()
+      .then((plants) => {
+        const rssFeed = {
+          title: "Clasamentul plantelor populare",
+          description:
+            "Aici găsiți clasamentul celor mai populare plante colectate.",
+          link: "salut",
+          language: "en",
+          lastBuildDate: new Date(),
+        };
+
+        const items = plants.map((plant) => {
+          return {
+            title: plant.title,
+            description: plant.description,
+            guid: plant.id_plant,
+            pubDate: new Date().toUTCString(),
+          };
+        });
+
+        const rssXml = generateRssXml(rssFeed, items);
+
+        fs.writeFileSync("rss.xml", rssXml);
+
+        res.end(rssXml);
+      })
+      .catch((error) => {
+        console.error(error);
+        res.statusCode = 500;
+        res.end("A apărut o eroare în generarea fișierului RSS.");
+      });
   }
 
   if (req.url === "/" && req.method === "GET") {
