@@ -26,8 +26,6 @@ document
           document.getElementById("loginMessage").innerHTML =
             "Verify your info or create an account :)";
         }
-        console.log(data);
-        //data sa fie sessionStringul ala si sa l setez undeva
       })
       .catch((error) => console.error("Error:", error));
   });
