@@ -33,7 +33,81 @@ function getPopularity() {
   });
 }
 
+function escapeXml(unsafe) {
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case "&":
+        return "&amp;";
+      case "'":
+        return "&apos;";
+      case '"':
+        return "&quot;";
+    }
+  });
+}
+
+function generateRssXml(rssFeed, items) {
+  const xmlItems = items
+    .map((item) => {
+      return `
+        <item>
+          <name>${escapeXml(item.name)}</name>
+          <top>${escapeXml(item.top)}</top>
+          <category>${escapeXml(item.category)}</category>
+          <type>${escapeXml(item.type)}</type>
+          <season>${escapeXml(item.season)}</season>
+          <color>${escapeXml(item.color)}</color>
+          <description>${escapeXml(item.description)}</description>
+          <language>${escapeXml(item.language)}</language>
+          <pubDate>${escapeXml(item.pubDate)}</pubDate>
+        </item>
+      `;
+    })
+    .join("");
+
+  const rssXml = `
+    <rss version="2.0">
+      <channel>
+        <title>${escapeXml(rssFeed.TITLE)}</title>
+        <description>${escapeXml(rssFeed.description)}</description>
+        <language>${escapeXml(rssFeed.language)}</language>
+        <lastBuildDate>${escapeXml(rssFeed.lastBuildDate)}</lastBuildDate>
+        ${xmlItems}
+      </channel>
+    </rss>
+  `;
+
+  return rssXml;
+}
+
+function escapeXml(unsafe) {
+  if (typeof unsafe !== "string") {
+    return unsafe;
+  }
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case "&":
+        return "&amp;";
+      case "'":
+        return "&apos;";
+      case '"':
+        return "&quot;";
+      default:
+        return c;
+    }
+  });
+}
+
 module.exports = {
   getYourCollection: getYourCollection,
   getPopularity: getPopularity,
+  generateRssXml: generateRssXml,
 };

@@ -93,7 +93,7 @@ document
         let resultsDiv = document.getElementById("COLLECT2");
         let htmlString = "";
 
-        if (data.rows && data.rows.length > 0) {
+        if (data.rows.length == 0) {
           htmlString += "<h2>Sorry, there are no collections :(</h2>";
         } else {
           data.rows.forEach((element) => {
@@ -125,9 +125,20 @@ generateRSSButton.addEventListener("click", () => {
   fetch("/api/rss", { method: "POST" })
     .then((response) => response.text())
     .then((data) => {
-      //console.log(data);
-      const newTab = window.open(); // Deschideți un tab nou în browser
-      newTab.document.write(`<pre>${data}</pre>`); // Afișați conținutul XML în tab-ul nou
+      const blob = new Blob([data], { type: "application/rss+xml" });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "rss.xml";
+      link.style.display = "none";
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
     })
     .catch((error) => console.error(error));
 });

@@ -15,6 +15,7 @@ const {
 } = require("./controllers/showCollectionController.js");
 const {
   showPopularityController,
+  showRssController,
 } = require("./controllers/showPopularityController");
 const { searchController } = require("./controllers/searchController");
 const { registerController } = require("./controllers/registerController");
@@ -25,7 +26,7 @@ const {
 const {
   modifyCollectionController,
 } = require("./controllers/modifyCollectionController");
-const { accessController } = require("./controllers/accessController");
+// const { accessController } = require("./controllers/accessController");
 
 async function getUserData() {
   try {
@@ -107,44 +108,46 @@ const server = http.createServer((req, res) => {
   if (req.method === "POST" && req.url === "/api/showPopularity") {
     showPopularityController(req, res);
   }
-
-  if (req.method == "POST" && req.url === "/api/rss") {
-    //titlul si numele filei
-    getPopularity()
-      .then((plants) => {
-        const rssFeed = {
-          TITLE: "Clasamentul plantelor populare",
-          description:
-            "Aici găsiți clasamentul celor mai populare plante colectate.",
-          language: "en",
-          lastBuildDate: new Date(),
-        };
-
-        const items = plants.map((plant) => {
-          return {
-            name: plant.name,
-            description: plant.description,
-            top: plant.appearance_count,
-            color: plant.color,
-            category: plant.category,
-            type: plant.type,
-            season: plant.season,
-            pubDate: new Date().toUTCString(),
-          };
-        });
-
-        const rssXml = generateRssXml(rssFeed, items);
-
-        fs.writeFileSync("rss.xml", rssXml);
-
-        res.end(rssXml);
-      })
-      .catch((error) => {
-        console.error(error);
-        res.statusCode = 500;
-        res.end("A apărut o eroare în generarea fișierului RSS.");
-      });
+  if (req.method === "POST" && req.url === "/api/rss") {
+    showRssController(req, res);
   }
+  // if (req.method == "POST" && req.url === "/api/rss") {
+  //   //titlul si numele filei
+  //   getPopularity()
+  //     .then((plants) => {
+  //       const rssFeed = {
+  //         TITLE: "Clasamentul plantelor populare",
+  //         description:
+  //           "Aici găsiți clasamentul celor mai populare plante colectate.",
+  //         language: "en",
+  //         lastBuildDate: new Date(),
+  //       };
+
+  //       const items = plants.map((plant) => {
+  //         return {
+  //           name: plant.name,
+  //           description: plant.description,
+  //           top: plant.appearance_count,
+  //           color: plant.color,
+  //           category: plant.category,
+  //           type: plant.type,
+  //           season: plant.season,
+  //           pubDate: new Date().toUTCString(),
+  //         };
+  //       });
+
+  //       const rssXml = generateRssXml(rssFeed, items);
+
+  //       fs.writeFileSync("rss.xml", rssXml);
+
+  //       res.end(rssXml);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //       res.statusCode = 500;
+  //       res.end("A apărut o eroare în generarea fișierului RSS.");
+  //     });
+  // }
 
   // NOT ALLOW NO AUTHENTICATED USERS TO ACCESS THE API
   // if (req.url === "/" && req.method === "GET") {
