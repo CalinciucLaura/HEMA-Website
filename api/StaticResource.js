@@ -1,19 +1,17 @@
-const { Console } = require("console");
-const fs = require("fs"); //manipularea fisierelor
-const { get } = require("http");
+const fs = require("fs");
 const path = require("path");
-const { r, c, update } = require("tar");
 
 function returnStaticResource(req, res, next) {
   let filePath;
   let extname;
   let contentType = "text/html";
-  //console.log(req.url);
 
-  if (next == true) {
+  if (next) {
     filePath = path.join(__dirname, "..", "pages", req.url);
   } else {
+    console.log("login");
     filePath = path.join(__dirname, "..", "pages", "Login", "login.html");
+    console.log(filePath);
   }
 
   if (filePath === undefined) {
@@ -38,6 +36,7 @@ function returnStaticResource(req, res, next) {
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
+      console.error(`Error reading file: ${filePath}`, err);
       if (err.code === "ENOENT") {
         res.writeHead(404);
         res.end("404 Not Found");
@@ -52,4 +51,4 @@ function returnStaticResource(req, res, next) {
   });
 }
 
-exports.returnStaticResource = returnStaticResource;
+module.exports = { returnStaticResource: returnStaticResource };

@@ -4,18 +4,18 @@
         <title>TOP 8 PLANTS</title>
         <description> DESCRIPTION: Aici găsiți clasamentul celor mai populare plante colectate.</description>
         <language> Language:  en</language>
-        <lastBuildDate> DOWNLOAD NOW : Sat Jun 24 2023 23:06:06 GMT+0300 (Eastern European Summer Time)</lastBuildDate>
+        <lastBuildDate> DOWNLOAD NOW : Sun Jun 25 2023 10:36:23 GMT+0300 (Eastern European Summer Time)</lastBuildDate>
         
         <item>
-          <name>NAME: anthurium</name>
+          <name>NAME: peace lily</name>
           <top>NR. OF APPEARANCES: 3 </top>
           <category>CATEGORY: house</category>
           <type>TYPE: flower </type>
-          <season>SEASON: autumn </season>
-          <color>COLOR: red</color>      
-          <description>DESCRIPTION: Anthuriums are relatively easy to grow, have attractive foliage and under the proper environment, produce long lasting flowers year round. They are also known as Painted Tongue, Flamingo Flower (Flamingo Lily) or Tail Flower.</description>
+          <season>SEASON: summer </season>
+          <color>COLOR: white</color>      
+          <description>DESCRIPTION: Peace lilies are tropical, evergreen plants that thrive on the forest floor, where they receive dappled sunlight and consistent moisture. Replicating these conditions in the home is the key to getting your peace lily to be happy, healthy, and thriving.</description>
           <language>LANGUAGE: EN</language>
-          <pubDate>PUBLIC DATE: Sat, 24 Jun 2023 20:06:06 GMT</pubDate>
+          <pubDate>PUBLIC DATE: Sun, 25 Jun 2023 07:36:23 GMT</pubDate>
         </item>
       
         <item>
@@ -27,7 +27,7 @@
           <color>COLOR: pink</color>      
           <description>DESCRIPTION: Orchids are a diverse and widespread family of flowering plants, with blooms that are often colourful and fragrant. The definition of orchid is a flowering plant of the orchid family, which is the biggest family of flowering plants in the world.</description>
           <language>LANGUAGE: EN</language>
-          <pubDate>PUBLIC DATE: Sat, 24 Jun 2023 20:06:06 GMT</pubDate>
+          <pubDate>PUBLIC DATE: Sun, 25 Jun 2023 07:36:23 GMT</pubDate>
         </item>
       
         <item>
@@ -39,7 +39,7 @@
           <color>COLOR: yellow</color>      
           <description>DESCRIPTION: Taraxacum is a large genus of flowering plants in the family Asteraceae, which consists of species commonly known as dandelions. They are native to Eurasia and North America, but the two commonplace species worldwide, T. officinale and T. erythrospermum, were imports from Europe that now propagate as wildflowers.</description>
           <language>LANGUAGE: EN</language>
-          <pubDate>PUBLIC DATE: Sat, 24 Jun 2023 20:06:06 GMT</pubDate>
+          <pubDate>PUBLIC DATE: Sun, 25 Jun 2023 07:36:23 GMT</pubDate>
         </item>
       
         <item>
@@ -51,7 +51,7 @@
           <color>COLOR: purple</color>      
           <description>DESCRIPTION: Violets are a genus of flowering plants in the family Violaceae. It is the largest genus in the family, containing between 525 and 600 species.</description>
           <language>LANGUAGE: EN</language>
-          <pubDate>PUBLIC DATE: Sat, 24 Jun 2023 20:06:06 GMT</pubDate>
+          <pubDate>PUBLIC DATE: Sun, 25 Jun 2023 07:36:23 GMT</pubDate>
         </item>
       
         <item>
@@ -63,7 +63,19 @@
           <color>COLOR: purple</color>      
           <description>DESCRIPTION: Dahlias are a genus of bushy, tuberous, herbaceous perennial plants native to Mexico and Central America. A member of the Asteraceae, dicotyledonous plants, related species include the sunflower, daisy, chrysanthemum, and zinnia.</description>
           <language>LANGUAGE: EN</language>
-          <pubDate>PUBLIC DATE: Sat, 24 Jun 2023 20:06:06 GMT</pubDate>
+          <pubDate>PUBLIC DATE: Sun, 25 Jun 2023 07:36:23 GMT</pubDate>
+        </item>
+      
+        <item>
+          <name>NAME: ameryllis</name>
+          <top>NR. OF APPEARANCES: 2 </top>
+          <category>CATEGORY: house</category>
+          <type>TYPE: flower </type>
+          <season>SEASON: winter </season>
+          <color>COLOR: red</color>      
+          <description>DESCRIPTION: Amaryllis is a genus of flowering plants that are native to South Africa and South America. They are known for their large, showy flowers that bloom in a variety of colors, including red, pink, white, and orange. Amaryllis plants are popular as houseplants and are often given as gifts during the winter holiday season.</description>
+          <language>LANGUAGE: EN</language>
+          <pubDate>PUBLIC DATE: Sun, 25 Jun 2023 07:36:23 GMT</pubDate>
         </item>
       
         <item>
@@ -75,19 +87,7 @@
           <color>COLOR: white</color>      
           <description>DESCRIPTION: Jasmine is a fragrant flowering plant belonging to the Oleaceae family, known for its delicate white or yellow flowers and sweet, intoxicating scent. It is commonly used in perfumery, aromatherapy, and tea, and holds cultural significance in various traditions around the world.</description>
           <language>LANGUAGE: EN</language>
-          <pubDate>PUBLIC DATE: Sat, 24 Jun 2023 20:06:06 GMT</pubDate>
-        </item>
-      
-        <item>
-          <name>NAME: aloe vera</name>
-          <top>NR. OF APPEARANCES: 2 </top>
-          <category>CATEGORY: house</category>
-          <type>TYPE: plant </type>
-          <season>SEASON: all </season>
-          <color>COLOR: green</color>      
-          <description>DESCRIPTION: Aloe vera is a succulent plant known for its fleshy, gel filled leaves that have medicinal and cosmetic uses. It has a long history of being cultivated for its healing properties, including soothing burns, moisturizing the skin, and promoting overall skin health. Aloe vera plants are easy to grow and are commonly kept as houseplants for their ornamental appeal and practical benefits.</description>
-          <language>LANGUAGE: EN</language>
-          <pubDate>PUBLIC DATE: Sat, 24 Jun 2023 20:06:06 GMT</pubDate>
+          <pubDate>PUBLIC DATE: Sun, 25 Jun 2023 07:36:23 GMT</pubDate>
         </item>
       
         <item>
@@ -99,7 +99,7 @@
           <color>COLOR: white</color>      
           <description>DESCRIPTION: Kaffir lily, also known as Clivia, is a flowering plant native to South Africa, featuring clusters of vibrant, trumpet shaped flowers atop long stalks. It is appreciated for its striking blooms, which can range in color from orange to red and yellow. Kaffir lilies are commonly cultivated as houseplants or in outdoor gardens, and they thrive in shaded or partially shaded areas.</description>
           <language>LANGUAGE: EN</language>
-          <pubDate>PUBLIC DATE: Sat, 24 Jun 2023 20:06:06 GMT</pubDate>
+          <pubDate>PUBLIC DATE: Sun, 25 Jun 2023 07:36:23 GMT</pubDate>
         </item>
       
       </channel>

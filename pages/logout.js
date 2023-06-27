@@ -1,5 +1,3 @@
-console.log("logout.js");
-
 document
   .getElementById("login-link")
   .addEventListener("click", function (event) {

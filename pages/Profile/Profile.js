@@ -1,8 +1,6 @@
 const plantName = localStorage.getItem("plant");
 const divElement = document.getElementById("favorites");
 
-//console.log(plantName);
-
 // Verifică dacă plantName există și nu este gol
 if (plantName) {
   // Transformă plantName într-un array de obiecte (presupunând că este în format JSON)
@@ -95,8 +93,8 @@ document
         let resultsDiv = document.getElementById("COLLECT2");
         let htmlString = "";
 
-        if (data.rows.length == 0) {
-          htmlString += "<h2>Sorry, your collection is empty :(</h2>";
+        if (data.rows && data.rows.length > 0) {
+          htmlString += "<h2>Sorry, there are no collections :(</h2>";
         } else {
           data.rows.forEach((element) => {
             htmlString += ` <div class="PLANT-BOX" style="margin:30px">

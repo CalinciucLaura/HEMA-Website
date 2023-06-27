@@ -1,0 +1,31 @@
+const { getPopularity } = require("../repositories/index");
+const { getCurrentUser } = require("../repositories/user");
+
+async function showPopularityController(req, res) {
+  body = "";
+  req.on("data", (chunk) => {
+    body += chunk.toString(); // convert Buffer to string
+  });
+
+  req.on("end", async () => {
+    try {
+      const id_user = await getCurrentUser(req);
+      getPopularity().then((rows) => {
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(
+          JSON.stringify({
+            rows,
+          })
+        );
+        return;
+      });
+    } catch (err) {
+      console.error(err);
+      res.writeHead(500, { "Content-Type": "text/plain" });
+      res.end("Server error");
+      return;
+    }
+  });
+}
+
+module.exports = { showPopularityController: showPopularityController };

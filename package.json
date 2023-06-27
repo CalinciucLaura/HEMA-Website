@@ -1,5 +1,6 @@
 {
     "dependencies": {
+        "controllers": "^0.0.2",
         "data-fns": "^1.1.0",
         "date-fns": "^2.30.0",
         "fs": "^0.0.1-security",
