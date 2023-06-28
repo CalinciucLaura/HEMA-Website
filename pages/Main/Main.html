@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title id="page-title">HEMA</title>
     <link rel="stylesheet" href="../Main/Main.css" />
+    
     <script src="../Main/Main.js"></script>
+ 
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +22,7 @@
     <!-- Navbar -->
     <header>
       <ul class="LOGO">
-        <li><a href="../Main/Main.html">HEMA</a></li>
+        <li><a href="Main.html">HEMA</a></li>
       </ul>
       <nav>
         <button class="hamburger">&#9776;</button>
@@ -32,8 +34,8 @@
          <li><a id="recommendation-link" href="../Recommendation/Recommendation.html">Recommendation</a></li>
           <li><a id="help-link" href="../Help/help.html">Help</a></li>
           <li><a id="about-link" href="../About/about.html">About</a></li>
-          <li><a id="login-link" href="../Login/login.html">Login</a></li>
-          <li><a id="register-link" href="../Register/register.html">Register</a> </li>
+          <li><a id="login-link" href="../Login/login.html">Log out</a></li>
+ 
           <li><a href="../Profile/Profile.html" ><img src="../../images/Main/profile-icon.png" style="width: 25px;"></a></li>
           
           </ul>
@@ -53,8 +55,8 @@
         </p>
 
         <div class="BACKGROUND-BUTTONS">
-          <a href="../Login/login.html"><button>LOGIN</button> </a>
-          <a href="../Register/register.html"><button>REGISTER</button> </a>
+          <a href="../About/about.html"><button>ABOUT</button> </a>
+          <a href="../Recommendation/Recommendation.html"><button>RECOMMENDATION</button> </a>
         </div>
       </div>
     </div>
@@ -97,7 +99,7 @@
     </div>
 
     <div class="PLANT-BOX"> 
-      <img src="../../images/Main/Mint.jpg" >
+      <img src="../../images/Main/mint.jpg" >
       <a href="../Medicinal/Medicinal.html">
       <div class="TEXT-BOX">
         <h4>MEDICINAL</h4>
@@ -110,6 +112,8 @@
 
 <!-- PLANTS CATEGORY CLOSED -->
 
+   
+
 <!-- FILTER -->
 <div class="FILTER">
 <h2>Search</h2>
@@ -117,86 +121,281 @@
 
    <!-- CATHEGORY -->
 
-  <form action="/action_page.php">
-    <label for="cathegory">Cathegory: </label>
-    <select id="cathegory" name="cathegory">
-      <option value="house">House</option>
-      <option value="garden">Garden</option>
-      <option value="tropical">Tropical</option>
-      <option value="medicinal">Medicinal</option>
-    </select>
-  </form>
+   <form id="mySearch">
 
-  <!-- NAME -->
+   <!-- Category Section -->
+   <fieldset>
+    <legend>Category:</legend>
+    <input type="checkbox" id="house" name="category" value="house">
+    <label for="house">house</label><br>
+    <input type="checkbox" id="garden" name="category" value="garden">
+    <label for="garden">garden</label><br>
+    <input type="checkbox" id="tropical" name="category" value="tropical">
+    <label for="tropical">tropical</label><br>
+    <input type="checkbox" id="medicinal" name="category" value="medicinal">
+    <label for="medicinal">medicinal</label><br>
+</fieldset>
 
-  <form action="/action_page.php">
-    <label for="plant"> Name: </label>
-    <select id="plant" name="plant">
-      <option value="orhid">Orhid</option>
-      <option value="poinsettia">Poinsettia</option>
-      <option value="jasmine">Jasmine</option>
-      <option value="dandelion">Dandelion</option>
-      <option value="roses">Roses</option>
-      <option value="tulip">Tulip</option>
-    </select>
-  </form>
-
-  <!-- TYPE -->
-
-  <form action="/action_page.php">
-    <label for="type"> Type: </label>
-    <select id="type" name="type">
-      <option value="tree">Tree</option>
-      <option value="herb">Herb</option>
-      <option value="shrub">Shrub</option>
-    </select>
-  </form>
-
-  <!-- COLOR -->
   
-  <form action="/action_page.php">
-    <label for="color"> Color: </label>
-    <select id="color" name="color">
-      <option value="white">White</option>
-      <option value="pink">Pink</option>
-      <option value="green">Green</option>
-      <option value="red">Red</option>
-      <option value="yellow">Yellow</option>
-      <option value="purple">Purple</option>
-      <option value="blue">Blue</option>
-      <option value="orange">Orange</option>
-      <option value="black">Black</option>
-    </select>
-  </form>
+<div id="checkboxContainer">
+<fieldset id="name">
+  <legend>Name:</legend>
+  <!-- Plants from the "House" category -->
+  <input type="checkbox" id="orchid" name="name" value="orchid">
+  <label for="orchid">Orchid</label><br>
+  <input type="checkbox" id="peace lily" name="name" value="peace lily">
+  <label for="peace lily">Peace Lily</label><br>
+  <input type="checkbox" id="anthurium" name="name" value="anthurium">
+  <label for="anthurium">Anthurium</label><br>
+  <input type="checkbox" id="kaffir lily" name="name" value="kaffir lily">
+  <label for="kaffir lily">Kaffir Lily</label><br>
+  <input type="checkbox" id="rubber plant" name="name" value="rubber plant">
+  <label for="rubber plant">Rubber Plant</label><br>
+  <input type="checkbox" id="aloe vera" name="name" value="aloe vera">
+  <label for="aloe vera">Aloe Vera</label><br>
+  <input type="checkbox" id="philondron" name="name" value="philondron">
+  <label for="philondron">Philondron</label><br>
+  <input type="checkbox" id="zz plant" name="name" value="zz plant">
+  <label for="zz plant">ZZ Plant</label><br>
+  <input type="checkbox" id="poinsettia" name="name" value="poinsettia">
+  <label for="poinsettia">Poinsettia</label><br>
+  <input type="checkbox" id="jasmine" name="name" value="jasmine">
+  <label for="jasmine">Jasmine</label><br>
+  <input type="checkbox" id="gloxinia" name="name" value="gloxinia">
+  <label for="gloxinia">Gloxinia</label><br>
+  <input type="checkbox" id="ameryllis" name="name" value="ameryllis">
+  <label for="ameryllis">Ameryllis</label><br>
+  <input type="checkbox" id="spider plant" name="name" value="spider plant">
+  <label for="spider plant">Spider Plant</label><br>
+  <input type="checkbox" id="chinese evergreen" name="name" value="chinese evergreen">
+  <label for="chinese evergreen">Chinese Evergreen</label><br>
+  <input type="checkbox" id="snake plant" name="name" value="snake plant">
+  <label for="snake plant">Snake Plant</label><br>
+  <input type="checkbox" id="monsterra" name="name" value="monsterra">
+  <label for="monsterra">Monsterra</label><br>
+  <input type="checkbox" id="bromeliad" name="name" value="bromeliad">
+  <label for="bromeliad">Bromeliad</label><br>
+  <input type="checkbox" id="succulent" name="name" value="succulent">
+  <label for="succulent">Succulent</label><br>
+  <input type="checkbox" id="devil's ivy" name="name" value="devil's ivy">
+  <label for="devil's ivy">Devil's Ivy</label><br>
 
-  <!-- CONDITIONS -->
 
-  <form action="/action_page.php">
-    <label for="condition"> Conditions: </label>
-    <select id="condition" name="condition">
-      <option value="sun">Sun</option>
-      <option value="shade">Shade</option>
-      <option value="water">Water requirements</option>
-    </select>
-  </form>
+  <!-- Plants from the "Garden" category -->
+  <input type="checkbox" id="roses" name="name" value="roses">
+  <label for="roses">Roses</label><br>
+  <input type="checkbox" id="liliac" name="name" value="liliac">
+  <label for="liliac">Liliac</label><br>
+  <input type="checkbox" id="dahlias" name="name" value="dahlias">
+  <label for="dahlias">Dahlias</label><br>
+  <input type="checkbox" id="peony" name="name" value="peony">
+  <label for="peony">Peony</label><br>
+  <input type="checkbox" id="lavender" name="name" value="lavender">
+  <label for="lavender">Lavender</label><br>
+  <input type="checkbox" id="lily" name="name" value="lily">
+  <label for="lily">Lily</label><br>
+  <input type="checkbox" id="violet" name="name" value="violet">
+  <label for="violet">Violet</label><br>
+  <input type="checkbox" id="daffodils" name="name" value="daffodils">
+  <label for="daffodils">Daffodils</label><br>
+  <input type="checkbox" id="petunia" name="name" value="petunia">
+  <label for="petunia">Petunia</label><br>
+  <input type="checkbox" id="sunflower" name="name" value="sunflower">
+  <label for="sunflower">Sunflower</label><br>
+  <input type="checkbox" id="daisy" name="name" value="daisy">
+  <label for="daisy">Daisy</label><br>
+  <input type="checkbox" id="chrysanthemum" name="name" value="chrysanthemum">
+  <label for="chrysanthemum">Chrysanthemum</label><br>
+  <input type="checkbox" id="snowdrop" name="name" value="snowdrop">
+  <label for="snowdrop">Snowdrop</label><br>
+  <input type="checkbox" id="crocus" name="name" value="crocus">
+  <label for="crocus">Crocus</label><br>
+  <input type="checkbox" id="cherry tree" name="name" value="cherry tree">
+  <label for="cherry tree">Cherry Tree</label><br>
+  <input type="checkbox" id="apple tree" name="name" value="apple tree">
+  <label for="apple tree">Apple Tree</label><br>
+  <input type="checkbox" id="pear tree" name="name" value="pear tree">
+  <label for="pear tree">Pear Tree</label><br>
+  <input type="checkbox" id="vine" name="name" value="vine">
+  <label for="vine">Vine</label><br>
+  <input type="checkbox" id="apricot tree" name="name" value="apricot tree">
+  <label for="apricot tree">Apricot Tree</label><br>
+  <input type="checkbox" id="tulip" name="name" value="tulip">
+  <label for="tulip">Tulip</label><br>
+  <input type="checkbox" id="hydrangeas" name="name" value="hydrangeas">
+  <label for="hydrangeas">Hydrangeas</label><br>
 
-  <!-- SEASON -->
+   <!-- Plant from the "Tropical" category -->
+    <input type="checkbox" id="bird of paradise" name="name" value="bird of paradise">
+    <label for="bird of paradise">Bird  Of Paradise</label><br>
+    <input type="checkbox" id="alpinia galanga" name="name" value="alpinia galanga">
+    <label for="alpinia galanga">Alpinia Galanga</label><br>
+    <input type="checkbox" id="palm tree" name="name" value="palm tree">
+    <label for="palm tree">Palm Tree</label><br>
+    <input type="checkbox" id="hibiscus" name="name" value="hibiscus">
+    <label for="hibiscus">Hibiscus</label><br>
+    <input type="checkbox" id="heliconia" name="name" value="heliconia">
+    <label for="heliconia">Heliconia</label><br>
+    <input type="checkbox" id="plumeria" name="name" value="plumeria">
+    <label for="plumeria">Plumeria</label><br>
+    <input type="checkbox" id="blue torch cactus" name="name" value="blue torch cactus">
+    <label for="blue torch cactus">Blue Torch Cactus</label><br>
+    <input type="checkbox" id="passiflora foetida" name="name" value="passiflora foetida">
+    <label for="passiflora foetida">Passiflora Foetida</label><br>
+    <input type="checkbox" id="santa rita cactus" name="name" value="santa rita cactus">
+    <label for="santa rita cactus">Santa Rita Cactus</label><br>
+    <input type="checkbox" id="dracunculus vulgaris" name="name" value="dracunculus vulgaris">
+    <label for="dracunculus vulgaris">Dracunculus Vulgaris</label><br>
+    <input type="checkbox" id="dietes grandiflora" name="name" value="dietes grandiflora">
+    <label for="dietes grandiflora">Dietes Grandiflora</label><br>
+    <input type="checkbox" id="calotropis procera" name="name" value="calotropis procera">
+    <label for="calotropis procera">Calotropis Procera</label><br>
+  
+    <input type="checkbox" id="calliandra tergemina" name="name" value="calliandra tergemina">
+    <label for="calliandra tergemina">Calliandra Tergemina</label><br>
+    <input type="checkbox" id="antigonon leptopus" name="name" value="antigonon leptopus">
+    <label for="antigonon leptopus">Antigonon Leptopus</label><br>
 
-  <form action="/action_page.php">
-    <label for="season"> Season: </label>
-    <select id="season" name="season">
-      <option value="winter">Winter</option>
-      <option value="spring">Spring</option>
-      <option value="summer">Summer</option>
-      <option value="fall">Fall</option>
-    </select>
-  </form>
+    <input type="checkbox" id="aloe vera medicinal" name="name" value="aloe vera medicinal">
+    <label for="aloe vera medicinal">Aloe Vera Medicinal</label><br>
 
+    <input type="checkbox" id="arisema triphyllum" name="name" value="arisema triphyllum">
+    <label for="arisema triphyllum">Arisema Triphyllum</label><br>
+
+    <input type="checkbox" id="ti plant" name="name" value="ti plant">
+    <label for="ti plant">Ti plant</label><br>
+
+    <input type="checkbox" id="areca palm" name="name" value="areca palm">
+    <label for="areca palm">Areca palm</label><br>
+
+    <input type="checkbox" id="hoya" name="name" value="hoya">
+    <label for="hoya">Hoya</label><br>
+    <input type="checkbox" id="orange tree" name="name" value="orange tree">
+    <label for="orange tree">Orange Tree</label><br>
+    <input type="checkbox" id="lemon tree" name="name" value="lemon tree">
+    <label for="lemon tree">Lemon Tree</label><br>
+    <input type="checkbox" id="salvia" name="name" value="salvia">
+    <label for="salvia">Salvia</label><br>
+    <input type="checkbox" id="dandelion" name="name" value="dandelion">
+    <label for="dandelion">Dandelion</label><br>
+    <input type="checkbox" id="cowberry" name="name" value="cowberry">
+    <label for="cowberry">Cowberry</label><br>
+    <input type="checkbox" id="saint john's wort" name="name" value="saint john's wort">
+    <label for="saint john's wort">Saint John's Wort</label><br>
+    <input type="checkbox" id="ashwagandha" name="name" value="ashwagandha">
+    <label for="ashwagandha">Ashwagandha</label><br>
+    <input type="checkbox" id="evening primrose" name="name" value="evening primrose">
+    <label for="evening primrose">Evening Primrose</label><br>
+    <input type="checkbox" id="mint" name="name" value="mint">
+    <label for="mint">Mint</label><br>
+    <input type="checkbox" id="chamomile" name="name" value="chamomile">
+    <label for="chamomile">Chamomile</label><br>
+    <input type="checkbox" id="echinacea" name="name" value="echinacea">
+    <label for="echinacea">Echinacea</label><br>
+    <input type="checkbox" id="hawthorn" name="name" value="hawthorn">
+    <label for="hawthorn">Hawthorn</label><br>
+    <input type="checkbox" id="cat's claw" name="name" value="cat's claw">
+    <label for="cat's claw">Cat's Claw</label><br>
+    <input type="checkbox" id="milk thistle" name="name" value="milk thistle">
+    <label for="milk thistle">Milk Thistle</label><br>
+    <input type="checkbox" id="valerian" name="name" value="valerian">
+    <label for="valerian">Valerian</label><br>
+    <input type="checkbox" id="turmeric" name="name" value="turmeric">
+    <label for="turmeric">Turmeric</label><br>
+    <input type="checkbox" id="ginkgo" name="name" value="ginkgo">
+    <label for="ginkgo">Ginkgo Biloba</label><br>
+    <input type="checkbox" id="rosemary" name="name" value="rosemary">
+    <label for="rosemary">Rosemary</label><br>
+    <input type="checkbox" id="black cohosh" name="name" value="black cohosh">
+    <label for="black cohosh">Black Cohosh</label><br>
+    <input type="checkbox" id="thyme" name="name" value="thyme">
+    <label for="thyme">Thyme</label><br>
+    <input type="checkbox" id="panax" name="name" value="panax">
+    <label for="panax">Panax</label><br>
+</fieldset>
 </div>
-<input type="submit">
+
+    <!-- Type Section -->
+    <fieldset >
+      <legend>Type:</legend>
+      <input type="checkbox" id="flower" name="type" value="flower">
+      <label for="flower">Flower</label><br>
+      <input type="checkbox" id="plant" name="type" value="plant">
+      <label for="plant">Plant</label><br>
+      <input type="checkbox" id="tree" name="type" value="tree">
+      <label for="tree">Tree</label><br>
+      <input type="checkbox" id="herb" name="type" value="herb">
+      <label for="herb">Herb</label><br>
+      <input type="checkbox" id="shrub" name="type" value="shrub">
+      <label for="shrub">Shrub</label><br>
+  </fieldset>
+   
+    <br>
+    <fieldset >
+    <legend>Color:</legend>
+    <input type="checkbox" id="white" name="color" value="white">
+    <label for="white">white</label><br>
+    <input type="checkbox" id="pink" name="color" value="pink">
+    <label for="pink">pink</label><br>
+    <input type="checkbox" id="green" name="color" value="green">
+    <label for="green">green</label><br>
+    <input type="checkbox" id="red" name="color" value="red">
+    <label for="red">red</label><br>
+    <input type="checkbox" id="yellow" name="color" value="yellow">
+    <label for="yellow">yellow</label><br>
+    <input type="checkbox" id="purple" name="color" value="purple">
+    <label for="purple">purple</label><br>
+    <input type="checkbox" id="blue" name="color" value="blue">
+    <label for="blue">blue</label><br>
+    <input type="checkbox" id="orange" name="color" value="orange">
+    <label for="orange">orange</label><br>
+    </fieldset>
+
+    <br>
+
+    <!-- Conditions Section -->
+    <fieldset id="conditions">
+      <legend>Conditions:</legend>
+      <input type="checkbox" id="sun" name="conditions" value="sun">
+      <label for="sun">sun</label><br>
+      <input type="checkbox" id="shade" name="conditions" value="shade">
+      <label for="shade">shade</label><br>
+      <input type="checkbox" id="water" name="conditions" value="water">
+      <label for="water">water</label><br>
+      <input type="checkbox" id="all" name="conditions" value="all">
+      <label for="all">all</label><br>
+  </fieldset>
+
+    <br>
+
+    <!-- Season -->
+    <fieldset id="season">
+      <legend>Season</legend>
+    <input type="checkbox" id="winter" name="season" value="winter">
+    <label for="winter">winter</label><br>
+    <input type="checkbox" id="spring" name="season" value="spring">
+    <label for="spring">spring</label><br>
+    <input type="checkbox" id="summer" name="season" value="summer">
+    <label for="summer">summer</label><br>
+    <input type="checkbox" id="autumn" name="season" value="autumn">
+    <label for="autumn">autumn</label><br>
+    <input type="checkbox" id="all" name="season" value="all">
+    <label for="all">all year</label><br>
+  </fieldset>
+
+    <br>
+
+    <button class="buttonSearch">Search</button>
+  </form>
+</div>
+
+<div id="showResults">
 </div>
 
 <!-- FILTER CLOSED -->
+
+<!-- SHOW RESULTS -->
+<div id="plantList"></div>
 
     <!-- FIND MORE-->
     <div class="BOX-FIND">
@@ -241,6 +440,9 @@
       </div>
     </div>
 
+    <script src="Main.js"></script>
+    <script src="../logout.js"></script>
+    <script src="../Plant.js"></script>
 </body>
-  </body>
+
 </html>

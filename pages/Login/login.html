@@ -2,20 +2,24 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Login Page</title>
-    <head>
-          <link rel="stylesheet" href="style_login.css"> 
-          <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
-          <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap" rel="stylesheet">
-    </head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="/Login/style_login.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
   <body>
     <div class="login">
       <div class="login-top">
-      <button onclick="window.location.href='../Main/Main.html'" class="LOGO">H E M A</button>
+        <button class="LOGO">H E M A</button>
       </div>
       <h1>Login</h1>
-      <form>
+
+      <form id="loginForm">
         <label for="username">Username:</label>
         <input
           type="text"
@@ -30,13 +34,20 @@
           name="password"
           placeholder="Enter password"
         />
-        </form>
-        <a href="../ForgotPassword/forgot_password.html" class="forgot-link">Forgot password?</a>
+
         <button class="submit-button" type="submit">Login</button>
-        <div>
-          <h2>Need an account?
-          <a href="../Register/register.html" class="register-link">Register</a></h2>
-        </div>
+      </form>
+      <!-- <a href="../ForgotPassword/forgot_password.html" class="forgot-link">Forgot password?</a> -->
+
+      <div>
+        <h2 id="loginMessage"></h2>
+        <h2>
+          Need an account?
+          <a href="/Register/register.html" class="register-link">Register</a>
+        </h2>
+      </div>
     </div>
+
+    <script src="/Login/login.js"></script>
   </body>
 </html>

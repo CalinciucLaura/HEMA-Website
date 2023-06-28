@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <body>
 
@@ -31,9 +32,10 @@
      <li><a id="recommendation-link" href="../Recommendation/Recommendation.html">Recommendation</a></li>
       <li><a id="help-link" href="../Help/help.html">Help</a></li>
       <li><a id="about-link" href="../About/about.html">About</a></li>
-      <li><a id="login-link" href="../Login/login.html">Login</a></li>
-      <li><a id="register-link" href="../Register/register.html">Register</a> </li>
+      <li><a id="login-link" href="../Login/login.html">Log out</a></li>
+   
       <li><a href="../Profile/Profile.html" ><img src="../../images/Main/profile-icon.png" style="width: 25px;"></a></li>
+      
     </ul>
   </nav>
 </header>
@@ -54,33 +56,45 @@
 <!-- ROW 1 -->
 <div class="PLANT-ROW">
 
-  <div class="PLANT-BOX" onclick="showDialog('Salvia','Salvia is a genus of plants in the mint family, Lamiaceae. There are over 1,000 species of Salvia, many of which are commonly known as sage. These plants are found all over the world, but are most diverse in Central and South America. Salvia plants can be annuals, biennials, or perennials and vary in size from small herbs to large shrubs. The flowers of Salvia plants are typically tubular and come in a wide range of colors, including blue, purple, red, pink, and white. Many species of Salvia have medicinal and culinary uses, and some are also grown for their ornamental value in gardens and landscapes.')">
-    <img id="img1" src="../../images/Main/Salvia.jpg">
-    <div class="TEXT-BOX">
-      <h4>SALVIA</h4>
+  <div class="PLANT-BOX">
+    <img id="img21" src="../../images/Main/salvia.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Salvia Plant', 'The Salvia plant, also known as Sage, encompasses a diverse genus of flowering plants with over 900 species. Salvia plants are renowned for their vibrant and showy flowers, which come in various colors like blue, purple, red, or white, depending on the species. They belong to the Lamiaceae family and are native to different regions around the world. Salvia plants are loved for their aromatic foliage and attractive blooms, which attract pollinators like bees and butterflies. They prefer well-drained soil and full sun to thrive. With their versatility and ornamental appeal, Salvia plants are widely cultivated in gardens and landscapes for their striking display of colors and their ability to attract beneficial wildlife.')">
+        <h4>SALVIA PLANT</h4>
     </div>
-  </div>
+    <button class="favorite-button heart-default" data-name="salvia">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 
-  <div class="PLANT-BOX" onclick="showDialog('Dandelion','Dandelion (Taraxacum officinale) is a common flowering plant that is native to Europe and Asia but has spread throughout the world. It is a member of the Asteraceae family and is often considered a weed due to its prolific growth and ability to spread easily.<br><br> Dandelions have bright yellow flowers that bloom in the spring and summer. The flowers are followed by round, fluffy seed heads that disperse in the wind. The leaves are lobed and have a toothed edge, and the plant\'s taproot is long and deep. Dandelions are known for their many health benefits and are used in traditional medicine to treat a variety of ailments, including digestive issues and skin conditions. They are also used in herbal teas and as a food source in salads and other dishes. ')"> 
-    <img id="img2" src="../../images/Main/Dandelion.jpg",>
-    <div class="TEXT-BOX">
+  <div class="PLANT-BOX"> 
+    <img id="img2" src="../../images/Main/Dandelion.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Dandelion','Dandelion \'Taraxacum officinale\' is a common flowering plant that is native to Europe and Asia but has spread throughout the world. It is a member of the Asteraceae family and is often considered a weed due to its prolific growth and ability to spread easily.<br><br> Dandelions have bright yellow flowers that bloom in the spring and summer. The flowers are followed by round, fluffy seed heads that disperse in the wind. The leaves are lobed and have a toothed edge, and the plant\'s taproot is long and deep. Dandelions are known for their many health benefits and are used in traditional medicine to treat a variety of ailments, including digestive issues and skin conditions. They are also used in herbal teas and as a food source in salads and other dishes. ')">
       <h4>DANDELION</h4>
     </div>
+    <button class="favorite-button heart-default" data-name="dandelion">
+      <i class="fas fa-heart"></i>
+  </button>
   </div> 
 
-  <div class="PLANT-BOX" onclick="showDialog('CowBerry','Cowberry, also known as lingonberry or mountain cranberry, is a wild berry commonly found in northern regions of Europe, Asia, and North America. It is a low-growing evergreen shrub that produces small, tart berries that are rich in vitamins and antioxidants. The berries are often used in cooking and baking, and are also made into jams, jellies, and sauces. In some traditional cultures, cowberry leaves and berries are used for medicinal purposes, such as treating urinary tract infections and improving digestion.')"> 
+  <div class="PLANT-BOX"> 
     <img id="img3" src="../../images/Main/CowBerry.jpg">
-    <div class="TEXT-BOX">
+    <div class="TEXT-BOX" onclick="showDialog('CowBerry','Cowberry, also known as lingonberry or mountain cranberry, is a wild berry commonly found in northern regions of Europe, Asia, and North America. It is a low-growing evergreen shrub that produces small, tart berries that are rich in vitamins and antioxidants. The berries are often used in cooking and baking, and are also made into jams, jellies, and sauces. In some traditional cultures, cowberry leaves and berries are used for medicinal purposes, such as treating urinary tract infections and improving digestion.')">
       <h4>COWBERRY</h4>
     </div>
+    <button class="favorite-button heart-default" data-name="cowberry">
+      <i class="fas fa-heart"></i>
+  </button>
   </div>
 
  
-  <div class="PLANT-BOX"  onclick="showDialog('Saint John\'s Wort','Saint John\'s Wort (Hypericum perforatum) is a flowering plant in the Hypericaceae family. It is native to Europe but can now be found in many parts of the world. Saint John\'s Wort is known for its medicinal properties and is often used as a natural treatment for depression and anxiety. The plant has yellow, star-shaped flowers that bloom in the summer, and its leaves are oval and dotted with small glands that contain a red oil. It is also commonly used in herbal teas, supplements, and topical treatments for a variety of ailments. However, it can interact with certain medications, so it is important to consult with a healthcare professional before using it.')"> 
+  <div class="PLANT-BOX"  > 
     <img id="img4" src="../../images/Main/SaintJohn'sWort.jpg">
-    <div class="TEXT-BOX">
+    <div class="TEXT-BOX" onclick="showDialog('Saint John\'s Wort','Saint John\'s Wort \'Hypericum perforatum\' is a flowering plant in the Hypericaceae family. It is native to Europe but can now be found in many parts of the world. Saint John\'s Wort is known for its medicinal properties and is often used as a natural treatment for depression and anxiety. The plant has yellow, star-shaped flowers that bloom in the summer, and its leaves are oval and dotted with small glands that contain a red oil. It is also commonly used in herbal teas, supplements, and topical treatments for a variety of ailments. However, it can interact with certain medications, so it is important to consult with a healthcare professional before using it.')">
       <h4>SAINT JOHN'S WORT</h4>
     </div>
+    <button class="favorite-button heart-default" data-name="saint john's wort">
+      <i class="fas fa-heart"></i>
+  </button>
   </div>
 </div>
 
@@ -89,66 +103,90 @@
 <!-- ROW 2 -->
 <div class="PLANT-ROW">
 
-  <div class="PLANT-BOX"  onclick="showDialog('Ashwagandha','Ashwagandha (Withania somnifera) is an herb commonly used in traditional Ayurvedic medicine. It is also known as Indian ginseng or winter cherry. Ashwagandha is native to India, Pakistan, and Sri Lanka, and is cultivated in many other countries as well.<br><br> The root and berry of the ashwagandha plant are used to make medicine. It is believed to have a range of health benefits, including reducing stress and anxiety, improving brain function, lowering blood sugar and cholesterol levels, boosting testosterone and fertility in men, and reducing inflammation and pain. <br><br> Ashwagandha can be consumed in several forms, including capsules, powders, and teas. It is also used in some traditional Indian dishes. It is generally considered safe, but it may interact with certain medications and may not be appropriate for everyone. It is best to consult with a healthcare professional before starting to take ashwagandha supplements. ')"> 
+  <div class="PLANT-BOX"  > 
     <img id="img5" src="../../images/Main/Ashwagandha.jpg">
-    <div class="TEXT-BOX">
+    <div class="TEXT-BOX" onclick="showDialog('Ashwagandha','Ashwagandha \'Withania somnifera\' is an herb commonly used in traditional Ayurvedic medicine. It is also known as Indian ginseng or winter cherry. Ashwagandha is native to India, Pakistan, and Sri Lanka, and is cultivated in many other countries as well.<br><br> The root and berry of the ashwagandha plant are used to make medicine. It is believed to have a range of health benefits, including reducing stress and anxiety, improving brain function, lowering blood sugar and cholesterol levels, boosting testosterone and fertility in men, and reducing inflammation and pain. <br><br> Ashwagandha can be consumed in several forms, including capsules, powders, and teas. It is also used in some traditional Indian dishes. It is generally considered safe, but it may interact with certain medications and may not be appropriate for everyone. It is best to consult with a healthcare professional before starting to take ashwagandha supplements. ')">
       <h4>ASHWAGANDHA</h4>
     </div>
+    <button class="favorite-button heart-default" data-name="ashwagandha">
+      <i class="fas fa-heart"></i>
+  </button>
   </div>
 
-    <div class="PLANT-BOX"  onclick="showDialog('Evening Primrose','Evening primrose (Oenothera biennis) is a wildflower native to North America but now widely grown around the world for its medicinal and ornamental uses. It is a biennial plant that grows up to 6 feet tall and produces yellow, fragrant flowers that open at night. The plant blooms from mid-summer to early fall and is often found growing in fields, meadows, and along roadsides.Evening primrose (Oenothera biennis) is a wildflower native to North America but now widely grown around the world for its medicinal and ornamental uses. It is a biennial plant that grows up to 6 feet tall and produces yellow, fragrant flowers that open at night. The plant blooms from mid-summer to early fall and is often found growing in fields, meadows, and along roadsides. <br><br> The evening primrose plant is known for its oil, which is extracted from its seeds and used as a dietary supplement to help with various health conditions. The oil is rich in gamma-linolenic acid (GLA), an omega-6 fatty acid that is believed to have anti-inflammatory properties and may help with skin health, hormonal balance, and immune system function.<br><br> The plant is also used in traditional medicine for various conditions, including PMS symptoms, menopause symptoms, asthma, eczema, and rheumatoid arthritis. However, more research is needed to fully understand its potential health benefits. Evening primrose is also a popular ornamental plant, and its showy flowers are often used in landscaping and gardening. The plant prefers well-drained soil and full sun to partial shade, and it is relatively easy to grow from seed.  ')"> 
+    <div class="PLANT-BOX"  > 
       <img id="img6" src="../../images/Main/EveningPrimrose.jpg">
-      <div class="TEXT-BOX">
+      <div class="TEXT-BOX" onclick="showDialog('Evening Primrose','Evening primrose \'Oenothera biennis\' is a wildflower native to North America but now widely grown around the world for its medicinal and ornamental uses. It is a biennial plant that grows up to 6 feet tall and produces yellow, fragrant flowers that open at night. The plant blooms from mid-summer to early fall and is often found growing in fields, meadows, and along roadsides.Evening primrose (Oenothera biennis) is a wildflower native to North America but now widely grown around the world for its medicinal and ornamental uses. It is a biennial plant that grows up to 6 feet tall and produces yellow, fragrant flowers that open at night. The plant blooms from mid-summer to early fall and is often found growing in fields, meadows, and along roadsides. <br><br> The evening primrose plant is known for its oil, which is extracted from its seeds and used as a dietary supplement to help with various health conditions. The oil is rich in gamma-linolenic acid (GLA), an omega-6 fatty acid that is believed to have anti-inflammatory properties and may help with skin health, hormonal balance, and immune system function.<br><br> The plant is also used in traditional medicine for various conditions, including PMS symptoms, menopause symptoms, asthma, eczema, and rheumatoid arthritis. However, more research is needed to fully understand its potential health benefits. Evening primrose is also a popular ornamental plant, and its showy flowers are often used in landscaping and gardening. The plant prefers well-drained soil and full sun to partial shade, and it is relatively easy to grow from seed.  ')">
         <h4>EVENING PRIMROSE</h4>
       </div>
+      <button class="favorite-button heart-default" data-name="evening primrose">
+      <i class="fas fa-heart"></i>
+  </button>
     </div>
 
 
-    <div class="PLANT-BOX"  onclick="showDialog('Mint','Mint is a herbaceous plant that belongs to the family Lamiaceae. It is a popular herb known for its refreshing fragrance and flavor. There are several species of mint, including peppermint, spearmint, and chocolate mint. Mint leaves are commonly used for culinary purposes, such as adding flavor to drinks, salads, and desserts. They are also used in the production of essential oils, which are used in aromatherapy, perfumes, and other cosmetic products. Mint is also known for its medicinal properties, such as relieving digestive issues, easing headaches, and reducing anxiety.')"> 
+    <div class="PLANT-BOX"  > 
       <img id="img7" src="../../images/Main/Mint.jpg">
-      <div class="TEXT-BOX">
+      <div class="TEXT-BOX" onclick="showDialog('Mint','Mint is a herbaceous plant that belongs to the family Lamiaceae. It is a popular herb known for its refreshing fragrance and flavor. There are several species of mint, including peppermint, spearmint, and chocolate mint. Mint leaves are commonly used for culinary purposes, such as adding flavor to drinks, salads, and desserts. They are also used in the production of essential oils, which are used in aromatherapy, perfumes, and other cosmetic products. Mint is also known for its medicinal properties, such as relieving digestive issues, easing headaches, and reducing anxiety.')">
         <h4>MINT</h4>
       </div>
+      <button class="favorite-button heart-default" data-name="mint">
+      <i class="fas fa-heart"></i>
+  </button>
     </div>
 
-    <div class="PLANT-BOX"  onclick="showDialog('Chamomile','Chamomile is a small, daisy-like flower that belongs to the Asteraceae family. The plant is native to Europe and Asia, but is now cultivated in many parts of the world. Chamomile flowers are used to make tea, essential oil, and other herbal remedies. Chamomile is known for its calming and relaxing properties and is often used to treat anxiety, insomnia, and other stress-related conditions. It is also used topically to soothe skin irritations and promote wound healing. There are two main types of chamomile: German chamomile (Matricaria chamomilla) and Roman chamomile (Chamaemelum nobile), both of which have similar uses and properties.')"> 
+    <div class="PLANT-BOX"  > 
       <img id="img8" src="../../images/Main/Chamomile.jpg" >
-      <div class="TEXT-BOX">
+      <div class="TEXT-BOX" onclick="showDialog('Chamomile','Chamomile is a small, daisy-like flower that belongs to the Asteraceae family. The plant is native to Europe and Asia, but is now cultivated in many parts of the world. Chamomile flowers are used to make tea, essential oil, and other herbal remedies. Chamomile is known for its calming and relaxing properties and is often used to treat anxiety, insomnia, and other stress-related conditions. It is also used topically to soothe skin irritations and promote wound healing. There are two main types of chamomile: German chamomile (Matricaria chamomilla) and Roman chamomile (Chamaemelum nobile), both of which have similar uses and properties.')">
         <h4>CHAMOMILE</h4>
       </div>
+      <button class="favorite-button heart-default" data-name="chamomile">
+      <i class="fas fa-heart"></i>
+  </button>
     </div>
 </div>
 
 <!-- ROW 3 -->
 <div class="PLANT-ROW">
 
-  <div class="PLANT-BOX"  onclick="showDialog('Echinacea','Echinacea is a genus of herbaceous flowering plants in the daisy family. They are also known as coneflowers because of the distinctive shape of their flower heads. Echinacea is native to North America and is commonly used in traditional medicine to boost the immune system and treat a variety of ailments, such as colds, flu, and infections.<br><br> There are nine species of Echinacea, but the most commonly used species for medicinal purposes are Echinacea angustifolia, Echinacea pallida, and Echinacea purpurea. Echinacea plants grow best in well-drained soil and full sun, and they are drought tolerant once established. The plant is typically harvested in the fall, after the flowers have died back, and the roots are used to make herbal supplements, teas, and tinctures.')"> 
+  <div class="PLANT-BOX"  > 
     <img id="img9" src="../../images/Main/Echinacea.jpg">
-    <div class="TEXT-BOX">
+    <div class="TEXT-BOX" onclick="showDialog('Echinacea','Echinacea is a genus of herbaceous flowering plants in the daisy family. They are also known as coneflowers because of the distinctive shape of their flower heads. Echinacea is native to North America and is commonly used in traditional medicine to boost the immune system and treat a variety of ailments, such as colds, flu, and infections.<br><br> There are nine species of Echinacea, but the most commonly used species for medicinal purposes are Echinacea angustifolia, Echinacea pallida, and Echinacea purpurea. Echinacea plants grow best in well-drained soil and full sun, and they are drought tolerant once established. The plant is typically harvested in the fall, after the flowers have died back, and the roots are used to make herbal supplements, teas, and tinctures.')">
       <h4>ECHINACEA</h4>
     </div>
+    <button class="favorite-button heart-default" data-name="echinacea">
+      <i class="fas fa-heart"></i>
+  </button>
   </div>
 
-  <div class="PLANT-BOX"  onclick="showDialog('Hawthorn','Hawthorn is a type of flowering shrub or small tree that belongs to the rose family (Rosaceae). It is native to temperate regions in the Northern Hemisphere, including Europe, North America, and Asia.<br><br> The hawthorn tree typically grows to a height of 5-15 meters and has thorny branches. It produces small, white or pink flowers in the spring, which are followed by red or black fruit in the fall. The fruit of the hawthorn tree is edible and has a slightly sweet taste, but it is not commonly consumed by humans. <br><br> Hawthorn has been used in traditional medicine for centuries to treat various ailments, including cardiovascular disease, digestive problems, and anxiety. It is believed to have antioxidant and anti-inflammatory properties, and some studies suggest that it may help lower blood pressure and cholesterol levels.<br><br>  In addition to its medicinal uses, hawthorn is also a popular ornamental plant in gardens and parks due to its attractive flowers and berries. The wood of the hawthorn tree is hard and dense, and it has been used for woodworking and making tool handles. ')"> 
+  <div class="PLANT-BOX"  > 
     <img id="img10" src="../../images/Main/Hawthorn.jpg">
-    <div class="TEXT-BOX">
+    <div class="TEXT-BOX" onclick="showDialog('Hawthorn','Hawthorn is a type of flowering shrub or small tree that belongs to the rose family \'Rosaceae\'. It is native to temperate regions in the Northern Hemisphere, including Europe, North America, and Asia.<br><br> The hawthorn tree typically grows to a height of 5-15 meters and has thorny branches. It produces small, white or pink flowers in the spring, which are followed by red or black fruit in the fall. The fruit of the hawthorn tree is edible and has a slightly sweet taste, but it is not commonly consumed by humans. <br><br> Hawthorn has been used in traditional medicine for centuries to treat various ailments, including cardiovascular disease, digestive problems, and anxiety. It is believed to have antioxidant and anti-inflammatory properties, and some studies suggest that it may help lower blood pressure and cholesterol levels.<br><br>  In addition to its medicinal uses, hawthorn is also a popular ornamental plant in gardens and parks due to its attractive flowers and berries. The wood of the hawthorn tree is hard and dense, and it has been used for woodworking and making tool handles. ')">
       <h4>HAWTHORN</h4>
     </div>
+    <button class="favorite-button heart-default" data-name="hawthorn">
+      <i class="fas fa-heart"></i>
+  </button>
   </div> 
 
-  <div class="PLANT-BOX"  onclick="showDialog('Cat\'s Claw','Cat\'s claw is a type of vine that grows in the tropical regions of Central and South America. The plant is also known as Una de Gato, which means \'cat\'s claw\' in Spanish, and its scientific name is Uncaria tomentosa.<br><br> Cat\'s claw is a type of vine that grows in the tropical regions of Central and South America. The plant is also known as Una de Gato, which means \'cat\'s claw\' in Spanish, and its scientific name is Uncaria tomentosa.')"> 
-    <img id="img11" src="../../images/Main/CatsClaw.jpg" >
-    <div class="TEXT-BOX">
+  <div class="PLANT-BOX"  > 
+    <img id="img11" src="../../images/Main/Cat'sClaw.jpg" >
+    <div class="TEXT-BOX" onclick="showDialog('Cat\'s Claw','Cat\'s claw is a type of vine that grows in the tropical regions of Central and South America. The plant is also known as Una de Gato, which means \'cat\'s claw\' in Spanish, and its scientific name is Uncaria tomentosa.<br><br> Cat\'s claw is a type of vine that grows in the tropical regions of Central and South America. The plant is also known as Una de Gato, which means \'cat\'s claw\' in Spanish, and its scientific name is Uncaria tomentosa.')">
       <h4>CAT'S CLAW</h4>
     </div>
+    <button class="favorite-button heart-default" data-name="cat's claw">
+      <i class="fas fa-heart"></i>
+  </button>
   </div>
 
-  <div class="PLANT-BOX"  onclick="showDialog('MilkThistle','')"> 
-    <img id="img12" src="../../images/Main/MilkThistle.jpg">
-    <div class="TEXT-BOX">
-      <h4>MILKTHISTLE</h4>
+  <div class="PLANT-BOX">
+    <img id="img22" src="../../images/Main/MilkThistle.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Milk Thistle', 'Milk Thistle, scientifically known as Silybum marianum, is a flowering plant native to the Mediterranean region. It belongs to the Asteraceae family and is recognized for its distinctive purple flowers and spiky leaves with white veins. Milk Thistle is renowned for its medicinal properties and has been traditionally used to support liver health and detoxification. The plant produces seeds that contain a bioactive compound called silymarin, which is known for its antioxidant and anti-inflammatory effects. Milk Thistle is also cultivated as an ornamental plant, adding a unique and striking appearance to gardens and landscapes.')">
+        <h4>MILK THISTLE</h4>
     </div>
-  </div>
+    <button class="favorite-button heart-default" data-name="milk thistle">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 </div>
 
 
@@ -156,70 +194,94 @@
 
 <div class="PLANT-ROW">
 
-    <div class="PLANT-BOX" onclick="showDialog('','')"> 
-      <img id="img13" src="../../images/Main/Valerian.jpg">
-      <div class="TEXT-BOX">
+    <div class="PLANT-BOX">
+    <img id="img23" src="../../images/Main/Valerian.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Valerian', 'Valerian, scientifically known as Valeriana officinalis, is a perennial flowering plant native to Europe and Asia. It belongs to the Caprifoliaceae family and is known for its fragrant pink or white flowers and fern-like foliage. Valerian is valued for its calming and sedative properties and has been used for centuries as a herbal remedy for promoting relaxation and sleep. It is often consumed in the form of teas, extracts, or capsules. Valerian plants prefer moist and well-drained soil and thrive in full sun to partial shade. With its medicinal benefits and attractive appearance, Valerian is a popular choice for herb gardens and natural medicine enthusiasts.')">
         <h4>VALERIAN</h4>
-      </div>
     </div>
+    <button class="favorite-button heart-default" data-name="valerian">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 
 
-    <div class="PLANT-BOX" onclick="showDialog('','')"> 
-      <img id="img14" src="../../images/Main/Turmeric.jpg">
-      <div class="TEXT-BOX">
+    <div class="PLANT-BOX">
+    <img id="img24" src="../../images/Main/turmeric.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Turmeric', 'Turmeric, scientifically known as Curcuma longa, is a perennial herbaceous plant native to Southeast Asia. It belongs to the Zingiberaceae family and is renowned for its bright yellow-orange rhizomes, which are widely used as a spice and natural coloring agent. Turmeric has been used for centuries in traditional medicine due to its potential health benefits. It contains a bioactive compound called curcumin, which exhibits antioxidant and anti-inflammatory properties. Turmeric plants thrive in tropical and subtropical climates and require well-draining soil and ample sunlight. With its vibrant color and culinary uses, Turmeric is not only a valuable herb but also a beautiful addition to gardens and landscapes.')">
         <h4>TURMERIC</h4>
-      </div>
     </div>
+    <button class="favorite-button heart-default" data-name="turmeric">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 
-    <div class="PLANT-BOX" onclick="showDialog('','')"> 
-      <img id="img15" src="../../images/Main/GinkgoBiloba.jpg">
-      <div class="TEXT-BOX">
+    <div class="PLANT-BOX">
+    <img id="img25" src="../../images/Main/GinkgoBiloba.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Ginkgo Biloba', 'Ginkgo biloba, commonly known as the Ginkgo tree, is a unique and ancient tree species native to China. It is the only living species in the division Ginkgophyta and has no close living relatives. Ginkgo biloba is prized for its distinct fan-shaped leaves, which turn vibrant yellow in the fall. It is considered a living fossil and has a rich history dating back millions of years. Ginkgo biloba is often planted for its ornamental value and is also used in traditional medicine. Its leaves and seeds are believed to have potential health benefits, including supporting cognitive function and promoting circulation. Ginkgo biloba trees are hardy and adaptable, thriving in various climates and soil types.')">
         <h4>GINKGO BILOBA</h4>
-      </div>
     </div>
+    <button class="favorite-button heart-default" data-name="ginkgo biloba">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 
-    <div class="PLANT-BOX" onclick="showDialog('','')"> 
-      <img id="img16" src="../../images/Main/Rosemary.jpg" >
-      <div class="TEXT-BOX">
+    <div class="PLANT-BOX">
+    <img id="img26" src="../../images/Main/Rosemary.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Rosemary', 'Rosemary, scientifically known as Rosmarinus officinalis, is an aromatic evergreen herb native to the Mediterranean region. It belongs to the Lamiaceae family and is highly valued for its culinary and medicinal uses. Rosemary plants have needle-like leaves that exude a pleasant aroma when crushed or brushed against. They produce small, blue or purple flowers that attract bees and other pollinators. Rosemary is known for its rich flavor and is commonly used as a seasoning in various dishes. It is also believed to have health benefits, such as improving digestion and memory. Rosemary plants thrive in sunny locations with well-draining soil and are often grown in herb gardens or containers.')">
         <h4>ROSEMARY</h4>
-      </div>
     </div>
+    <button class="favorite-button heart-default" data-name="rosemary">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 </div>
 
 <!-- ROW 5 -->
 
 <div class="PLANT-ROW">
 
-  <div class="PLANT-BOX" onclick="showDialog('','')"> 
-    <img id="img17" src="../../images/Main/BlackCohosh.jpg">
-    <div class="TEXT-BOX">
-      <h4>BLACK COHOSH</h4>
+  <div class="PLANT-BOX">
+    <img id="img27" src="../../images/Main/BlackCohosh.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Black Cohosh', 'Black Cohosh, scientifically known as Actaea racemosa, is a herbaceous perennial plant native to eastern North America. It belongs to the Ranunculaceae family and is esteemed for its medicinal properties. Black Cohosh has tall, spiky racemes of small white flowers that bloom in summer. It has a long history of traditional use by Native American tribes for various purposes, including women\'s health support. Black Cohosh is primarily known for its potential benefits in alleviating menopause-related symptoms. It is available in supplement form, and its root is commonly used in herbal preparations. Black Cohosh plants prefer partial shade and well-drained soil. They are a popular choice for shade gardens and natural medicine enthusiasts.')">
+        <h4>BLACK COHOSH</h4>
     </div>
-  </div>
+    <button class="favorite-button heart-default" data-name="black cohosh">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 
 
-  <div class="PLANT-BOX" onclick="showDialog('','')"> 
-    <img id="img18" src="../../images/Main/aloe.jpg">
-    <div class="TEXT-BOX">
-      <h4>ALOE</h4>
+  <div class="PLANT-BOX">
+    <img id="img28" src="../../images/Main/AloeVera.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Aloe Vera Medicinal', 'Aloe vera, scientifically known as Aloe barbadensis, is a succulent plant renowned for its medicinal properties. It belongs to the Asphodelaceae family and is native to the Arabian Peninsula. Aloe vera has fleshy, lance-shaped leaves with serrated edges and a gel-like substance inside. The gel is widely used for its soothing and healing effects on the skin, making aloe vera a popular ingredient in skincare products. It is also consumed internally for its potential digestive and immune system benefits. Aloe vera plants thrive in warm and arid climates, requiring well-drained soil and ample sunlight. They are commonly grown as houseplants and are valued for their ornamental beauty and therapeutic qualities.')">
+        <h4>ALOE VERA (MEDICINAL)</h4>
     </div>
-  </div>
+    <button class="favorite-button heart-default" data-name="aloe vera medicinal">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 
-  <div class="PLANT-BOX" onclick="showDialog('','')"> 
-    <img id="img19" src="../../images/Main/Thyme.jpg" >
-    <div class="TEXT-BOX">
-      <h4>THYME</h4>
+  <div class="PLANT-BOX">
+    <img id="img29" src="../../images/Main/Thyme.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Thyme', 'Thyme is a herbaceous perennial plant belonging to the Lamiaceae family. It is known for its aromatic leaves and is widely used as a culinary herb. Thyme plants have small, narrow leaves and produce tiny flowers in shades of white, pink, or purple. The leaves of thyme are rich in essential oils, giving them a strong and distinctive flavor. Thyme is a versatile herb that can be used fresh or dried in various dishes, including soups, stews, marinades, and roasted meats. It is also believed to have medicinal properties and is used in herbal remedies for respiratory and digestive issues. Thyme plants prefer well-drained soil and full sun, making them a popular choice for herb gardens and container gardening.')">
+        <h4>THYME</h4>
     </div>
-  </div>
+    <button class="favorite-button heart-default" data-name="thyme">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 
  
 
-  <div class="PLANT-BOX" onclick="showDialog('','')"> 
-    <img id="img20" src="../../images/Main/Panax.jpg" >
-    <div class="TEXT-BOX">
-      <h4>PANAX</h4>
+  <div class="PLANT-BOX">
+    <img id="img30" src="../../images/Main/Panax.jpg">
+    <div class="TEXT-BOX" onclick="showDialog('Panax Ginseng', 'Panax ginseng, commonly known as Asian ginseng or Korean ginseng, is a perennial plant native to East Asia. It belongs to the Araliaceae family and is highly valued for its medicinal properties. Panax ginseng is known for its fleshy roots, which are used in traditional Chinese medicine. It is believed to have adaptogenic properties, helping the body cope with physical and mental stress. Panax ginseng is also considered a stimulant and is used to boost energy and improve cognitive function. The plant requires well-drained soil and shade or partial shade to thrive. Due to its popularity and demand, Panax ginseng is often cultivated and harvested for its roots.')">
+        <h4>PANAX GINSENG</h4>
     </div>
-  </div>
+    <button class="favorite-button heart-default" data-name="panax">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
 </div>
 
 <!-- <script src="../House/House.js"></script> -->
@@ -232,5 +294,6 @@
   </div>
 
 <script src="../Plant.js"></script>
+<script src="../logout.js"></script>
 </body>
 </html>

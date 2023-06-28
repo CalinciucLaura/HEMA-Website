@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Register Page</title>
+    <title>REGISTER</title>
     <head>
           <link rel="stylesheet" href="style_register.css"> 
           <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
@@ -12,37 +12,44 @@
   <body>
     <div class="register">
       <div class="register-top">
-      <button onclick="window.location.href='../Main/Main.html'" class="LOGO">H E M A</button>
+      <button class="LOGO">H E M A</button>
       </div>
       <h1>Register</h1>
-      <form>
+
+      <form id="myForm">
         <label for="username">Username:</label>
         <input
           type="text"
           id="username"
           name="username"
-          placeholder="Enter username"
+          placeholder="user123"
         />
         <label for="email">Email:</label>
         <input
           type="text"
           id="email"
           name="email"
-          placeholder="Enter email"
+          placeholder="example@gmail.com"
         />
         <label for="password">Password:</label>
         <input
           type="password"
           id="password"
           name="password"
-          placeholder="Enter password"
+          placeholder="Between 3-8 characters"
         />
+ 
+    
+        <button class="submit-button"  >Register</button>
         </form>
-        <button class="submit-button" type="submit">Register</button>
+     
         <div>
+          <h2 id="registerMessage"></h2>
           <h2>Already have an account? 
           <a href="../Login/login.html" class="login-link">Login</a></h2>
         </div>
     </div>
+
+    <script src="register.js"></script>
   </body>
 </html>
