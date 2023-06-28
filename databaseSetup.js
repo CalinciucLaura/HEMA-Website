@@ -18,7 +18,8 @@ db.serialize(() => {
     username TEXT,
     email TEXT,
     password TEXT,
-    sessionToken TEXT
+    sessionToken TEXT,
+    isAdmin INTEGER
   )`);
 
   db.run(`CREATE TABLE IF NOT EXISTS plantAbout(

@@ -51,7 +51,7 @@ function registerController(req, res) {
               console.log("Cookie setat");
 
               db.run(
-                "INSERT INTO users(username, email, password, sessionToken) VALUES(?, ?, ?, ?)",
+                "INSERT INTO users(username, email, password, sessionToken, isAdmin) VALUES(?, ?, ?, ?, 0)",
                 [username, email, hashedPassword, token],
                 function (err) {
                   if (err) {

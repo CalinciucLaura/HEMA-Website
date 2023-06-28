@@ -27,6 +27,7 @@ const {
   modifyCollectionController,
 } = require("./controllers/modifyCollectionController");
 // const { accessController } = require("./controllers/accessController");
+const { showUsers } = require("./controllers/showUsers");
 
 async function getUserData() {
   try {
@@ -111,6 +112,12 @@ const server = http.createServer((req, res) => {
   if (req.method === "POST" && req.url === "/api/rss") {
     showRssController(req, res);
   }
+
+  if (req.method === "POST" && req.url === "/api/showUsers") {
+    showUsers(req, res);
+    return;
+  }
+
   // if (req.method == "POST" && req.url === "/api/rss") {
   //   //titlul si numele filei
   //   getPopularity()
@@ -153,12 +160,12 @@ const server = http.createServer((req, res) => {
   // if (req.url === "/" && req.method === "GET") {
   //   accessController(req, res);
   // }
+
   if (req.url === "/" && req.method === "GET") {
     returnStaticResource(req, res, false);
     return;
   } else if (!req.url.startsWith("/api") && req.method === "GET") {
     returnStaticResource(req, res, true);
-
     return;
   }
 });

@@ -1,3 +1,4 @@
+const { is } = require("date-fns/locale");
 const db = require("../databaseSetup.js");
 const bcrypt = require("bcrypt");
 
@@ -81,9 +82,42 @@ async function getCurrentUser(req) {
   });
 }
 
+function isAnAdmin(req) {
+  return new Promise((resolve, reject) => {
+    let sessionToken = getCookie(req);
+    db.get(
+      `SELECT isAdmin FROM users WHERE sessionToken = ?`,
+      [sessionToken],
+      (err, row) => {
+        if (err) {
+          console.error(err.message);
+          reject(err);
+        } else {
+          resolve(row.isAdmin);
+        }
+      }
+    );
+  });
+}
+
+function getUsers(req) {
+  return new Promise((resolve, reject) => {
+    db.all(`SELECT id, username, email , isAdmin FROM users`, (err, rows) => {
+      if (err) {
+        console.error(err.message);
+        reject(err);
+      } else {
+        resolve(rows);
+      }
+    });
+  });
+}
+
 module.exports = {
   isInDatabase: isInDatabase,
   isInDatabase2: isInDatabase2,
   getCurrentUser: getCurrentUser,
   getCookie: getCookie,
+  isAnAdmin: isAnAdmin,
+  getUsers: getUsers,
 };

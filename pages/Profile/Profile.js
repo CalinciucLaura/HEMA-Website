@@ -1,3 +1,5 @@
+const { error } = require("console");
+
 const plantName = localStorage.getItem("plant");
 const divElement = document.getElementById("favorites");
 
@@ -142,3 +144,50 @@ generateRSSButton.addEventListener("click", () => {
     })
     .catch((error) => console.error(error));
 });
+
+document.getElementById("showAllUsers").addEventListener("click", function () {
+  fetch("/api/showUsers", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("HTTP error! Status: ${response.status}");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Users:", data);
+      createTable(data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      console.error(error);
+      alert("Error: " + error);
+    });
+});
+
+function createTable(data) {
+  const table = document.getElementById("userTable");
+  table.innerHTML = "";
+
+  const headerRow = document.createElement("tr");
+  for (let key in data[0]) {
+    const headerCell = document.createElement("th");
+    headerCell.textContent = key;
+    headerRow.appendChild(headerCell);
+  }
+  table.appendChild(headerRow);
+
+  data.forEach((user) => {
+    const row = document.createElement("tr");
+    for (let key in user) {
+      const cell = document.createElement("td");
+      cell.textContent = user[key];
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  });
+}
