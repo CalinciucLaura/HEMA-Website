@@ -5,7 +5,6 @@ body {
   background-attachment: fixed;
   font-family: "Raleway", sans-serif;
 }
-
 body::before {
   content: "";
   display: block;
@@ -17,8 +16,7 @@ body::before {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
-
-.register {
+.block {
   position: relative;
   background-color: #c0b5b58d;
   border: 5px solid #383434;
@@ -26,37 +24,26 @@ body::before {
   max-width: 500px;
   margin: 50px auto;
   border-radius: 50px;
-  font-family: "Abril Fatface", cursive;
+  font-family: "Raleway", sans-serif;
 }
-
-.register-top {
+.block-top {
   position: absolute;
   top: 0;
   left: 0;
   width: 93%;
-  height: 9%;
+  height: 10%;
   background-color: #1e1e1e;
   padding: 19px;
-  margin: 0 auto;
   border-radius: 41px 41px 0 0;
   border-bottom: 3px solid #242121;
 }
-
 h1 {
   text-align: center;
   position: relative;
   top: 45px;
   font-family: "Raleway", sans-serif;
-  margin: 40px 30px;
+  margin: 60px auto;
 }
-h2 {
-  text-align: left;
-  position: relative;
-  left: 32%;
-  font-size: 15px;
-  font-family: "Raleway", sans-serif;
-}
-
 input[type="text"],
 input[type="password"] {
   width: 80%;
@@ -69,8 +56,8 @@ input[type="password"] {
   background-color: rgb(255, 255, 255);
   font-family: "Raleway", sans-serif;
   box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.25);
+  font-weight: 200;
 }
-
 .submit-button {
   background-color: #4caf50;
   color: white;
@@ -85,36 +72,24 @@ input[type="password"] {
   opacity: 1 !important;
   box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
 }
-
 .submit-button:hover {
   background-color: #45a049;
   background-color: rgba(76, 175, 80, 1);
 }
+
 .submit-button:active {
   background-color: #45a049;
   background-color: rgba(76, 175, 80, 1);
   box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
   transform: translateY(1px);
 }
-
-.login-link {
-  position: absolute;
-  font-size: 15px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  font-family: "Raleway", sans-serif;
-  display: inline;
-  margin: 10px, 10px;
-}
-
 label {
-  margin-right: 100px;
-  margin-top: 10px;
-  margin-left: 55px;
+  position: relative;
   display: inline-block;
   font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  left: 35%;
 }
 .LOGO {
   color: rgba(255, 255, 255, 0.596);

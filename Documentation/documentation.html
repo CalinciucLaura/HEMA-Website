@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation HeMa (Herbal Web Manager)</title>
+    <link rel="stylesheet" href="style-scholarly.css" />
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=PSFgI_Qh2x8niuGH7ZbQUSoPXpYmOgR6LEgSw1pOvazD0ngN-r-NGpY-x8uwdj1oWvVZ19vZF25mJxHg12msNrV0E0i5ahTsJRVe5dQx8PLC6iZ6kpM9uBObExUFD4mW8JFZiYyJied-9qy0h2xZOQ"
+      charset="UTF-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vYXR0YWNobWVudHMvMTA0OTA4OTY1NDE3NzEzNjc3NS8xMDk0NzIxNzM2MDU1OTgwMjMyL3NjaG9sYXJseS5odG1s"
+    />
+  </head>
+  <body>
+    <div class="title-box">
+      <h1 class="title">Documentation HeMa (Herbal Web Manager)</h1>
+    </div>
+    <div class="title_cap">
+      <h2><b>Authors: Codreanu Robert & Calinciuc Laura</b></h2>
+      <h2>Contents</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#I. Abstract">I. Abstract</a></li>
+        <li><a href="#II. Introduction">II. Introduction</a></li>
+        <ul>
+          <li>
+            <a href="#intended-customers"
+              >2.1 The application's intended customers</a
+            >
+          </li>
+          <li><a href="#purpose">2.2 Purpose</a></li>
+          <li><a href="#vision">2.3 Vision</a></li>
+        </ul>
+        <li><a href="#III. Structure">III. Structure</a></li>
+        <ul>
+          <li><a href="#Theme">3.1 Application theme (colors)</a></li>
+          <li><a href="#Title">3.2 Title</a></li>
+          <li><a href="#Logo">3.3 Logo</a></li>
+          <li><a href="#HomePage">3.4 Home Page</a></li>
+          <ul>
+            <li>
+              <a href="#HomePage-not-logged"
+                >3.4.1 Home Page When User Is Not Logged</a
+              >
+            </li>
+            <li>
+              <a href="#HomePage-logged">3.4.2 Home Page When User Is Logged</a>
+            </li>
+          </ul>
+          <li><a href="#ShopPage">3.5 Shop</a></li>
+          <li><a href="#AboutPage">3.6 About</a></li>
+          <li><a href="#HelpPage">3.7 Help</a></li>
+          <li><a href="#Login/Register">3.8 Login and Register</a></li>
+          <li><a href="#Crops">3.9 Crops</a></li>
+          <li><a href="#Cart">3.10 Cart</a></li>
+          <li><a href="#Notification">3.11 Notification</a></li>
+        </ul>
+        <li>
+          <a href="#IV.The users and their roles in the application"
+            >IV. The users and their roles in the application</a
+          >
+        </li>
+        <ul>
+          <li><a href="#User">4.1 User</a></li>
+          <li><a href="#Gardener">4.2 Gardener</a></li>
+          <li><a href="#Administrator">4.3 Administrator</a></li>
+        </ul>
+      </ul>
+      <h2>
+        <span id="I. Abstract"></span
+        ><span class="title_cap" id="I. Abstract">I. Abstract</span>
+      </h2>
+      <div class="text">
+        <p>
+          Herbal plant manager website is a comprehensive online resource that
+          provides information on various types of plants, their properties, and
+          their uses. This website is designed to help individuals who are
+          interested in learning about different herbs, plants, and their
+          medicinal or therapeutic benefits.
+        </p>
+        <p>
+          The website contains a vast database of different types of plants,
+          which can be searched based on their common or scientific name. Each
+          plant entry includes detailed information on the plant's physical
+          characteristics, habitat, growing conditions, and uses. This
+          information can be used by individuals who want to grow these plants
+          at home, use them for cooking or herbal remedies, or simply learn
+          about their unique properties.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h2>
+        <span id="II. Introduction"></span
+        ><span class="title_cap" id="II. Introduction">II. Introduction</span>
+      </h2>
+      <div class="text">
+        <p>
+          Web Gardening is a project that focuses on producing a web application
+          that provides users with suggestions for their house plants and
+          gardens while also allowing them to explore and discover a wide
+          variety of house, tropical, herbal plants, etc.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h3>
+        <span id="intended-customers"></span
+        ><span class="title_cap" id="intended-customers"
+          >2.1 The application's intended customers
+        </span>
+      </h3>
+      <div class="text">
+        <p>
+          Web Gardening is a web program that provides suggestions and resources
+          to gardeners and plant enthusiasts for caring for their spring plants
+          and encouraging them to expand their plant collection. Our app's
+          target users are <b>curious people in search of a new hobby</b> and
+          <b>plant lovers</b>, who want to just admire plants.
+        </p>
+        <p>
+          For <b>the ones who want to admire</b>, the app provides a wide range
+          collection of images of plants (FEED), which can be filtered by type,
+          color, etc.
+        </p>
+        <p>
+          For <b>the ones who want to share</b>, the app provides enhanced tools
+          for importing pictures of plants. Users can create their own
+          collection and manage them online using the application.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h3>
+        <span id="purpose"></span
+        ><span class="title_cap" id="purpose">2.2 Purpose </span>
+      </h3>
+      <div class="text">
+        <p>
+          The app purpose is to raise awareness about plants and the hobby of
+          having/acquiring plants and their benefits for the spiritual and
+          psychologycal health, to have plants more accessible and enjoyable for
+          a wider range of people, and to provide a platform for plant
+          enthusiasts to connect and share their knowledge and experiences.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+        <h3>
+          <span id="vision"></span
+          ><span class="title_cap" id="vision">2.3 Vision </span>
+        </h3>
+      </div>
+      <div class="text">
+        <p>
+          This app's vision is to foster an active network of plant enthusiasts
+          who can connect, share their plants and ideas, and learn from one
+          another. By providing a user-friendly design and a wide range of
+          resources, such as plant care manuals.  
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h2>
+        <span id="III. Structure"></span
+        ><span class="title_cap" id="III. Structure">III. Structure</span>
+      </h2>
+      <h3>
+        <span id="Theme"></span
+        ><span class="title_cap" id="Theme"
+          >3.1 Application theme (colors)
+        </span>
+      </h3>
+      <div class="text">
+        <p>
+          Green is a natural and refreshing color that is often associated with
+          growth, health, and nature. Plants are also naturally green, so it
+          makes sense to incorporate this color into a plant-based website.
+          Green is calming and relaxing, which can help visitors feel more
+          connected to nature and the environment. Black, on the other hand, is
+          a bold and sophisticated color that can help create a sense of
+          elegance and sophistication. When paired with green, it can create a
+          strong contrast that can make the green stand out even more. Black can
+          also help to create a sense of depth and dimension on a website, which
+          can make the content more visually appealing and engaging. <br />
+          <br />Adding white to a green and black color scheme can create a
+          sense of balance and harmony. White is a neutral color that can help
+          to soften the boldness of black and provide a clean and fresh backdrop
+          for the green. White can also help to create a sense of spaciousness
+          and clarity, which can make the website feel more open and
+          inviting.<br />
+          <br />
+          Incorporating grey into a green, black, and white color scheme for a
+          plant-based website can add a touch of subtlety and sophistication.
+          Grey is a neutral color that can help to balance the boldness of black
+          and provide a sense of depth and texture to the design.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h3>
+        <span id="Title"></span
+        ><span class="title_cap" id="Title">3.2 Title </span>
+      </h3>
+      <div class="text">
+        <p>
+          The name "Hema" has several possible meanings and origins, but one of
+          its meanings is "golden" in Sanskrit. This name could be a good fit
+          for a plant-based website because it evokes the idea of something
+          precious, valuable, and natural, like gold or other precious
+          metals.<br />
+          <br />
+          The name Hema can also have connotations of growth and abundance,
+          which are important themes in the world of plants. Just as a seed can
+          grow into a beautiful and thriving plant, the name Hema suggests the
+          potential for growth, abundance, and prosperity.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h3>
+        <span id="Logo"></span
+        ><span class="title_cap" id="Logo">3.3 Logo </span>
+      </h3>
+      <div class="text">
+        <p>
+          A simple and effective logo for the Hema plant-based website could be
+          the word "Hema" written in a clean and modern font. The letters could
+          be in a bold and striking green color, which would emphasize the
+          website's focus on nature and the environment. To add a touch of
+          elegance and sophistication, the letters could be set against a white
+          or light grey background, which would create a sense of contrast and
+          balance. The word "Hema" could be written in all caps to create a
+          strong and memorable visual impression.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h3>
+        <span id="HomePage"></span
+        ><span class="title_cap" id="HomePage">3.4 Home Page </span>
+      </h3>
+      <div class="text">
+        <p>
+          Our website's 'Home' page serves as the central hub for users to
+          access all the different features and pages available on our site. All
+          users can easily navigate through the website using the navigation
+          bar, located at the top of the home page. From here, users can access
+          the 'Help', 'About', and different types of plants pages, allowing
+          them to quickly find the information or products they need. The
+          login/register page can be accessed from the top right corner of the
+          page, as well as under the introduction paragraph. Also, there is a
+          multicriteria search bar, which allows users to find the plants they
+          are looking for and some categories of plants are easily accessible by
+          clicking sugesting pictures. Finally, clicking on the website's logo
+          takes the user back to the home page.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+
+      <h3>
+        <span id="Categories pages"></span
+        ><span class="title_cap" id="CategoriesPages"
+          >3.5 Categories pages (tropical.html, house.html, )</span
+        >
+      </h3>
+      <div class="text">
+        <p>
+          Visitors can access the shop page if they want to purchase spring
+          flowers from our site or even if they just want to look around. Users
+          can then choose the desired product from the list, and to make their
+          search easier, they can filter the products by price (low to high or
+          high to low), by best sellers, or by newest. Users can also use
+          ratings or the name of the flower they wish to filter the products.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h3>
+        <span id="AboutPage"></span
+        ><span class="title_cap" id="AboutPage">3.6 About (about.html)</span>
+      </h3>
+      <div class="text">
+        <p>
+          We have some essential details about the functionality of the web
+          application on the about page, which would be very helpful to someone
+          using it for the first time. It also includes a few representative
+          photos. At the bottom of the website, the user can enter his email
+          address to receive notifications of any updates that are made, and if
+          he has any questions for which the 'help' page does not provide an
+          answer, he can call the numbers given.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura </b></p>
+      </div>
+      <h3>
+        <span id="HelpPage"></span
+        ><span class="title_cap" id="HelpPage">3.7 Help (help.html)</span>
+      </h3>
+      <div class="text">
+        <p>
+          Users can find answers to their questions on the help page before
+          calling customer service. Users are therefore able to learn about the
+          products and services available, how to use the program, and common
+          technical issues they may face. This can lessen the amount of time
+          they spend seeking for information or waiting for responses to their
+          questions, therefore increasing their app experience.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h3>
+        <span id="Login/Register"></span
+        ><span class="title_cap" id="Login/Register"
+          >3.8 Login and Register (login.html, register.html)
+        </span>
+      </h3>
+      <div class="text">
+        <p>
+          The login and register pages are thoughtfully designed to attract
+          users to create an account on our application. The background video
+          depicts a beautiful plant. The login and register pages are simple and
+          easy to use. Users can easily log in and register for a new account.
+          The login page also includes a forgot password option, which allows
+          users to reset their password if they forget it.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+
+      <h3>
+        <span id="Cart"></span
+        ><span class="title_cap" id="Cart">3.9 Profile (profile.html)</span>
+      </h3>
+      <div class="text">
+        <p>
+          Currently, the shopping cart feature is designed to be simple and
+          user-friendly, with a neat menu that opens up when the cursor is moved
+          over it. The menu displays the products that have been added to the
+          cart. However, to further enhance the user's experience, it could be
+          beneficial to create a dedicated Shopping Cart page. This page would
+          provide additional details such as the quantity of products in the
+          cart, along with a more detailed overview of each product.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h3>
+        <span id="Notification"></span
+        ><span class="title_cap" id="Notification">3.10 Notification </span>
+      </h3>
+      <div class="text">
+        <p>
+          As previously mentioned with the shopping cart, the notifications menu
+          also features a clean and user-friendly interface that pops up when
+          the user hovers over the notifications button. However, to further
+          enhance user experience and efficiency, we could consider creating a
+          dedicated notification page where users can easily view and manage
+          promotions and messages they have received.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+      <h2>
+        <span id="IV.The users and their roles in the application"></span
+        ><span
+          class="title_cap"
+          id="IV.The users and their roles in the application"
+          >IV.The users and their roles in the application</span
+        >
+      </h2>
+      <h3>
+        <span id="User"></span
+        ><span class="title_cap" id="User">4.1 User </span>
+      </h3>
+      <div class="text">
+        <p>
+          A user can use the application in several ways, such as browsing the
+          available plants in the collection, adding photos in their collection,
+          checking out, and leaving comments.
+        </p>
+        <p>
+          The user can create an account and save their preferences and personal
+          information. In summary, the user can use the application to browse
+          and review products, access plant information, connect with other
+          gardeners, manage their account.
+        </p>
+        <p><b>Authors: Codreanu Robert & Calinciuc Laura</b></p>
+      </div>
+    </nav>
+  </body>
+</html>

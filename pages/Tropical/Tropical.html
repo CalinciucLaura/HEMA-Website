@@ -32,10 +32,9 @@
      <li><a id="recommendation-link" href="../Recommendation/Recommendation.html">Recommendation</a></li>
       <li><a id="help-link" href="../Help/help.html">Help</a></li>
       <li><a id="about-link" href="../About/about.html">About</a></li>
-      <li><a id="login-link" href="../Login/login.html">Log out</a></li>
-      <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&family=PT+Serif&family=Pacifico&family=Poppins:wght@200;700&family=Raleway:wght@300&display=swap" rel="stylesheet">
+      <li><a id="login-link" href="../Login/login.html">Login</a></li>
+      <li><a id="register-link" href="../Register/register.html">Register</a> </li>
       <li><a href="../Profile/Profile.html" ><img src="../../images/Main/profile-icon.png" style="width: 25px;"></a></li>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     </ul>
   </nav>
 </header>
@@ -55,46 +54,34 @@
 <!-- ROW 1 -->
 <div class="PLANT-ROW">
 
-  <div class="PLANT-BOX" >
+  <div class="PLANT-BOX" onclick="showDialog('Bird Of Paradise', 'Bird of paradise, also known as Strelitzia, is a tropical plant native to South Africa. It is famous for its unique and distinctive flower that resembles a brightly colored bird in flight, hence the name \'bird of paradise\'. The plant has long, thick leaves that grow in a fan-like shape, and it produces large, vibrant flowers that come in a range of colors, including orange, yellow, and blue. Bird of paradise is a popular ornamental plant and is often used in tropical gardens and as a cut flower in floral arrangements.')">
     <img id="img1" src="../../images/Main/BirdOfParadise.jpg" >
-    <div class="TEXT-BOX" onclick="showDialog('Bird Of Paradise', 'Bird of paradise, also known as Strelitzia, is a tropical plant native to South Africa. It is famous for its unique and distinctive flower that resembles a brightly colored bird in flight, hence the name \'bird of paradise\'. The plant has long, thick leaves that grow in a fan-like shape, and it produces large, vibrant flowers that come in a range of colors, including orange, yellow, and blue. Bird of paradise is a popular ornamental plant and is often used in tropical gardens and as a cut flower in floral arrangements.')">
+    <div class="TEXT-BOX">
       <h4>BIRD OF PARADISE</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="areca palm">
-      <i class="fas fa-heart"></i>
-  </button>
   </div>
 
-  <div class="PLANT-BOX" > 
-    <img id="img2" src="../../images/Main/alpiniagalanga.jpg",>
-    <div class="TEXT-BOX" onclick="showDialog('Alpinia Galanga', 'Alpinia galanga, also known as galangal, is a plant species in the ginger family that is native to Southeast Asia and Indonesia. It is a perennial herb that grows up to 2 meters tall and has long, narrow leaves. <br> <br> The plant produces flowers on a spike that emerges from the center of the foliage, with each flower being small and white with red markings. Galangal is cultivated for its rhizomes, which are used in traditional medicine and culinary applications, particularly in Thai and Indonesian cuisine. The rhizomes have a pungent, spicy flavor and are used to flavor soups, curries, and other dishes. They are also used in traditional medicine for their anti-inflammatory and digestive properties.')">
+  <div class="PLANT-BOX" onclick="showDialog('Alpinia Galanga', 'Alpinia galanga, also known as galangal, is a plant species in the ginger family that is native to Southeast Asia and Indonesia. It is a perennial herb that grows up to 2 meters tall and has long, narrow leaves. <br> <br> The plant produces flowers on a spike that emerges from the center of the foliage, with each flower being small and white with red markings. Galangal is cultivated for its rhizomes, which are used in traditional medicine and culinary applications, particularly in Thai and Indonesian cuisine. The rhizomes have a pungent, spicy flavor and are used to flavor soups, curries, and other dishes. They are also used in traditional medicine for their anti-inflammatory and digestive properties.')"> 
+    <img id="img2" src="../../images/Main/AlpiniaGalanga.jpg",>
+    <div class="TEXT-BOX">
       <h4>ALPINIA GALANGA</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="alpinia galanga">
-      <i class="fas fa-heart"></i>
-  </button>
   </div> 
 
-  <div class="PLANT-BOX" > 
+  <div class="PLANT-BOX" onclick="showDialog('Palm Tree', 'Palm trees are a diverse group of plants that belong to the family Arecaceae. They are native to tropical and subtropical regions and are known for their tall, slender trunks and large, fan-like or feather-like leaves. There are over 2,500 species of palm trees, with varying shapes, sizes, and growth habits. <br><br> Palm trees are often grown as ornamental plants in landscapes and gardens due to their distinctive appearance. Some of the most popular species for landscaping include the coconut palm, date palm, and the queen palm. Palm trees are also economically important for their fruit, such as coconuts and dates, as well as for their use in producing palm oil, a common ingredient in many food and cosmetic products. <br><br> Palm trees require warm temperatures and abundant sunlight to grow, and they are typically planted in well-draining soil. They are relatively low-maintenance plants, although they do require periodic pruning to remove dead or damaged fronds. Palm trees also need regular watering, particularly during the dry season, and may require fertilization to maintain healthy growth.')"> 
     <img id="img3" src="../../images/Main/PalmTree.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Palm Tree', 'Palm trees are a diverse group of plants that belong to the family Arecaceae. They are native to tropical and subtropical regions and are known for their tall, slender trunks and large, fan-like or feather-like leaves. There are over 2,500 species of palm trees, with varying shapes, sizes, and growth habits. <br><br> Palm trees are often grown as ornamental plants in landscapes and gardens due to their distinctive appearance. Some of the most popular species for landscaping include the coconut palm, date palm, and the queen palm. Palm trees are also economically important for their fruit, such as coconuts and dates, as well as for their use in producing palm oil, a common ingredient in many food and cosmetic products. <br><br> Palm trees require warm temperatures and abundant sunlight to grow, and they are typically planted in well-draining soil. They are relatively low-maintenance plants, although they do require periodic pruning to remove dead or damaged fronds. Palm trees also need regular watering, particularly during the dry season, and may require fertilization to maintain healthy growth.')">
+    <div class="TEXT-BOX">
       <h4>PALM TREE</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="palm tree">
-      <i class="fas fa-heart"></i>
-  </button>
   </div>
 
  
-  <div class="PLANT-BOX" > 
+  <div class="PLANT-BOX" onclick="showDialog('Hibiscus', 'Hibiscus is a genus of flowering plants in the family Malvaceae, which includes over 200 species. These plants are native to warm and tropical regions of the world, including Africa, Asia, and the Americas. Hibiscus plants are known for their large, showy flowers that can come in a wide range of colors, including red, pink, white, yellow, and orange. <br><br> Hibiscus plants are popular ornamental plants in gardens and landscapes due to their attractive flowers and foliage. They can be grown as shrubs or small trees and are often pruned to maintain a desired shape and size. Hibiscus plants require well-draining soil and full sun to thrive, although they can tolerate some shade. They also need regular watering and may require fertilizer to promote healthy growth and blooming. <br><br> In addition to their ornamental value, hibiscus plants have a number of medicinal uses. The flowers and leaves of some species are used to make teas and other beverages that are believed to have a range of health benefits, including reducing blood pressure and cholesterol levels. Hibiscus is also used in traditional medicine to treat conditions such as coughs, colds, and skin irritations.')"> 
     <img id="img4" src="../../images/Main/Hibiscus.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Hibiscus', 'Hibiscus is a genus of flowering plants in the family Malvaceae, which includes over 200 species. These plants are native to warm and tropical regions of the world, including Africa, Asia, and the Americas. Hibiscus plants are known for their large, showy flowers that can come in a wide range of colors, including red, pink, white, yellow, and orange. <br><br> Hibiscus plants are popular ornamental plants in gardens and landscapes due to their attractive flowers and foliage. They can be grown as shrubs or small trees and are often pruned to maintain a desired shape and size. Hibiscus plants require well-draining soil and full sun to thrive, although they can tolerate some shade. They also need regular watering and may require fertilizer to promote healthy growth and blooming. <br><br> In addition to their ornamental value, hibiscus plants have a number of medicinal uses. The flowers and leaves of some species are used to make teas and other beverages that are believed to have a range of health benefits, including reducing blood pressure and cholesterol levels. Hibiscus is also used in traditional medicine to treat conditions such as coughs, colds, and skin irritations.')">
+    <div class="TEXT-BOX">
       <h4>HIBISCUS</h4>
     </div>
-  <button class="favorite-button heart-default" data-name="hibiscus">
-      <i class="fas fa-heart"></i>
-  </button>
-</div>
+  </div>
 </div>
 
 
@@ -102,91 +89,67 @@
 <!-- ROW 2 -->
 <div class="PLANT-ROW">
 
-  <div class="PLANT-BOX" >
+  <div class="PLANT-BOX" onclick="showDialog('Heliconia', 
+  'The Heliconia plant is a genus of tropical flowering plants native to Central and South America. There are over 100 different species of heliconias, which are known for their vibrant and exotic-looking flowers.Heliconias have long, slender stems and large, banana-like leaves. <br><br> The flowers grow in clusters on the end of the stem and come in a variety of shapes and colors, including red, yellow, orange, and pink. Some species also have bracts, or modified leaves, that are brightly colored and add to the plant\'s visual appeal.Heliconias prefer warm, humid climates and thrive in tropical regions with consistent rainfall. They require well-draining soil and benefit from regular fertilization. <br><br> The plant can grow up to 15 feet tall, depending on the species, and typically blooms in the summer and fall.In addition to their ornamental value, heliconias are also used for medicinal purposes in some traditional cultures. The plant has been used to treat a variety of ailments, including inflammation, infections, and digestive issues. However, more research is needed to fully understand its potential health benefits.')">
      
     <img id="img5" src="../../images/Main/Heliconia.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Heliconia', 
-  'The Heliconia plant is a genus of tropical flowering plants native to Central and South America. There are over 100 different species of heliconias, which are known for their vibrant and exotic-looking flowers.Heliconias have long, slender stems and large, banana-like leaves. <br><br> The flowers grow in clusters on the end of the stem and come in a variety of shapes and colors, including red, yellow, orange, and pink. Some species also have bracts, or modified leaves, that are brightly colored and add to the plant\'s visual appeal.Heliconias prefer warm, humid climates and thrive in tropical regions with consistent rainfall. They require well-draining soil and benefit from regular fertilization. <br><br> The plant can grow up to 15 feet tall, depending on the species, and typically blooms in the summer and fall.In addition to their ornamental value, heliconias are also used for medicinal purposes in some traditional cultures. The plant has been used to treat a variety of ailments, including inflammation, infections, and digestive issues. However, more research is needed to fully understand its potential health benefits.')">
+    <div class="TEXT-BOX">
       <h4>HELICONIA</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="heliconia">
-      <i class="fas fa-heart"></i>
-  </button>
   </div>
 
-    <div class="PLANT-BOX"  > 
+    <div class="PLANT-BOX"  onclick="showDialog('Plumeria','Plumeria, also known as frangipani, is a genus of flowering plants native to tropical regions of America, especially in Mexico, Central America, and the Caribbean. They are also commonly found in Southeast Asia, particularly in Indonesia, the Philippines, and Thailand, where they are widely cultivated for their beautiful and fragrant flowers.<br><br>Plumeria flowers are typically very colorful and come in a range of hues, including pink, white, yellow, and red. They are often used in tropical floral arrangements, as well as in traditional Hawaiian leis. The flowers are highly fragrant and have a sweet, exotic scent that is widely used in perfumes and scented oils. <br><br>Plumeria plants are deciduous and grow as small trees or shrubs, reaching up to 20 feet in height. They have thick, succulent branches and leaves that are arranged in a spiral pattern. Plumeria plants are highly valued for their ornamental value, and are often used in landscaping projects to add color and fragrance to gardens and outdoor spaces. They require full sun and well-draining soil, and can be grown in containers or directly in the ground.')"> 
       <img id="img6" src="../../images/Main/Plumeria.jpg">
-      <div class="TEXT-BOX" onclick="showDialog('Plumeria','Plumeria, also known as frangipani, is a genus of flowering plants native to tropical regions of America, especially in Mexico, Central America, and the Caribbean. They are also commonly found in Southeast Asia, particularly in Indonesia, the Philippines, and Thailand, where they are widely cultivated for their beautiful and fragrant flowers.<br><br>Plumeria flowers are typically very colorful and come in a range of hues, including pink, white, yellow, and red. They are often used in tropical floral arrangements, as well as in traditional Hawaiian leis. The flowers are highly fragrant and have a sweet, exotic scent that is widely used in perfumes and scented oils. <br><br>Plumeria plants are deciduous and grow as small trees or shrubs, reaching up to 20 feet in height. They have thick, succulent branches and leaves that are arranged in a spiral pattern. Plumeria plants are highly valued for their ornamental value, and are often used in landscaping projects to add color and fragrance to gardens and outdoor spaces. They require full sun and well-draining soil, and can be grown in containers or directly in the ground.')">
+      <div class="TEXT-BOX">
         <h4>PLUMERIA</h4>
       </div>
-      <button class="favorite-button heart-default" data-name="plumeria">
-      <i class="fas fa-heart"></i>
-  </button>
     </div>
 
 
-    <div class="PLANT-BOX"  > 
+    <div class="PLANT-BOX"  onclick="showDialog('Blue Torch Cactus','Blue Torch Cactus, also known as Pilocereus or Pilosocereus, is a species of cactus native to Central and South America. It is a tall, columnar cactus that can reach up to 30 feet in height in the wild, but typically grows to be around 6-8 feet tall in cultivation. The blue-green stems are covered in small spines and produce large, showy flowers that are typically pink or purple in color. The flowers are followed by edible fruits that are often used in traditional medicine to treat various ailments. The Blue Torch Cactus is a popular ornamental plant and is commonly grown in gardens and as houseplants. It prefers full sun and well-draining soil, and requires minimal watering.')"> 
       <img id="img7" src="../../images/Main/BlueTorchCactus.jpg">
-      <div class="TEXT-BOX" onclick="showDialog('Blue Torch Cactus','Blue Torch Cactus, also known as Pilocereus or Pilosocereus, is a species of cactus native to Central and South America. It is a tall, columnar cactus that can reach up to 30 feet in height in the wild, but typically grows to be around 6-8 feet tall in cultivation. The blue-green stems are covered in small spines and produce large, showy flowers that are typically pink or purple in color. The flowers are followed by edible fruits that are often used in traditional medicine to treat various ailments. The Blue Torch Cactus is a popular ornamental plant and is commonly grown in gardens and as houseplants. It prefers full sun and well-draining soil, and requires minimal watering.')">
+      <div class="TEXT-BOX">
         <h4>BLUE TORCH CACTUS</h4>
       </div>
-      <button class="favorite-button heart-default" data-name="blue torch cactus">
-      <i class="fas fa-heart"></i>
-  </button>
     </div>
 
-    <div class="PLANT-BOX"  > 
+    <div class="PLANT-BOX"  onclick="showDialog('Passiflora Foetida','Passiflora foetida, also known as stinking passionflower or wild water lemon, is a species of passionflower native to tropical regions of the Americas, including the Caribbean, Central America, and northern South America. It is a vine that can grow up to 5 meters long and produces small, greenish-yellow flowers and edible fruits that resemble tiny lemons. The plant is called \'stinking\' because of its unpleasant odor, which is most noticeable when the leaves or stems are crushed. Despite its pungent scent, the plant has several traditional medicinal uses, such as for treating infections, inflammation, and high blood pressure.')"> 
       <img id="img8" src="../../images/Main/PassifloraFoetida.jpg" >
-      <div class="TEXT-BOX" onclick="showDialog('Passiflora Foetida','Passiflora foetida, also known as stinking passionflower or wild water lemon, is a species of passionflower native to tropical regions of the Americas, including the Caribbean, Central America, and northern South America. It is a vine that can grow up to 5 meters long and produces small, greenish-yellow flowers and edible fruits that resemble tiny lemons. The plant is called \'stinking\' because of its unpleasant odor, which is most noticeable when the leaves or stems are crushed. Despite its pungent scent, the plant has several traditional medicinal uses, such as for treating infections, inflammation, and high blood pressure.')">
-        <h4>PASSIFLORA FOETIDA</h4>
+      <div class="TEXT-BOX">
+        <h4>PASSOFILORA FOETIDA</h4>
       </div>
-    <button class="favorite-button heart-default" data-name="passiflora foetida">
-      <i class="fas fa-heart"></i>
-  </button>
-</div>
+    </div>
 </div>
 
 <!-- ROW 3 -->
 <div class="PLANT-ROW">
 
-  <div class="PLANT-BOX" > 
+  <div class="PLANT-BOX" onclick="showDialog('Santa Rita Cactus', 'The Santa Rita Cactus, also known as the Purple Prickly Pear or the Oputia violacea, is a species of cactus native to the southwestern United States and Mexico. It typically grows low to the ground and can spread wide, with flattened, paddle-shaped segments that are covered in spines.<br><br>The Santa Rita Cactus gets its name from its vibrant purple color that it exhibits when grown in bright sunlight, although it can also appear green or grayish-blue in other lighting conditions. In the spring, the cactus produces large, showy pink or purple flowers that attract pollinators such as bees and butterflies. <br><br>  Like most cacti, the Santa Rita Cactus is drought-tolerant and requires well-draining soil. It can be propagated by taking stem cuttings, which can be rooted in sandy soil or cactus mix. The cactus is relatively low-maintenance and can thrive in a variety of growing conditions, making it a popular choice for both indoor and outdoor gardens.')"> 
     <img id="img9" src="../../images/Main/SantaRitaCactus.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Santa Rita Cactus', 'The Santa Rita Cactus, also known as the Purple Prickly Pear or the Oputia violacea, is a species of cactus native to the southwestern United States and Mexico. It typically grows low to the ground and can spread wide, with flattened, paddle-shaped segments that are covered in spines.<br><br>The Santa Rita Cactus gets its name from its vibrant purple color that it exhibits when grown in bright sunlight, although it can also appear green or grayish-blue in other lighting conditions. In the spring, the cactus produces large, showy pink or purple flowers that attract pollinators such as bees and butterflies. <br><br>  Like most cacti, the Santa Rita Cactus is drought-tolerant and requires well-draining soil. It can be propagated by taking stem cuttings, which can be rooted in sandy soil or cactus mix. The cactus is relatively low-maintenance and can thrive in a variety of growing conditions, making it a popular choice for both indoor and outdoor gardens.')">
+    <div class="TEXT-BOX">
       <h4>SANTA RITA CACTUS</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="santa rita cactus">
-      <i class="fas fa-heart"></i>
-  </button>
   </div>
 
-  <div class="PLANT-BOX" > 
+  <div class="PLANT-BOX" onclick="showDialog('Dracunculus Vulgaris','Dracunculus vulgaris, also known as the dragon lily or stink lily, is a flowering plant native to the eastern Mediterranean region and western Asia. It is a perennial plant that can grow up to 1.5 meters tall and produces a single large leaf divided into leaflets that resemble fingers. The flowers of the plant are large and unique, with a deep maroon spathe that is shaped like a funnel and a long, protruding spadix that can reach up to 60 centimeters in length. The plant is called \'stink lily\' because of its pungent odor, which is produced to attract pollinators such as flies and carrion beetles.')"> 
     <img id="img10" src="../../images/Main/DracunculusVulgaris.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Dracunculus Vulgaris','Dracunculus vulgaris, also known as the dragon lily or stink lily, is a flowering plant native to the eastern Mediterranean region and western Asia. It is a perennial plant that can grow up to 1.5 meters tall and produces a single large leaf divided into leaflets that resemble fingers. The flowers of the plant are large and unique, with a deep maroon spathe that is shaped like a funnel and a long, protruding spadix that can reach up to 60 centimeters in length. The plant is called \'stink lily\' because of its pungent odor, which is produced to attract pollinators such as flies and carrion beetles.')">
-      <h4>DRACUNCULUS VULGARIS</h4>
+    <div class="TEXT-BOX">
+      <h4>DRACUNULUS VULGARIS</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="dracunculus vulgaris">
-      <i class="fas fa-heart"></i>
-  </button>
   </div> 
 
-  <div class="PLANT-BOX" > 
+  <div class="PLANT-BOX" onclick="showDialog('Dietes Grandiflora','Dracunculus vulgaris, also known as the Dragon Arum or Voodoo Lily, is a plant species native to the eastern Mediterranean region and the Balkans. It is known for its striking, dark purple spathe (a large, leaf-like bract) surrounding a central spadix (a fleshy stem covered in small flowers) that emits a foul odor similar to rotting flesh to attract its pollinators. The plant grows from a corm and produces a large, umbrella-like leaf in addition to the flowering stem. It is considered a unique and interesting addition to a garden or collection, but its strong odor may make it unsuitable for some settings.')"> 
     <img id="img11" src="../../images/Main/DietesGrandiflora.jpg" >
-    <div class="TEXT-BOX" onclick="showDialog('Dietes Grandiflora','Dracunculus vulgaris, also known as the Dragon Arum or Voodoo Lily, is a plant species native to the eastern Mediterranean region and the Balkans. It is known for its striking, dark purple spathe (a large, leaf-like bract) surrounding a central spadix (a fleshy stem covered in small flowers) that emits a foul odor similar to rotting flesh to attract its pollinators. The plant grows from a corm and produces a large, umbrella-like leaf in addition to the flowering stem. It is considered a unique and interesting addition to a garden or collection, but its strong odor may make it unsuitable for some settings.')">
+    <div class="TEXT-BOX">
       <h4>DIETES GRANDIFLORA</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="dietes grandiflora">
-      <i class="fas fa-heart"></i>
-  </button>
   </div>
 
-  <div class="PLANT-BOX" > 
+  <div class="PLANT-BOX" onclick="showDialog('Calotropis Procera', 'Calotropis procera, commonly known as Apple of Sodom, Sodom Apple, or Kapok tree, is a species of plant in the family Apocynaceae. It is native to North Africa, tropical Africa, Western Asia, South Asia, and Indochina. The plant is a small tree or shrub that can reach up to 6 meters in height. It has large leaves and clusters of small, fragrant, purple or white flowers. The fruit of the Calotropis procera is a large, inflated pod filled with fluffy fibers that are used to make textiles and stuffing for pillows and mattresses. The plant has a long history of medicinal use in traditional systems of medicine for a range of ailments, including digestive issues, skin problems, and respiratory infections. However, its use is not recommended without proper medical supervision due to potential toxic effects.' )"> 
     <img id="img12" src="../../images/Main/CalotropisProcera.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Calotropis Procera', 'Calotropis procera, commonly known as Apple of Sodom, Sodom Apple, or Kapok tree, is a species of plant in the family Apocynaceae. It is native to North Africa, tropical Africa, Western Asia, South Asia, and Indochina. The plant is a small tree or shrub that can reach up to 6 meters in height. It has large leaves and clusters of small, fragrant, purple or white flowers. The fruit of the Calotropis procera is a large, inflated pod filled with fluffy fibers that are used to make textiles and stuffing for pillows and mattresses. The plant has a long history of medicinal use in traditional systems of medicine for a range of ailments, including digestive issues, skin problems, and respiratory infections. However, its use is not recommended without proper medical supervision due to potential toxic effects.' )">
+    <div class="TEXT-BOX">
       <h4>CALOTROPIS PROCERA</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="calotropis procera">
-      <i class="fas fa-heart"></i>
-  </button>
   </div>
 </div>
 
@@ -195,45 +158,33 @@
 
 <div class="PLANT-ROW">
 
-    <div class="PLANT-BOX" > 
+    <div class="PLANT-BOX"> 
       <img id="img13" src="../../images/Main/CalliandraTergemina.jpg">
-      <div class="TEXT-BOX" onclick="showDialog('Calliandra Tergemina', 'Calliandra tergemina is a small shrub with feathery leaves and colorful, clustered flowers. It is commonly grown for its ornamental value.' )">
+      <div class="TEXT-BOX">
         <h4>CALLIANDRA TERGEMINA</h4>
       </div>
-      <button class="favorite-button heart-default" data-name="calliandra tergemina">
-      <i class="fas fa-heart"></i>
-  </button>
     </div>
 
 
     <div class="PLANT-BOX"> 
-      <img id="img14" src="../../images/Main/AntigononLeptopus.jpg">
-      <div class="TEXT-BOX" onclick="showDialog('Antigonon Leptopus', 'Antigonon leptopus, also called Coral Vine or Queen s Wreath, is a fast-growing vine with heart-shaped leaves and clusters of vibrant pink or coral-colored flowers. It attracts pollinators and is often used for ornamental purposes, but can be invasive in certain regions.' )">
+      <img id="img14" src="../../images/Main/AntigononLeptopus.jpeg">
+      <div class="TEXT-BOX">
         <h4>ANTIGONON LEPTOPUS</h4>
       </div>
-      <button class="favorite-button heart-default" data-name="antigonon leptopus">
-      <i class="fas fa-heart"></i>
-  </button>
     </div>
 
     <div class="PLANT-BOX"> 
       <img id="img15" src="../../images/Main/ArisaemaTriphyllum.jpg">
-      <div class="TEXT-BOX" onclick="showDialog('Arisaema Triphyllum', 'Arisaema triphyllum, also known as Jack-in-the-Pulpit, is a North American perennial plant with a distinctive flower structure resembling a preacher in a pulpit. It thrives in shady woodland areas and features a compound leaf with three leaflets.' )">
+      <div class="TEXT-BOX">
         <h4>ARISAEMA TRIPHYLLUM</h4>
       </div>
-      <button class="favorite-button heart-default" data-name="arisaema triphyllum">
-      <i class="fas fa-heart"></i>
-  </button>
     </div>
 
     <div class="PLANT-BOX"> 
       <img id="img16" src="../../images/Main/TiPlant.jpg" >
-      <div class="TEXT-BOX" onclick="showDialog('Ti Plant', 'The Ti plant (Cordyline fruticosa) is a tropical shrub with long, strap-like leaves in various colors. It is prized for its ornamental value and is commonly used in landscaping and indoor gardening.' )">
+      <div class="TEXT-BOX">
         <h4>TI PLANT</h4>
       </div>
-      <button class="favorite-button heart-default" data-name="ti plant">
-      <i class="fas fa-heart"></i>
-  </button>
     </div>
 </div>
 
@@ -241,48 +192,36 @@
 
 <div class="PLANT-ROW">
 
-  <div class="PLANT-BOX" > 
+  <div class="PLANT-BOX"> 
     <img id="img17" src="../../images/Main/ArecaPalm.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Areca Palm', 'The Areca Palm, scientifically known as Dypsis lutescens or Chrysalidocarpus lutescens, is a popular tropical palm tree native to Madagascar. It is widely cultivated as an indoor plant or for outdoor landscaping in warm climates. The Areca Palm is known for its graceful and feathery fronds that arch from the crown of the plant. The fronds are composed of numerous narrow leaflets, giving them a lush and tropical appearance. The palm can reach a height of around 6-7 feet when grown indoors, while outdoor specimens can grow even taller.' )">
+    <div class="TEXT-BOX">
       <h4>ARECA PALM</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="areca palm">
-      <i class="fas fa-heart"></i>
-  </button>
   </div>
 
 
-  <div class="PLANT-BOX">
+  <div class="PLANT-BOX"> 
     <img id="img18" src="../../images/Main/Hoya.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Hoya Plant', 'The Hoya plant is a popular houseplant known for its beautiful and waxy foliage. It belongs to the genus Hoya, which comprises various species of vining plants. Hoya plants are loved for their clusters of star-shaped flowers that come in different colors, such as pink, white, or red. They are low-maintenance plants that thrive in bright, indirect light and well-draining soil. Hoya plants are also known for their unique and often fragrant blooms. They make excellent additions to hanging baskets or can be trained to climb on trellises.')" >
-        <h4>HOYA</h4>
+    <div class="TEXT-BOX">
+      <h4>HOYA</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="hoya">
-        <i class="fas fa-heart"></i>
-    </button>
-</div>
+  </div>
 
-  <div class="PLANT-BOX">
-    <img id="img19" src="../../images/Main/OrangeTree.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Orange Tree', 'The Orange tree, scientifically known as Citrus sinensis, is a fruit-bearing tree cherished for its delicious and citrusy oranges. It belongs to the Rutaceae family and is widely cultivated in various regions around the world. Orange trees have glossy, evergreen leaves and fragrant white flowers that precede the development of the fruit. They require a sunny and warm climate to thrive, with well-draining soil. With proper care, they can produce abundant and juicy oranges, making them a popular choice for home orchards and gardens.')" >
-        <h4>ORANGE TREE</h4>
+  <div class="PLANT-BOX"> 
+    <img id="img19" src="../../images/Main/OrangeTree.jpg" >
+    <div class="TEXT-BOX">
+      <h4>ORANGE TREE</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="orange tree">
-        <i class="fas fa-heart"></i>
-    </button>
-</div>
+  </div>
 
  
 
-  <div class="PLANT-BOX">
-    <img id="img20" src="../../images/Main/LemonTree.jpg">
-    <div class="TEXT-BOX" onclick="showDialog('Lemon Tree', 'The Lemon tree, scientifically known as Citrus limon, is a small evergreen tree highly valued for its tangy and aromatic yellow fruits. It belongs to the Rutaceae family and is native to Asia. Lemon trees have glossy, green leaves and produce fragrant white flowers that precede the development of the fruit. They thrive in a sunny and warm climate, with well-draining soil. Lemon trees are often grown for their culinary uses, as the juice and zest of lemons are widely used in cooking, baking, and beverages. They are also popular for their ornamental value, with their vibrant fruits adding a pop of color to gardens and landscapes.')" >
-        <h4>LEMON TREE</h4>
+  <div class="PLANT-BOX"> 
+    <img id="img20" src="../../images/Main/LemonTree.jpg" >
+    <div class="TEXT-BOX">
+      <h4>LEMON TREE</h4>
     </div>
-    <button class="favorite-button heart-default" data-name="lemon tree">
-        <i class="fas fa-heart"></i>
-    </button>
-</div>
+  </div>
 </div>
 
 <!-- DIALOG BOX -->
@@ -294,6 +233,5 @@
   </div>
 
 <script src="../Plant.js"></script>
-<script src="../logout.js"></script>
 </body>
 </html>
